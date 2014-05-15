@@ -28,6 +28,7 @@ needs
 ・トップナビの現在位置特定機能を実装
 ・assets:precompile環境のproductionに対応すること
 　->つまり、digestがついたファイル名
+・非推奨のオプション（起動時に警告される）を使わないようにする
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create

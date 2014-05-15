@@ -1,4 +1,9 @@
 body{
+	a.logo{
+		img{
+			width:270px;
+		}
+	}
 	.after-nav{
 		background-color: $brand-primary;
 		border-top:solid 1px $almost-white;

@@ -1,0 +1,1000 @@
+/* GLYPHICONS 1.8 */
+
+@font-face
+  font-family: "Glyphicons"
+  src: url('#{$icon-font-path}glyphicons-regular.eot')
+  src: url('#{$icon-font-path}glyphicons-regular.eot?#iefix') format('eot'), url('#{$icon-font-path}glyphicons-regular.woff') format('woff'), url('#{$icon-font-path}glyphicons-regular.ttf') format('truetype'), url('#{$icon-font-path}glyphicons-regular.svg#glyphiconsregular') format('svg')
+
+// Use compass mixin instead above font-face declaration to ensure that font files path is always proper
+// @import 'compass'
+// +font-face("glyphicons", font-files("glyphicons/glyphicons-regular.woff", woff, "glyphicons/glyphicons-regular.ttf", truetype, "glyphicons/glyphicons-regular.svg#glyphiconsregular", svg), "glyphicons/glyphicons-regular.eot")
+
+// if you use several icon sets in project you will be able to use prefixed class to avoid collision with other icon sets.
+
+// eg. <i class="glyphicon-glass glyphicon-spin></i>
+
+
+$icon-prefix: glyphicon
+
+[class*="#{$icon-prefix}-"]
+  display: inline-block
+  vertical-align: middle
+  font:
+    family: "Glyphicons"
+    style: normal
+    weight: normal
+    size: 1em
+
+.#{$icon-prefix}-spin
+  -moz-animation: #{$icon-prefix}-spin 2s infinite linear
+  -o-animation: #{$icon-prefix}-spin 2s infinite linear
+  -webkit-animation: #{$icon-prefix}-spin 2s infinite linear
+  animation: #{$icon-prefix}-spin 2s infinite linear
+
+@-moz-keyframes #{$icon-prefix}-spin
+  0%
+    -moz-transform: rotate(0deg)
+  100%
+    -moz-transform: rotate(359deg)
+@-webkit-keyframes #{$icon-prefix}-spin
+  0%
+    -webkit-transform: rotate(0deg)
+  100%
+    -webkit-transform: rotate(359deg)
+@-o-keyframes #{$icon-prefix}-spin
+  0%
+    -o-transform: rotate(0deg)
+  100%
+    -o-transform: rotate(359deg)
+@-ms-keyframes #{$icon-prefix}-spin
+  0%
+    -ms-transform: rotate(0deg)
+  100%
+    -ms-transform: rotate(359deg)
+@keyframes #{$icon-prefix}-spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(359deg)
+
+
+.#{$icon-prefix}-glass:before
+  content: "\E001"
+.#{$icon-prefix}-leaf:before
+  content: "\E002"
+.#{$icon-prefix}-dog:before
+  content: "\1F415"
+.#{$icon-prefix}-user:before
+  content: "\E004"
+.#{$icon-prefix}-girl:before
+  content: "\1F467"
+.#{$icon-prefix}-car:before
+  content: "\E006"
+.#{$icon-prefix}-user_add:before
+  content: "\E007"
+.#{$icon-prefix}-user_remove:before
+  content: "\E008"
+.#{$icon-prefix}-film:before
+  content: "\E009"
+.#{$icon-prefix}-magic:before
+  content: "\E010"
+.#{$icon-prefix}-envelope:before
+  content: "\2709"
+.#{$icon-prefix}-camera:before
+  content: "\1F4F7"
+.#{$icon-prefix}-heart:before
+  content: "\E013"
+.#{$icon-prefix}-beach_umbrella:before
+  content: "\E014"
+.#{$icon-prefix}-train:before
+  content: "\1F686"
+.#{$icon-prefix}-print:before
+  content: "\E016"
+.#{$icon-prefix}-bin:before
+  content: "\E017"
+.#{$icon-prefix}-music:before
+  content: "\E018"
+.#{$icon-prefix}-note:before
+  content: "\E019"
+.#{$icon-prefix}-heart_empty:before
+  content: "\E020"
+.#{$icon-prefix}-home:before
+  content: "\E021"
+.#{$icon-prefix}-snowflake:before
+  content: "\2744"
+.#{$icon-prefix}-fire:before
+  content: "\1F525"
+.#{$icon-prefix}-magnet:before
+  content: "\E024"
+.#{$icon-prefix}-parents:before
+  content: "\E025"
+.#{$icon-prefix}-binoculars:before
+  content: "\E026"
+.#{$icon-prefix}-road:before
+  content: "\E027"
+.#{$icon-prefix}-search:before
+  content: "\E028"
+.#{$icon-prefix}-cars:before
+  content: "\E029"
+.#{$icon-prefix}-notes_2:before
+  content: "\E030"
+.#{$icon-prefix}-pencil:before
+  content: "\270F"
+.#{$icon-prefix}-bus:before
+  content: "\1F68C"
+.#{$icon-prefix}-wifi_alt:before
+  content: "\E033"
+.#{$icon-prefix}-luggage:before
+  content: "\E034"
+.#{$icon-prefix}-old_man:before
+  content: "\E035"
+.#{$icon-prefix}-woman:before
+  content: "\1F469"
+.#{$icon-prefix}-file:before
+  content: "\E037"
+.#{$icon-prefix}-coins:before
+  content: "\E038"
+.#{$icon-prefix}-airplane:before
+  content: "\2708"
+.#{$icon-prefix}-notes:before
+  content: "\E040"
+.#{$icon-prefix}-stats:before
+  content: "\E041"
+.#{$icon-prefix}-charts:before
+  content: "\E042"
+.#{$icon-prefix}-pie_chart:before
+  content: "\E043"
+.#{$icon-prefix}-group:before
+  content: "\E044"
+.#{$icon-prefix}-keys:before
+  content: "\E045"
+.#{$icon-prefix}-calendar:before
+  content: "\1F4C5"
+.#{$icon-prefix}-router:before
+  content: "\E047"
+.#{$icon-prefix}-camera_small:before
+  content: "\E048"
+.#{$icon-prefix}-dislikes:before
+  content: "\E049"
+.#{$icon-prefix}-star:before
+  content: "\E050"
+.#{$icon-prefix}-link:before
+  content: "\E051"
+.#{$icon-prefix}-eye_open:before
+  content: "\E052"
+.#{$icon-prefix}-eye_close:before
+  content: "\E053"
+.#{$icon-prefix}-alarm:before
+  content: "\E054"
+.#{$icon-prefix}-clock:before
+  content: "\E055"
+.#{$icon-prefix}-stopwatch:before
+  content: "\E056"
+.#{$icon-prefix}-projector:before
+  content: "\E057"
+.#{$icon-prefix}-history:before
+  content: "\E058"
+.#{$icon-prefix}-truck:before
+  content: "\E059"
+.#{$icon-prefix}-cargo:before
+  content: "\E060"
+.#{$icon-prefix}-compass:before
+  content: "\E061"
+.#{$icon-prefix}-keynote:before
+  content: "\E062"
+.#{$icon-prefix}-paperclip:before
+  content: "\1F4CE"
+.#{$icon-prefix}-power:before
+  content: "\E064"
+.#{$icon-prefix}-lightbulb:before
+  content: "\E065"
+.#{$icon-prefix}-tag:before
+  content: "\E066"
+.#{$icon-prefix}-tags:before
+  content: "\E067"
+.#{$icon-prefix}-cleaning:before
+  content: "\E068"
+.#{$icon-prefix}-ruller:before
+  content: "\E069"
+.#{$icon-prefix}-gift:before
+  content: "\E070"
+.#{$icon-prefix}-umbrella:before
+  content: "\2602"
+.#{$icon-prefix}-book:before
+  content: "\E072"
+.#{$icon-prefix}-bookmark:before
+  content: "\1F516"
+.#{$icon-prefix}-wifi:before
+  content: "\E074"
+.#{$icon-prefix}-cup:before
+  content: "\E075"
+.#{$icon-prefix}-stroller:before
+  content: "\E076"
+.#{$icon-prefix}-headphones:before
+  content: "\E077"
+.#{$icon-prefix}-headset:before
+  content: "\E078"
+.#{$icon-prefix}-warning_sign:before
+  content: "\E079"
+.#{$icon-prefix}-signal:before
+  content: "\E080"
+.#{$icon-prefix}-retweet:before
+  content: "\E081"
+.#{$icon-prefix}-refresh:before
+  content: "\E082"
+.#{$icon-prefix}-roundabout:before
+  content: "\E083"
+.#{$icon-prefix}-random:before
+  content: "\E084"
+.#{$icon-prefix}-heat:before
+  content: "\E085"
+.#{$icon-prefix}-repeat:before
+  content: "\E086"
+.#{$icon-prefix}-display:before
+  content: "\E087"
+.#{$icon-prefix}-log_book:before
+  content: "\E088"
+.#{$icon-prefix}-address_book:before
+  content: "\E089"
+.#{$icon-prefix}-building:before
+  content: "\E090"
+.#{$icon-prefix}-eyedropper:before
+  content: "\E091"
+.#{$icon-prefix}-adjust:before
+  content: "\E092"
+.#{$icon-prefix}-tint:before
+  content: "\E093"
+.#{$icon-prefix}-crop:before
+  content: "\E094"
+.#{$icon-prefix}-vector_path_square:before
+  content: "\E095"
+.#{$icon-prefix}-vector_path_circle:before
+  content: "\E096"
+.#{$icon-prefix}-vector_path_polygon:before
+  content: "\E097"
+.#{$icon-prefix}-vector_path_line:before
+  content: "\E098"
+.#{$icon-prefix}-vector_path_curve:before
+  content: "\E099"
+.#{$icon-prefix}-vector_path_all:before
+  content: "\E100"
+.#{$icon-prefix}-font:before
+  content: "\E101"
+.#{$icon-prefix}-italic:before
+  content: "\E102"
+.#{$icon-prefix}-bold:before
+  content: "\E103"
+.#{$icon-prefix}-text_underline:before
+  content: "\E104"
+.#{$icon-prefix}-text_strike:before
+  content: "\E105"
+.#{$icon-prefix}-text_height:before
+  content: "\E106"
+.#{$icon-prefix}-text_width:before
+  content: "\E107"
+.#{$icon-prefix}-text_resize:before
+  content: "\E108"
+.#{$icon-prefix}-left_indent:before
+  content: "\E109"
+.#{$icon-prefix}-right_indent:before
+  content: "\E110"
+.#{$icon-prefix}-align_left:before
+  content: "\E111"
+.#{$icon-prefix}-align_center:before
+  content: "\E112"
+.#{$icon-prefix}-align_right:before
+  content: "\E113"
+.#{$icon-prefix}-justify:before
+  content: "\E114"
+.#{$icon-prefix}-list:before
+  content: "\E115"
+.#{$icon-prefix}-text_smaller:before
+  content: "\E116"
+.#{$icon-prefix}-text_bigger:before
+  content: "\E117"
+.#{$icon-prefix}-embed:before
+  content: "\E118"
+.#{$icon-prefix}-embed_close:before
+  content: "\E119"
+.#{$icon-prefix}-table:before
+  content: "\E120"
+.#{$icon-prefix}-message_full:before
+  content: "\E121"
+.#{$icon-prefix}-message_empty:before
+  content: "\E122"
+.#{$icon-prefix}-message_in:before
+  content: "\E123"
+.#{$icon-prefix}-message_out:before
+  content: "\E124"
+.#{$icon-prefix}-message_plus:before
+  content: "\E125"
+.#{$icon-prefix}-message_minus:before
+  content: "\E126"
+.#{$icon-prefix}-message_ban:before
+  content: "\E127"
+.#{$icon-prefix}-message_flag:before
+  content: "\E128"
+.#{$icon-prefix}-message_lock:before
+  content: "\E129"
+.#{$icon-prefix}-message_new:before
+  content: "\E130"
+.#{$icon-prefix}-inbox:before
+  content: "\E131"
+.#{$icon-prefix}-inbox_plus:before
+  content: "\E132"
+.#{$icon-prefix}-inbox_minus:before
+  content: "\E133"
+.#{$icon-prefix}-inbox_lock:before
+  content: "\E134"
+.#{$icon-prefix}-inbox_in:before
+  content: "\E135"
+.#{$icon-prefix}-inbox_out:before
+  content: "\E136"
+.#{$icon-prefix}-cogwheel:before
+  content: "\E137"
+.#{$icon-prefix}-cogwheels:before
+  content: "\E138"
+.#{$icon-prefix}-picture:before
+  content: "\E139"
+.#{$icon-prefix}-adjust_alt:before
+  content: "\E140"
+.#{$icon-prefix}-database_lock:before
+  content: "\E141"
+.#{$icon-prefix}-database_plus:before
+  content: "\E142"
+.#{$icon-prefix}-database_minus:before
+  content: "\E143"
+.#{$icon-prefix}-database_ban:before
+  content: "\E144"
+.#{$icon-prefix}-folder_open:before
+  content: "\E145"
+.#{$icon-prefix}-folder_plus:before
+  content: "\E146"
+.#{$icon-prefix}-folder_minus:before
+  content: "\E147"
+.#{$icon-prefix}-folder_lock:before
+  content: "\E148"
+.#{$icon-prefix}-folder_flag:before
+  content: "\E149"
+.#{$icon-prefix}-folder_new:before
+  content: "\E150"
+.#{$icon-prefix}-edit:before
+  content: "\E151"
+.#{$icon-prefix}-new_window:before
+  content: "\E152"
+.#{$icon-prefix}-check:before
+  content: "\E153"
+.#{$icon-prefix}-unchecked:before
+  content: "\E154"
+.#{$icon-prefix}-more_windows:before
+  content: "\E155"
+.#{$icon-prefix}-show_big_thumbnails:before
+  content: "\E156"
+.#{$icon-prefix}-show_thumbnails:before
+  content: "\E157"
+.#{$icon-prefix}-show_thumbnails_with_lines:before
+  content: "\E158"
+.#{$icon-prefix}-show_lines:before
+  content: "\E159"
+.#{$icon-prefix}-playlist:before
+  content: "\E160"
+.#{$icon-prefix}-imac:before
+  content: "\E161"
+.#{$icon-prefix}-macbook:before
+  content: "\E162"
+.#{$icon-prefix}-ipad:before
+  content: "\E163"
+.#{$icon-prefix}-iphone:before
+  content: "\E164"
+.#{$icon-prefix}-iphone_transfer:before
+  content: "\E165"
+.#{$icon-prefix}-iphone_exchange:before
+  content: "\E166"
+.#{$icon-prefix}-ipod:before
+  content: "\E167"
+.#{$icon-prefix}-ipod_shuffle:before
+  content: "\E168"
+.#{$icon-prefix}-ear_plugs:before
+  content: "\E169"
+.#{$icon-prefix}-record:before
+  content: "\E170"
+.#{$icon-prefix}-step_backward:before
+  content: "\E171"
+.#{$icon-prefix}-fast_backward:before
+  content: "\E172"
+.#{$icon-prefix}-rewind:before
+  content: "\E173"
+.#{$icon-prefix}-play:before
+  content: "\E174"
+.#{$icon-prefix}-pause:before
+  content: "\E175"
+.#{$icon-prefix}-stop:before
+  content: "\E176"
+.#{$icon-prefix}-forward:before
+  content: "\E177"
+.#{$icon-prefix}-fast_forward:before
+  content: "\E178"
+.#{$icon-prefix}-step_forward:before
+  content: "\E179"
+.#{$icon-prefix}-eject:before
+  content: "\E180"
+.#{$icon-prefix}-facetime_video:before
+  content: "\E181"
+.#{$icon-prefix}-download_alt:before
+  content: "\E182"
+.#{$icon-prefix}-mute:before
+  content: "\E183"
+.#{$icon-prefix}-volume_down:before
+  content: "\E184"
+.#{$icon-prefix}-volume_up:before
+  content: "\E185"
+.#{$icon-prefix}-screenshot:before
+  content: "\E186"
+.#{$icon-prefix}-move:before
+  content: "\E187"
+.#{$icon-prefix}-more:before
+  content: "\E188"
+.#{$icon-prefix}-brightness_reduce:before
+  content: "\E189"
+.#{$icon-prefix}-brightness_increase:before
+  content: "\E190"
+.#{$icon-prefix}-circle_plus:before
+  content: "\E191"
+.#{$icon-prefix}-circle_minus:before
+  content: "\E192"
+.#{$icon-prefix}-circle_remove:before
+  content: "\E193"
+.#{$icon-prefix}-circle_ok:before
+  content: "\E194"
+.#{$icon-prefix}-circle_question_mark:before
+  content: "\E195"
+.#{$icon-prefix}-circle_info:before
+  content: "\E196"
+.#{$icon-prefix}-circle_exclamation_mark:before
+  content: "\E197"
+.#{$icon-prefix}-remove:before
+  content: "\E198"
+.#{$icon-prefix}-ok:before
+  content: "\E199"
+.#{$icon-prefix}-ban:before
+  content: "\E200"
+.#{$icon-prefix}-download:before
+  content: "\E201"
+.#{$icon-prefix}-upload:before
+  content: "\E202"
+.#{$icon-prefix}-shopping_cart:before
+  content: "\E203"
+.#{$icon-prefix}-lock:before
+  content: "\1F512"
+.#{$icon-prefix}-unlock:before
+  content: "\E205"
+.#{$icon-prefix}-electricity:before
+  content: "\E206"
+.#{$icon-prefix}-ok_2:before
+  content: "\E207"
+.#{$icon-prefix}-remove_2:before
+  content: "\E208"
+.#{$icon-prefix}-cart_out:before
+  content: "\E209"
+.#{$icon-prefix}-cart_in:before
+  content: "\E210"
+.#{$icon-prefix}-left_arrow:before
+  content: "\E211"
+.#{$icon-prefix}-right_arrow:before
+  content: "\E212"
+.#{$icon-prefix}-down_arrow:before
+  content: "\E213"
+.#{$icon-prefix}-up_arrow:before
+  content: "\E214"
+.#{$icon-prefix}-resize_small:before
+  content: "\E215"
+.#{$icon-prefix}-resize_full:before
+  content: "\E216"
+.#{$icon-prefix}-circle_arrow_left:before
+  content: "\E217"
+.#{$icon-prefix}-circle_arrow_right:before
+  content: "\E218"
+.#{$icon-prefix}-circle_arrow_top:before
+  content: "\E219"
+.#{$icon-prefix}-circle_arrow_down:before
+  content: "\E220"
+.#{$icon-prefix}-play_button:before
+  content: "\E221"
+.#{$icon-prefix}-unshare:before
+  content: "\E222"
+.#{$icon-prefix}-share:before
+  content: "\E223"
+.#{$icon-prefix}-chevron-right:before
+  content: "\E224"
+.#{$icon-prefix}-chevron-left:before
+  content: "\E225"
+.#{$icon-prefix}-bluetooth:before
+  content: "\E226"
+.#{$icon-prefix}-euro:before
+  content: "\20AC"
+.#{$icon-prefix}-usd:before
+  content: "\E228"
+.#{$icon-prefix}-gbp:before
+  content: "\E229"
+.#{$icon-prefix}-retweet_2:before
+  content: "\E230"
+.#{$icon-prefix}-moon:before
+  content: "\E231"
+.#{$icon-prefix}-sun:before
+  content: "\2609"
+.#{$icon-prefix}-cloud:before
+  content: "\2601"
+.#{$icon-prefix}-direction:before
+  content: "\E234"
+.#{$icon-prefix}-brush:before
+  content: "\E235"
+.#{$icon-prefix}-pen:before
+  content: "\E236"
+.#{$icon-prefix}-zoom_in:before
+  content: "\E237"
+.#{$icon-prefix}-zoom_out:before
+  content: "\E238"
+.#{$icon-prefix}-pin:before
+  content: "\E239"
+.#{$icon-prefix}-albums:before
+  content: "\E240"
+.#{$icon-prefix}-rotation_lock:before
+  content: "\E241"
+.#{$icon-prefix}-flash:before
+  content: "\E242"
+.#{$icon-prefix}-google_maps:before
+  content: "\E243"
+.#{$icon-prefix}-anchor:before
+  content: "\2693"
+.#{$icon-prefix}-conversation:before
+  content: "\E245"
+.#{$icon-prefix}-chat:before
+  content: "\E246"
+.#{$icon-prefix}-male:before
+  content: "\E247"
+.#{$icon-prefix}-female:before
+  content: "\E248"
+.#{$icon-prefix}-asterisk:before
+  content: "\002A"
+.#{$icon-prefix}-divide:before
+  content: "\00F7"
+.#{$icon-prefix}-snorkel_diving:before
+  content: "\E251"
+.#{$icon-prefix}-scuba_diving:before
+  content: "\E252"
+.#{$icon-prefix}-oxygen_bottle:before
+  content: "\E253"
+.#{$icon-prefix}-fins:before
+  content: "\E254"
+.#{$icon-prefix}-fishes:before
+  content: "\E255"
+.#{$icon-prefix}-boat:before
+  content: "\E256"
+.#{$icon-prefix}-delete:before
+  content: "\E257"
+.#{$icon-prefix}-sheriffs_star:before
+  content: "\E258"
+.#{$icon-prefix}-qrcode:before
+  content: "\E259"
+.#{$icon-prefix}-barcode:before
+  content: "\E260"
+.#{$icon-prefix}-pool:before
+  content: "\E261"
+.#{$icon-prefix}-buoy:before
+  content: "\E262"
+.#{$icon-prefix}-spade:before
+  content: "\E263"
+.#{$icon-prefix}-bank:before
+  content: "\1F3E6"
+.#{$icon-prefix}-vcard:before
+  content: "\E265"
+.#{$icon-prefix}-electrical_plug:before
+  content: "\E266"
+.#{$icon-prefix}-flag:before
+  content: "\E267"
+.#{$icon-prefix}-credit_card:before
+  content: "\E268"
+.#{$icon-prefix}-keyboard-wireless:before
+  content: "\E269"
+.#{$icon-prefix}-keyboard-wired:before
+  content: "\E270"
+.#{$icon-prefix}-shield:before
+  content: "\E271"
+.#{$icon-prefix}-ring:before
+  content: "\02DA"
+.#{$icon-prefix}-cake:before
+  content: "\E273"
+.#{$icon-prefix}-drink:before
+  content: "\E274"
+.#{$icon-prefix}-beer:before
+  content: "\E275"
+.#{$icon-prefix}-fast_food:before
+  content: "\E276"
+.#{$icon-prefix}-cutlery:before
+  content: "\E277"
+.#{$icon-prefix}-pizza:before
+  content: "\E278"
+.#{$icon-prefix}-birthday_cake:before
+  content: "\E279"
+.#{$icon-prefix}-tablet:before
+  content: "\E280"
+.#{$icon-prefix}-settings:before
+  content: "\E281"
+.#{$icon-prefix}-bullets:before
+  content: "\E282"
+.#{$icon-prefix}-cardio:before
+  content: "\E283"
+.#{$icon-prefix}-t-shirt:before
+  content: "\E284"
+.#{$icon-prefix}-pants:before
+  content: "\E285"
+.#{$icon-prefix}-sweater:before
+  content: "\E286"
+.#{$icon-prefix}-fabric:before
+  content: "\E287"
+.#{$icon-prefix}-leather:before
+  content: "\E288"
+.#{$icon-prefix}-scissors:before
+  content: "\E289"
+.#{$icon-prefix}-bomb:before
+  content: "\1F4A3"
+.#{$icon-prefix}-skull:before
+  content: "\1F480"
+.#{$icon-prefix}-celebration:before
+  content: "\E292"
+.#{$icon-prefix}-tea_kettle:before
+  content: "\E293"
+.#{$icon-prefix}-french_press:before
+  content: "\E294"
+.#{$icon-prefix}-coffe_cup:before
+  content: "\E295"
+.#{$icon-prefix}-pot:before
+  content: "\E296"
+.#{$icon-prefix}-grater:before
+  content: "\E297"
+.#{$icon-prefix}-kettle:before
+  content: "\E298"
+.#{$icon-prefix}-hospital:before
+  content: "\1F3E5"
+.#{$icon-prefix}-hospital_h:before
+  content: "\E300"
+.#{$icon-prefix}-microphone:before
+  content: "\1F3A4"
+.#{$icon-prefix}-webcam:before
+  content: "\E302"
+.#{$icon-prefix}-temple_christianity_church:before
+  content: "\E303"
+.#{$icon-prefix}-temple_islam:before
+  content: "\E304"
+.#{$icon-prefix}-temple_hindu:before
+  content: "\E305"
+.#{$icon-prefix}-temple_buddhist:before
+  content: "\E306"
+.#{$icon-prefix}-bicycle:before
+  content: "\1F6B2"
+.#{$icon-prefix}-life_preserver:before
+  content: "\E308"
+.#{$icon-prefix}-share_alt:before
+  content: "\E309"
+.#{$icon-prefix}-comments:before
+  content: "\E310"
+.#{$icon-prefix}-flower:before
+  content: "\2698"
+.#{$icon-prefix}-baseball:before
+  content: "\26BE"
+.#{$icon-prefix}-rugby:before
+  content: "\E313"
+.#{$icon-prefix}-ax:before
+  content: "\E314"
+.#{$icon-prefix}-table_tennis:before
+  content: "\E315"
+.#{$icon-prefix}-bowling:before
+  content: "\1F3B3"
+.#{$icon-prefix}-tree_conifer:before
+  content: "\E317"
+.#{$icon-prefix}-tree_deciduous:before
+  content: "\E318"
+.#{$icon-prefix}-more_items:before
+  content: "\E319"
+.#{$icon-prefix}-sort:before
+  content: "\E320"
+.#{$icon-prefix}-filter:before
+  content: "\E321"
+.#{$icon-prefix}-gamepad:before
+  content: "\E322"
+.#{$icon-prefix}-playing_dices:before
+  content: "\E323"
+.#{$icon-prefix}-calculator:before
+  content: "\E324"
+.#{$icon-prefix}-tie:before
+  content: "\E325"
+.#{$icon-prefix}-wallet:before
+  content: "\E326"
+.#{$icon-prefix}-piano:before
+  content: "\E327"
+.#{$icon-prefix}-sampler:before
+  content: "\E328"
+.#{$icon-prefix}-podium:before
+  content: "\E329"
+.#{$icon-prefix}-soccer_ball:before
+  content: "\E330"
+.#{$icon-prefix}-blog:before
+  content: "\E331"
+.#{$icon-prefix}-dashboard:before
+  content: "\E332"
+.#{$icon-prefix}-certificate:before
+  content: "\E333"
+.#{$icon-prefix}-bell:before
+  content: "\1F514"
+.#{$icon-prefix}-candle:before
+  content: "\E335"
+.#{$icon-prefix}-pushpin:before
+  content: "\1F4CC"
+.#{$icon-prefix}-iphone_shake:before
+  content: "\E337"
+.#{$icon-prefix}-pin_flag:before
+  content: "\E338"
+.#{$icon-prefix}-turtle:before
+  content: "\1F422"
+.#{$icon-prefix}-rabbit:before
+  content: "\1F407"
+.#{$icon-prefix}-globe:before
+  content: "\E341"
+.#{$icon-prefix}-briefcase:before
+  content: "\1F4BC"
+.#{$icon-prefix}-hdd:before
+  content: "\E343"
+.#{$icon-prefix}-thumbs_up:before
+  content: "\E344"
+.#{$icon-prefix}-thumbs_down:before
+  content: "\E345"
+.#{$icon-prefix}-hand_right:before
+  content: "\E346"
+.#{$icon-prefix}-hand_left:before
+  content: "\E347"
+.#{$icon-prefix}-hand_up:before
+  content: "\E348"
+.#{$icon-prefix}-hand_down:before
+  content: "\E349"
+.#{$icon-prefix}-fullscreen:before
+  content: "\E350"
+.#{$icon-prefix}-shopping_bag:before
+  content: "\E351"
+.#{$icon-prefix}-book_open:before
+  content: "\E352"
+.#{$icon-prefix}-nameplate:before
+  content: "\E353"
+.#{$icon-prefix}-nameplate_alt:before
+  content: "\E354"
+.#{$icon-prefix}-vases:before
+  content: "\E355"
+.#{$icon-prefix}-bullhorn:before
+  content: "\E356"
+.#{$icon-prefix}-dumbbell:before
+  content: "\E357"
+.#{$icon-prefix}-suitcase:before
+  content: "\E358"
+.#{$icon-prefix}-file_import:before
+  content: "\E359"
+.#{$icon-prefix}-file_export:before
+  content: "\E360"
+.#{$icon-prefix}-bug:before
+  content: "\1F41B"
+.#{$icon-prefix}-crown:before
+  content: "\1F451"
+.#{$icon-prefix}-smoking:before
+  content: "\E363"
+.#{$icon-prefix}-cloud-upload:before
+  content: "\E364"
+.#{$icon-prefix}-cloud-download:before
+  content: "\E365"
+.#{$icon-prefix}-restart:before
+  content: "\E366"
+.#{$icon-prefix}-security_camera:before
+  content: "\E367"
+.#{$icon-prefix}-expand:before
+  content: "\E368"
+.#{$icon-prefix}-collapse:before
+  content: "\E369"
+.#{$icon-prefix}-collapse_top:before
+  content: "\E370"
+.#{$icon-prefix}-globe_af:before
+  content: "\E371"
+.#{$icon-prefix}-global:before
+  content: "\E372"
+.#{$icon-prefix}-spray:before
+  content: "\E373"
+.#{$icon-prefix}-nails:before
+  content: "\E374"
+.#{$icon-prefix}-claw_hammer:before
+  content: "\E375"
+.#{$icon-prefix}-classic_hammer:before
+  content: "\E376"
+.#{$icon-prefix}-hand_saw:before
+  content: "\E377"
+.#{$icon-prefix}-riflescope:before
+  content: "\E378"
+.#{$icon-prefix}-electrical_socket_eu:before
+  content: "\E379"
+.#{$icon-prefix}-electrical_socket_us:before
+  content: "\E380"
+.#{$icon-prefix}-message_forward:before
+  content: "\E381"
+.#{$icon-prefix}-coat_hanger:before
+  content: "\E382"
+.#{$icon-prefix}-dress:before
+  content: "\1F457"
+.#{$icon-prefix}-bathrobe:before
+  content: "\E384"
+.#{$icon-prefix}-shirt:before
+  content: "\E385"
+.#{$icon-prefix}-underwear:before
+  content: "\E386"
+.#{$icon-prefix}-log_in:before
+  content: "\E387"
+.#{$icon-prefix}-log_out:before
+  content: "\E388"
+.#{$icon-prefix}-exit:before
+  content: "\E389"
+.#{$icon-prefix}-new_window_alt:before
+  content: "\E390"
+.#{$icon-prefix}-video_sd:before
+  content: "\E391"
+.#{$icon-prefix}-video_hd:before
+  content: "\E392"
+.#{$icon-prefix}-subtitles:before
+  content: "\E393"
+.#{$icon-prefix}-sound_stereo:before
+  content: "\E394"
+.#{$icon-prefix}-sound_dolby:before
+  content: "\E395"
+.#{$icon-prefix}-sound_5_1:before
+  content: "\E396"
+.#{$icon-prefix}-sound_6_1:before
+  content: "\E397"
+.#{$icon-prefix}-sound_7_1:before
+  content: "\E398"
+.#{$icon-prefix}-copyright_mark:before
+  content: "\E399"
+.#{$icon-prefix}-registration_mark:before
+  content: "\E400"
+.#{$icon-prefix}-radar:before
+  content: "\E401"
+.#{$icon-prefix}-skateboard:before
+  content: "\E402"
+.#{$icon-prefix}-golf_course:before
+  content: "\E403"
+.#{$icon-prefix}-sorting:before
+  content: "\E404"
+.#{$icon-prefix}-sort-by-alphabet:before
+  content: "\E405"
+.#{$icon-prefix}-sort-by-alphabet-alt:before
+  content: "\E406"
+.#{$icon-prefix}-sort-by-order:before
+  content: "\E407"
+.#{$icon-prefix}-sort-by-order-alt:before
+  content: "\E408"
+.#{$icon-prefix}-sort-by-attributes:before
+  content: "\E409"
+.#{$icon-prefix}-sort-by-attributes-alt:before
+  content: "\E410"
+.#{$icon-prefix}-compressed:before
+  content: "\E411"
+.#{$icon-prefix}-package:before
+  content: "\1F4E6"
+.#{$icon-prefix}-cloud_plus:before
+  content: "\E413"
+.#{$icon-prefix}-cloud_minus:before
+  content: "\E414"
+.#{$icon-prefix}-disk_save:before
+  content: "\E415"
+.#{$icon-prefix}-disk_open:before
+  content: "\E416"
+.#{$icon-prefix}-disk_saved:before
+  content: "\E417"
+.#{$icon-prefix}-disk_remove:before
+  content: "\E418"
+.#{$icon-prefix}-disk_import:before
+  content: "\E419"
+.#{$icon-prefix}-disk_export:before
+  content: "\E420"
+.#{$icon-prefix}-tower:before
+  content: "\E421"
+.#{$icon-prefix}-send:before
+  content: "\E422"
+.#{$icon-prefix}-git_branch:before
+  content: "\E423"
+.#{$icon-prefix}-git_create:before
+  content: "\E424"
+.#{$icon-prefix}-git_private:before
+  content: "\E425"
+.#{$icon-prefix}-git_delete:before
+  content: "\E426"
+.#{$icon-prefix}-git_merge:before
+  content: "\E427"
+.#{$icon-prefix}-git_pull_request:before
+  content: "\E428"
+.#{$icon-prefix}-git_compare:before
+  content: "\E429"
+.#{$icon-prefix}-git_commit:before
+  content: "\E430"
+.#{$icon-prefix}-construction_cone:before
+  content: "\E431"
+.#{$icon-prefix}-shoe_steps:before
+  content: "\E432"
+.#{$icon-prefix}-plus:before
+  content: "\002B"
+.#{$icon-prefix}-minus:before
+  content: "\2212"
+.#{$icon-prefix}-redo:before
+  content: "\E435"
+.#{$icon-prefix}-undo:before
+  content: "\E436"
+.#{$icon-prefix}-golf:before
+  content: "\E437"
+.#{$icon-prefix}-hockey:before
+  content: "\E438"
+.#{$icon-prefix}-pipe:before
+  content: "\E439"
+.#{$icon-prefix}-wrench:before
+  content: "\1F527"
+.#{$icon-prefix}-folder_closed:before
+  content: "\E441"
+.#{$icon-prefix}-phone_alt:before
+  content: "\E442"
+.#{$icon-prefix}-earphone:before
+  content: "\E443"
+.#{$icon-prefix}-floppy_disk:before
+  content: "\E444"
+.#{$icon-prefix}-floppy_saved:before
+  content: "\E445"
+.#{$icon-prefix}-floppy_remove:before
+  content: "\E446"
+.#{$icon-prefix}-floppy_save:before
+  content: "\E447"
+.#{$icon-prefix}-floppy_open:before
+  content: "\E448"
+.#{$icon-prefix}-translate:before
+  content: "\E449"
+.#{$icon-prefix}-fax:before
+  content: "\E450"
+.#{$icon-prefix}-factory:before
+  content: "\1F3ED"
+.#{$icon-prefix}-shop_window:before
+  content: "\E452"
+.#{$icon-prefix}-shop:before
+  content: "\E453"
+.#{$icon-prefix}-kiosk:before
+  content: "\E454"
+.#{$icon-prefix}-kiosk_wheels:before
+  content: "\E455"
+.#{$icon-prefix}-kiosk_light:before
+  content: "\E456"
+.#{$icon-prefix}-kiosk_food:before
+  content: "\E457"
+.#{$icon-prefix}-transfer:before
+  content: "\E458"
+.#{$icon-prefix}-money:before
+  content: "\E459"
+.#{$icon-prefix}-header:before
+  content: "\E460"
+.#{$icon-prefix}-blacksmith:before
+  content: "\E461"
+.#{$icon-prefix}-saw_blade:before
+  content: "\E462"
+.#{$icon-prefix}-basketball:before
+  content: "\E463"
+.#{$icon-prefix}-server:before
+  content: "\E464"
+.#{$icon-prefix}-server_plus:before
+  content: "\E465"
+.#{$icon-prefix}-server_minus:before
+  content: "\E466"
+.#{$icon-prefix}-server_ban:before
+  content: "\E467"
+.#{$icon-prefix}-server_flag:before
+  content: "\E468"
+.#{$icon-prefix}-server_lock:before
+  content: "\E469"
+.#{$icon-prefix}-server_new:before
+  content: "\E470"

@@ -69,21 +69,12 @@ body.top{
 				}
 				&.original-news{
 					background:$brand-primary;
-					a h4:before{
-						content: url(/assets/top/icon.png);
-					}
 				}
 				&.facebook{
 					background-color: #3B5998;
-					a h4:before{
-						content: url(/assets/top/facebook.png);
-					}
 				}
 				&.twitter{
 					background-color: #55ACEE;
-					a h4:before{
-						content: url(/assets/top/twitter.png);
-					}
 				}
 			}
 			.panel-body{
@@ -120,6 +111,7 @@ body.top{
 			border-top-right-radius:3px;
 			border-bottom-right-radius:3px;
 			span{
+				font-size:16px;
 				display:block;
 				width:100%;
 				border-bottom:1px solid #ccc;
