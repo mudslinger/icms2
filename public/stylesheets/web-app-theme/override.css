@@ -1,0 +1,84 @@
+/* Override here any style defined by web-app-theme */
+
+/*エラーのあるフィールド*/
+.field_with_errors {
+	  padding: 2px;
+	  background-color: red;
+	  display: table;
+}
+
+table#customfield {
+	margin-top:1em;
+	border:0px;
+	border-collapse:collapse;
+	margin-bottom:1em;
+}
+
+table#customfield th.cf_container,
+table#customfield td.cf_container{
+	border:0px;
+	padding:7px;
+	border-bottom:1px solid #eee;
+}
+
+table#customfield th{
+	text-align:left;
+	color:#333;
+}
+
+table#customfield td input:text,
+table#customfield td textarea{
+	width:540px;
+	border:1px solid #ccc;
+}
+
+div#date {
+	padding-bottom:1em;
+}
+
+div#button {
+	padding-top:1em;
+	padding-bottom:1em;
+	text-align:right;
+}
+
+div#button input {
+	font-size:18px;
+	margin-left:9px;
+	background-color:#666;
+	color:#fff;
+	padding-left:18px;padding-right:18px;
+}
+
+
+ul#main_menu {
+	padding-right:1em;
+}
+
+ul#main_menu li {
+	padding-left:10px;
+	list-style-type:none;
+	border-bottom:1px solid #ddd;
+	padding-top:4px;
+	padding-bottom:4px;
+	font-size:14px;
+}
+
+ul#main_menu li a{
+	display:block;
+	color:#666;
+	text-decoration:none;
+}
+
+h3 {
+border-bottom:2px solid #ccc;	padding-bottom:6px;
+color:#222;
+}
+
+input#entry_title {
+	font-size:18px;
+	padding:4px;
+	margin-bottom:1em;
+	
+}
+

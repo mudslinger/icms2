@@ -1,0 +1,124 @@
+
+<%
+@page_title = "ラーメン山岡家 " + @entry.title;
+@category_title = "店舗情報";
+@category_sub_title = "";
+%>
+
+
+
+<%=render 'header_sub' %>
+
+
+
+<script>
+$(document).ready( function (){
+
+var ido_keido ="<%= @entry.cf.location %>";
+
+  if(ido_keido != "")	{ 
+  	kekka = ido_keido.split(",");
+	var lng = kekka[1];
+	var lat = kekka[0];
+
+  }
+            var latlng = new google.maps.LatLng(lat, lng);
+            var mapOptions = {
+                zoom: <%= @entry.cf.zoom %>,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                scaleControl: true
+            };
+            var mapObj = new google.maps.Map(document.getElementById('maps'), mapOptions);
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: mapObj
+            });
+});
+</script>
+
+
+
+
+      <div class="content">
+        <div class="cols">
+          <div class="colLeft">
+            <figure class="shopPhoto">
+              <img alt="no photo" height="220" src="/images/img_shop_dummy.jpg" width="320">
+            </figure>
+            <table class="shopData">
+              <tr>
+                <th>住所</th>
+                <td>
+                  〒<%= @entry.cf.zip %>
+                  <br>
+                  <%= @entry.cf.address %>
+                </td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td><%= @entry.cf.phone %></td>
+              </tr>
+              <tr>
+                <th>営業時間</th>
+                <td><%= @entry.cf.shop_hour %></td>
+              </tr>
+              <tr>
+                <th>アクセス</th>
+                <td><%= @entry.cf.access %></td>
+              </tr>
+              <tr>
+                <th>目印・その他</th>
+                <td><%= @entry.cf.landmark %></td>
+              </tr>
+              <tr>
+                <th>限定メニュー</th>
+                <td>--</td>
+              </tr>
+            </table>
+          </div>
+          <div class="colRight"><div id="maps" style="width:612px;height:612px;"></div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //section -->
+    <section class="nearbyShops">
+      <div class="content">
+        <h2>
+          近くのお店
+        </h2>
+	<ul>
+	<%neighbor_entries(@entry, headline("shops", 999) ,4, :within =>
+70).each do |entry|%>
+	
+	
+	          <li>
+            <p class="shopName">
+              <%=entry.title%>
+            </p>
+            <figure>
+              <%=link_to contents_detail_path_for(entry) do %><img alt="つくば店" height="124" src="/images/img_nearbyShops_dummy.jpg" width="180"><%end%>
+            </figure>
+            <p>
+               <%=entry.cf.location_address%>
+            </p>
+
+              <%=link_to contents_detail_path_for(entry), :class => "btn" do %>店舗詳細・地図<%end%>
+
+          </li>
+		  
+		  
+		  
+
+<%end%>
+</ul>
+      </div>
+    </section>
+	
+	
+	
+	 <%=render 'footer_sub' %>

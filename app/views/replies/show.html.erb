@@ -1,0 +1,21 @@
+<%= form_for(@reply) do |f| %>
+
+
+<p>
+  <b>Title:</b>
+  <%= @reply.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @reply.content %>
+</p>
+
+<p>
+  <b>Memo:</b>
+  <%= @reply.memo %>
+</p>
+
+<%=link_to "修正", edit_reply_path(@reply) %>
+<%=f.submit "送信", :name => "button_send" %>
+<%end%> 

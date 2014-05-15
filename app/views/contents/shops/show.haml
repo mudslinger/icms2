@@ -1,0 +1,79 @@
+!!! 5
+/[if lt IE 7] <html class="ie6 datauri_na" lang="ja">
+/[if IE 7] <html class="ie7 datauri_na" lang="ja">
+/[if IE 8] <html class="ie8 datauri_na" lang="ja">
+/[if gt IE 8] <!--> <html class="modearn datauri_avlbl" lang="ja"> <!--
+- @page_title =  @entry.title;
+=render 'contents/template/brand/common/head'
+%body.shop
+	=render 'contents/template/brand/common/header'
+	.after-nav.container-full
+		.container
+			.row
+				%h2.col-xs-12
+					%span.glyphicon.glyphicon-globe
+					=@page_title
+	.container
+		.row
+			%ol.breadcrumb.col-xs-6.pull-left
+				%li
+					%a{href:'/index.html',title:'トップ'} トップ
+				%li
+					%a{href:'/shops/',title: '店舗情報'} 店舗情報
+				%li=@page_title
+			-#SNSボタンの読み込み
+			=render 'contents/template/brand/common/sns'
+	.container
+		.row
+			.col-md-5
+				-if file_exists?("/images/shop/photo/#{@entry.cf.id}.jpg")
+					%img.shop-image.img-rounded{src:"/images/shop/photo/#{@entry.cf.id}.jpg"}
+				-else
+					%img.shop-image.img-rounded{src:"/images/shop/img_shop_dummy.jpg"}
+				%hr
+				.panel.panel-default
+					%table.table
+						%caption 店舗情報
+						%tr
+							%th 住所
+							%td
+								="〒#{@entry.cf.zip}"
+								%br
+								= @entry.cf.location_address
+						%tr
+							%th 電話番号
+							%td= @entry.cf.phone
+						%tr
+							%th 営業時間
+							%td= @entry.cf.shop_hour
+						%tr
+							%th アクセス
+							%td= @entry.cf.access
+						%tr
+							%th 目印・その他
+							%td= @entry.cf.landmark
+						%tr
+							%th 限定メニュー
+							%td
+			.col-md-7
+				.well#maps{style:'width:97%;height:500px;margin-left:3%'}
+		.row
+			%h3.col-xs-12 近くのお店
+			- neighbor_entries(@entry,headline('shops',999),4,within:70).each do |entry|
+				.col-md-3
+					.thumbnail
+						.caption
+							%h4=entry.title
+						-if file_exists? "/images/shop/photo/#{entry.cf.id}.jpg"
+							%img.img-thumbnail{src:"/images/shop/photo/#{entry.cf.id}.jpg"}
+						-else
+							%img.img-thumbnail{src:"/images/shop/img_shop_dummy.jpg"}
+						.caption
+							%p=entry.cf.location_address
+							%p=link_to "店舗情報",contents_detail_path_for(entry), :class => "btn btn-primary"
+	#location.hidden=@entry.cf.location
+	#zoom.hidden=@entry.cf.zoom
+	=render 'contents/template/brand/common/footer'
+
+!= "</html>"
+

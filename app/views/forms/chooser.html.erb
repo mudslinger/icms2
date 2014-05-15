@@ -1,0 +1,16 @@
+<h1>選んでください</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+
+<% @forms.each do |form| %>
+  <tr>
+    <td><%=link_to( form.title, new_entry_path(:form_id => form.id  )  )%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

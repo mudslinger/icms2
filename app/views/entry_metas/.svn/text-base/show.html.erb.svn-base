@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Entry:</b>
+  <%= @entry_meta.entry_id %>
+</p>
+
+<p>
+  <b>Field:</b>
+  <%= @entry_meta.field_id %>
+</p>
+
+<p>
+  <b>String value:</b>
+  <%= @entry_meta.string_value %>
+</p>
+
+<p>
+  <b>Text value:</b>
+  <%= @entry_meta.text_value %>
+</p>
+
+<p>
+  <b>Int value:</b>
+  <%= @entry_meta.int_value %>
+</p>
+
+<p>
+  <b>Date value:</b>
+  <%= @entry_meta.date_value %>
+</p>
+
+<p>
+  <b>Float value:</b>
+  <%= @entry_meta.float_value %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_meta_path(@entry_meta) %> |
+<%= link_to 'Back', entry_metas_path %>

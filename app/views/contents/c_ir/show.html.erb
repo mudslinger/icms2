@@ -1,0 +1,16 @@
+<%
+@page_title = @entry.title;
+@category_title = "IR";
+@category_sub_title = "";
+%>
+
+
+
+
+<%=render 'contents/template/corporate/header_sub' %>
+ <section class='content'>
+        <%= raw@entry.content%>
+      </section>
+
+    </section>
+<%=render 'contents/template/corporate/footer_sub' %>

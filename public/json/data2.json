@@ -1,0 +1,72 @@
+{
+  "title":{
+    "text":  "経常利益",
+    "style": "{font-size: 13px; color:#333333; text-align: center;}"
+  },
+
+  "y_legend":{
+    "text": "",
+    "style": "{color: #736AFF; font-size: 12px;}"
+  },
+
+  "elements":[
+    {
+      "type":      "bar_glass",
+      "alpha":     0.8,
+      "colour":    "#0000FF",
+      "font-size": 10,
+      "values" :   [243433,393275,290018,57895,176058],
+      "text" : "経常利益(単位:千円)"
+    },
+    {"type":"tags",
+            "values":[
+                    {"x":0,"y":243433},{"x":1,"y":393275},{"x":2,"y":290018},{"x":3,"y":57895},{"x":4,"y":176058}
+            ],
+            "font-size":10,
+            "colour":"#000000",
+            "align-x":"center",
+            "text":"#y#"
+    }
+  ],
+
+  "x_axis":{
+    "stroke":1,
+    "tick_height":0,
+    "colour":"#888888",
+    "grid_colour":"#888888",
+    "text_align": "center",
+    "font-size": 8,
+    "labels": {
+        "labels": [
+            
+            "第16期\n（平成21年1月期）",
+            "第17期\n（平成22年1月期）",
+            "第18期\n（平成23年1月期）",
+            "第19期\n（平成24年1月期）",
+            "第20期\n（平成25年1月期）"
+        ],
+        "size" : 9
+    }
+   },
+
+  "y_axis":{
+    "stroke":      1,
+    "tick_length": 3,
+    "colour":      "#888888",
+    "grid_colour": "#888888",
+    "offset":      0,
+    "max":         400000,
+    "min":         0,
+    "labels": {
+        "labels": [
+            {"y":0},
+            {"y":100000},
+            {"y":200000},
+            {"y":300000},
+            {"y":400000}
+        ],
+        "size": 8
+    }
+  },
+  "bg_colour": "#FFFFFF"
+}

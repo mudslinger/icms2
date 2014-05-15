@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta content='キーワード1,キーワード2,キーワード3' name='Keywords'>
+    <title>ラーメン山岡家　山岡家のラーメンは濃厚スープに極太麺。年中無休24時間営業中！</title>
+    <meta content='ページのdescription' name='description'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+	
+	 <link href='css_test/normalize.css' rel='stylesheet' type='text/css'>
+	<!-- Bootstrap用css START -->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+	<!-- Bootstrap用css END -->
+	
+
+    <link href='css_test/layout.css' rel='stylesheet' type='text/css'>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+    <%= javascript_include_tag "application" %>
+    <script src='js/menu.js'></script>
+    <script src='js/jquery.smoothScroll.js'></script>
+    <!-- %script{src:"js/top_bg.js"} -->
+    <script src='js/jquery.cycle.all.js'></script>
+    <script src='js/jquery.maximage.js'></script>
+    <script>
+      $(function(){
+        // Trigger maximage
+        jQuery('#maximage').maximage();
+      });
+    </script>
+    <script src='js/tab.js'></script>
+    <link href='css_test/jquery.maximage.css' rel='stylesheet'>
+    <link href='css_test/screen.css' rel='stylesheet'>
+    <!--[if lt IE 9]>
+      <script src='js/html5.js'></script>
+      <link href='css_test/ie8.css' media='all' rel='stylesheet' type='text/css'>
+    <![endif]-->
+  </head>
+  <body class='top'>
+  
+  <%=render 'contents/template/brand/block/fb_pre' %>
+
+
+
+
+    <div id='maximage'>
+<% each_headline( "slider", 5)do |entry| %>	
+<img src="<%=entry.cf.image1%>" width="100%" height="auto" alt="<%=entry.title%>" />
+<%end%>	
+    </div>
+    <header>
+      <div class='wrapper'>
+        <h1>山岡家のラーメンは濃厚スープに極太麺。年中無休24時間営業中！</h1>
+        <p class='logo'>
+          <a href='index.html' title='山岡家ホーム'>
+            <img alt='山岡家' height='43' src='images/logo.png' width='254'>
+          </a>
+        </p>
+        <a class='sp-menu-btn'>
+          <img alt='メニュー' src='images/btn_menu.png' width='42'>
+        </a>
+        <%=render 'contents/template/brand/nav' %>
+      </div>
+    </header>
+    <section class='topnav'>
+      <ul>
+
+        <li>
+          <a class='smoothScroll' href='#menu_in_top'>メニュー</a>
+        </li>
+        <li>
+          <a class='smoothScroll' href='#shop_in_top'>店舗検索</a>
+        </li>
+      </ul>
+      <div class='tabcontainer type-pc'>
+        <ul class='tabs'>
+          <li>
+            <a class='selected' href='#tab1'>新着情報</a>
+          </li>
+          <li>
+            <a href='#tab2'>
+              <img alt='Twitter' height='20' src='images/top/icon_twitter_in_tab.png' width='20'>
+            </a>
+          </li>
+          <li>
+            <a href='#tab3'>
+              <img alt='Facebook' height='20' src='images/top/icon_facebook_in_tab.png' width='20'>
+            </a>
+          </li>
+        </ul>
+        <ul class='panel'>
+          <li id='tab1'>
+            <table>
+			
+			
+			
+<% each_headline( "news",0)do |entry| %>
+
+              <tr>
+                <th>
+                  <%=entry.cf.kikan_start.strftime("%Y/%m/%d") %>
+                </th>
+                <td>
+                  <a href='<%=entry.cf.link %>'>
+                    <%=entry.title %>
+                  </a>
+                </td>
+              </tr>
+<%end%>
+
+
+            </table>
+            <a class='toList' href='/news/'>&raquo; 一覧を見る</a>
+          </li>
+          <li id='tab2'>
+            <%=render 'contents/template/brand/block/twitter' %>
+          </li>
+          <li id='tab3'>
+			<%=render 'contents/template/brand/block/fb_body' %>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class='menu' id='menu_in_top'>
+      <div class='title'>
+        <p>
+          <a href='/menus/'>
+            <span class='eng'>
+              MENU
+            </span>
+            <span class='jp'>
+              メニュー　
+            </span>
+            <span class='additional'>
+              すべてのメニューを見る
+            </span>
+          </a>
+        </p>
+      </div>
+      <div class='content'>
+        <h2>いくつものこだわりが隠された山岡家のラーメン
+        </h2>
+        <p>
+数日間豚骨を煮込んだ濃厚なスープとスープにからみつく極太ストレート麺、<br />
+特製のタレで煮炊いた本格チャーシュー、白髪ネギ山盛りのネギラーメ ン・・・<br />
+無性に食べたくなる定番的存在の「山岡家ラーメン」はこちらから！
+        </p>
+        <a class='btn btn-large btn-danger ' href='/menus/'>メニュー一覧を見る</a>
+      </div>
+    </section>
+    <!-- //section -->
+    <section class='shop' id='shop_in_top'>
+      <div class='title'>
+        <p>
+          <a href='/shops/'>
+            <span class='eng'>
+              LOCATION
+            </span>
+            <span class='jp'>
+              店舗情報
+            </span>
+            <span class='additional'>
+              店舗情報を見る
+            </span>
+          </a>
+        </p>
+      </div>
+      <div class='content'>
+        <h2>山岡家は、すべてのお客様が食べたい時に、<br />いつでも食べられるラーメン店を目指します
+        </h2>
+        <p>手作りのおいしいラーメンづくり」と「心のこもったサービス」を<br />一人でも多くのお客様にお届けしたい・・・<br />
+全国各地に広がる、「山岡家」店舗の検索はこちらから！</p>
+        <a class='btn btn-large btn-danger ' href='/shops/'>店舗情報を見る</a>
+      </div>
+    </section>
+    <section class='topnav2 type-sp'>
+      <div class='tabcontainer'>
+        <ul class='tabs'>
+          <li>
+            <a href='#tab21'>新着情報</a>
+          </li>
+          <li>
+            <a href='#tab22'>
+              <img alt='Twitter' height='20' src='images/top/icon_twitter_in_tab.png' width='20'>
+            </a>
+          </li>
+          <li>
+            <a href='#tab23'>
+              <img alt='Facebook' height='20' src='images/top/icon_facebook_in_tab.png' width='20'>
+            </a>
+          </li>
+        </ul>
+        <ul class='panel'>
+          <li id='tab21' style="display:block;">
+            <table>
+			
+			
+			
+<% each_headline( "news",0)do |entry| %>
+
+              <tr>
+                <th>
+                  <%=entry.cf.kikan_start.strftime("%Y/%m/%d") %>
+                </th>
+                <td>
+                  <a href='<%=entry.cf.link %>'>
+                    <%=entry.title %>
+                  </a>
+                </td>
+              </tr>
+<%end%>
+
+
+            </table>
+            <a class='toList' href='#'>&raquo; 一覧を見る</a>
+          </li>
+          <li id='tab22'>
+            <%=render 'contents/template/brand/block/twitter' %>
+          </li>
+          <li id='tab23'>
+			<%=render 'contents/template/brand/block/fb_body' %>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- //section -->
+
+<%=render 'contents/template/brand/footer_sub' %>

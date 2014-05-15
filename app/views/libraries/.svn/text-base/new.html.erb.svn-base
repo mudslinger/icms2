@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <title>編集</title>
+<% end %>
+
+<h1>New library</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', libraries_path %>

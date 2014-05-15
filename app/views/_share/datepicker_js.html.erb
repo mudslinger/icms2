@@ -1,0 +1,54 @@
+<%
+ idstr = "#{name}_#{property}"
+
+ triggerid = "button_#{idstr}"
+ year_select_id = "#{idstr}_1i"
+ month_select_id = "#{idstr}_2i"
+ day_select_id = "#{idstr}_3i"
+
+  obj = instance_variable_get "@#{name}"
+  initial_value = ""
+  if obj
+    dt =  obj.__send__(property)
+    initial_value = dt.strftime '%Y/%m/%d' if dt
+  
+  end  
+
+  %>
+  
+	<button id="<%=triggerid %>" type="button" class="trigger" value="<%=initial_value %>">
+    <%=image_tag "web-app-theme/icons/calendar.gif" %>
+	</button>
+
+<script type="text/javascript">
+//<![CDATA[
+	
+// Update three select controls to match a datepicker selection
+
+$(function() {
+  $('#<%=triggerid%>').datepick({
+    alignment: 'bottomRight', 
+	
+	onSelect: function(dates) {
+      $('#<%=year_select_id%>').val(dates.length ? dates[0].getFullYear() : '');
+      $('#<%=month_select_id%>').val(dates.length ? dates[0].getMonth() + 1 : '');
+      $('#<%=day_select_id%>').val(dates.length ? dates[0].getDate() : '')
+	},
+    
+	
+	//showTrigger: '#calImg'
+    //showTrigger: '<button type="button" class="trigger">' +
+    //'<img src="calendar.gif" alt="Popup"></button>'
+  });
+  
+
+// Update datepicker from three select controls
+  $('#<%=year_select_id%>,#<%=month_select_id%>,#<%=day_select_id%>').change(function() {
+    $('#<%=triggerid%>').datepick('setDate', new Date(
+        $('#<%=year_select_id%>').val(), $('#<%=month_select_id%>').val() - 1,
+        $('#<%=day_select_id%>').val()));
+  });
+});
+	
+//]]>
+</script>  

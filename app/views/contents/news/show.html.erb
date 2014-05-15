@@ -1,0 +1,31 @@
+
+
+<%
+@page_title = @entry.title;
+
+@category_title = "その他";
+@category_title_eng = "Etc";
+@category_url = "";
+
+@category_sub_title = "";
+%>
+
+
+
+
+<%=render 'contents/template/brand/header_sub' %>
+
+
+
+
+
+<div class='content'>
+        <h2><%=@entry.title%>1</h2>
+
+<%= raw @entry.content %>
+          </div>
+    </section>
+	
+	
+	
+	 <%=render 'footer_sub' %>

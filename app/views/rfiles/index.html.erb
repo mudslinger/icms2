@@ -1,0 +1,80 @@
+<%content_for :head do%>
+<%= render 'script' %>
+<script type="text/javascript">
+// <![CDATA[
+
+(function(){
+	icmCtrl.objects = [
+	<%= raw @rfiles.to_json %>
+	].pop();
+	
+})();
+
+// ]]>
+</script>
+<%end%>
+
+
+    <!-- form onsubmit="ImageDialog.insert();return false;" action="#" --> 
+	<%= form_for(:rfile,  :html => { :multipart => true } ) do |f| %>
+		<div class="tabs">
+			<ul>
+				<li id="my_tab" ><span><%=link_to "アップロード", rfile_upload_path %></span></li>
+				<li id="list_tab" class="current"><span><a href="javascript:mcTabs.displayTab('list_tab','list_panel');" onmousedown="return false;">ギャラリー</a></span></li>
+				<li id="general_tab" ><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{#advimage_dlg.tab_general}</a></span></li>
+				<li id="appearance_tab"><span><a href="javascript:mcTabs.displayTab('appearance_tab','appearance_panel');" onmousedown="return false;">{#advimage_dlg.tab_appearance}</a></span></li>
+				<li id="advanced_tab"><span><a href="javascript:mcTabs.displayTab('advanced_tab','advanced_panel');" onmousedown="return false;">{#advimage_dlg.tab_advanced}</a></span></li>
+			</ul>
+		</div>
+        <div class="panel_wrapper">
+			<div id="list_panel" class="panel current">
+				<fieldset>
+						<legend>一覧</legend>
+
+						<table>
+						  <tr>
+						  	<th></th>
+						    <th></th>
+						    
+						    <th></th>
+						    <th></th>
+						  </tr>
+						
+						<% @rfiles.each_with_index do |rfile,index| %>
+						  <tr>
+						  	<td>
+						  		<%=link_to "javascript:icmCtrl.imageSelected(#{index}, '#{image_path(rfile.file_path.url)}')" do %>
+						  		<%=image_tag rfile.file_path.icon.url, :size => "32x32" %>
+								<%end%>
+							</td>
+							<td><%= truncate rfile.label, :length => 10, :omission => '...' %></td>
+							<!--
+						    
+						    <td><%= rfile.description %></td>
+						    <td><%= rfile.file_name %></td>
+						    <td><%= rfile.file_name_ext %></td>
+						    <td><%= rfile.file_path %></td>
+							-->
+						    
+						    <td><%= link_to '変更', edit_rfile_path(rfile) %></td>
+						    <td><%= link_to '削除', rfile, :confirm => '本当に削除しますか？', :method => :delete %></td>
+						  </tr>
+						<% end %>
+						</table>					
+						<%= paginate @rfiles %>
+				</fieldset>
+			</div>
+						
+            <%=render 'tabs' %>
+		
+	
+		</div>
+
+		<div class="mceActionPanel">
+			<!--
+			<input type="submit" id="insert" name="insert" value="{#insert}"  />
+			-->
+			<input  type="button" id="insert" value="{#insert}" onclick="ImageDialog.insert()"  />
+			<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+		</div>
+    <% end %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  memo: MyText
+  form_id: 1
+  created_by_id: 1
+  updated_by_id: 1
+  mailaddress: MyString
+  ipaddress: MyString
+  status: MyString
+
+two:
+  title: MyString
+  content: MyText
+  memo: MyText
+  form_id: 1
+  created_by_id: 1
+  updated_by_id: 1
+  mailaddress: MyString
+  ipaddress: MyString
+  status: MyString

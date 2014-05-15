@@ -1,0 +1,9 @@
+#fb-root
+:coffeescript
+	do (d=document,s='script',id='facebook-jssdk')->
+		fjs = d.getElementsByTagName(s)[0]
+		unless d.getElementById(id)
+			js = d.createElement(s)
+			js.id = id
+			js.src = '//connect.facebook.net/ja_JP/all.js#xfbml=1'
+			fjs.parentNode.insertBefore(js, fjs)

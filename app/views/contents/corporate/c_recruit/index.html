@@ -1,0 +1,21 @@
+<%
+@page_title = "採用情報";
+@category_title = "採用情報";
+@category_sub_title = "";
+%>
+
+
+
+
+<%=render 'contents/template/corporate/header_sub' %>
+
+<% each_headline( "c_recruit",0,:where => "id = '200'" )do |entry| %>
+ <section class='content'>
+        <%= raw entry.content%>
+      </section>
+
+    </section>
+<%end%>
+
+
+<%=render 'contents/template/corporate/footer_sub' %>

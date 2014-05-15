@@ -1,0 +1,92 @@
+
+<%=render 'contents/template/brand/common/head' %>
+
+
+<body class="categoryClassName Shop">
+<%=render 'contents/template/brand/common/header' %>
+
+
+<section>
+	<header>
+		<div class="title">
+			<div class="container clearfix">
+					<h1 class="col-xs-12"><span><i>N</i>ews</span>新着情報</h1>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2>新着情報</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<ol class="breadcrumb col-xs-12">
+			<li><a href='/index.html' title='トップ'>トップ</a></li>
+			<li>新着情報</li>
+			<li class="pull-right"><img src="/images/tweet.jpg">　<img src="/images/fb-btn.png"></li>
+		</ol>
+	</div>
+
+<div class='container'>
+
+<!--
+	<dl class="dl-horizontal">
+		<% each_headline( "news",0)do |entry| %>
+			<dt><%=entry.cf.kikan_start.strftime("%Y/%m/%d") %></dt>
+			<dd><a href='<%=entry.cf.link %>'><%=entry.title %></a></dd>
+		<%end%>
+    </dl>
+-->
+<% count = 0 %>
+<div class="col-sm-6">
+	<table class="newsList table">
+		<% each_headline( "news",20)do |entry| %>
+			<tr><th><%=entry.cf.kikan_start.strftime("%Y/%m/%d") %></th><td><a href='<%=entry.cf.link %>'><%=entry.title %></a></td></tr>
+			<% count = count + 1%>
+			<% if count == 10 then%>
+    </table></div><div class="col-sm-6"><table class="newsList2 table">
+			<%end%>
+		<%end%>
+    </table>
+</div>
+
+<!--
+<table>
+          <thead>
+            <tr>
+              <th>
+                日付              </th>
+              <th>
+                タイトル              </th>
+            </tr>
+          </thead>
+          
+  <% each_headline( "news",0)do |entry| %>
+          
+          <tr>
+            <th>
+<%=entry.cf.kikan_start.strftime("%Y/%m/%d") %>        </th>
+            <td><a href='<%=entry.cf.link %>'><%=entry.title %></a></td>
+          </tr>
+ <%end%>
+ 
+ 
+        </table>
+-->
+        
+        
+</div>        
+
+</section>
+</div><!--mapright-->
+
+</div><!--mapwrap-->
+
+    
+
+<%=render 'contents/template/brand/common/footer' %>
+
+

@@ -1,0 +1,88 @@
+body.menus{
+	.menu-intro{
+		font-family:serif;
+		font-size:1.7em;
+	}
+	.panel-menu{
+		border-color: $gray;
+		.panel-heading{
+			color:$almost-white; 
+			background:$brand-primary;
+			h4.panel-title{
+				padding:8px; 
+				font-size:$font-size-large; 
+			}
+		}
+		.panel-body{
+			background: url(/images/bg02.jpg) repeat-x;
+		}
+	}
+	.menu-box{
+		background: url(/images/bg02.jpg) repeat-x;
+	}
+	.thumbnail .caption{
+		font-size:$font-size-large;
+		img.digit{
+			vertical-align: baseline;
+		}
+		.yen{
+			font-size: 150%;
+		}
+		.zeikomi{
+			font-size: 70%;
+			margin-right: 10px;
+		}
+		.zeinuki{
+			font-size: 100%;
+		}
+	}
+
+   .picture {
+	    position: relative;
+	    overflow: hidden;
+	    margin-bottom: 8px;
+	    margin-top: 8px;
+	    padding:2px;
+	    cursor: pointer;
+	    background-color: $almost-white;
+	    .tags{
+			position: absolute;
+			right: 2px;
+			top: 2px;
+			direction: rtl;
+	    	.label{
+				display: table;
+				margin-bottom: 2px;
+				text-align: left;
+				direction: ltr;
+	    	}
+	    }
+	    img{
+	    	width:100%;
+	    }
+	    
+	    .actions{
+			width: 100%;
+			position: absolute;
+			background-color: $gray-darker;
+			@include opacity(0.4);
+			height: 30px;
+			left: 0;
+			bottom: 0px;
+			overflow: hidden;
+			*zoom: 1;
+			.btn-link{
+				color: $almost-white;
+				text-shadow: none;
+			}
+			.pull-right .btn-link{
+				position: relative;
+				top: 1px
+			}
+	    }
+	    &:hover .actions{
+	    	@include opacity(1);
+	    	background-color: $brand-primary;
+	    }
+	}
+}

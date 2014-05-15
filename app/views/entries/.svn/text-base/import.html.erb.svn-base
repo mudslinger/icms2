@@ -1,0 +1,14 @@
+<% content_for :head do %>
+  <title>データ取込</title>
+<%end%>
+
+<h1>データ取込 </h1>
+<%=Form.where(:template_name => params[:name]).first.title%>
+<%=form_tag entries_import_path(:name => params[:name]) , :multipart => true do %>
+
+<%=file_field_tag "up_file"%>
+<%=submit_tag "送信" %>
+
+<%end%>
+
+<%=link_to "戻る", entries_path %>

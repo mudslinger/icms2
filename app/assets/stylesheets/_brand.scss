@@ -1,0 +1,89 @@
+body{
+	.after-nav{
+		background-color: $brand-primary;
+		border-top:solid 1px $almost-white;
+	}
+	.footer{
+		background: url('/assets/bg_footer.png') darken($brand-primary,8%) top right no-repeat;
+		#footer{
+			padding-top:10px;
+			p{
+				text-align: justify;
+				text-justify: inter-ideograph;
+			}
+		}
+		h4{
+			border-bottom: dotted 1px $gray-lighter;
+			padding-bottom: 3px;
+			&:before{
+				content: '▼';
+				color: lighten($brand-primary,30%);
+			}
+		}
+		img.img-thumbnail{
+			float: left;
+			max-width: 40%; 
+			margin:5px; 
+		}
+	}
+	.bottom-nav{
+		padding:3px;
+		background:$gray-dark;
+		color:$almost-white;
+		clear: both;
+		border-top: solid 1px $almost-white;
+	}
+	.copyright{
+		padding:7px 0;
+		background:$gray-darker;
+		color:$almost-white;
+		clear: both;
+	}
+
+	.container#main{
+		@include bg('shop/bg.jpg');
+		padding-top:30px;
+		padding-bottom:30px;
+		@include border-radius();
+	}
+	img{
+		&.sns-button{
+			margin:5px;
+		}
+	}
+	.navbar{
+		border-top: $brand-primary 3px solid;
+		margin-bottom: 0;
+	}
+	h2,h3{
+		@include text-shadow(rgba(darken($brand-primary,80%), 0.2) 1px 1px 0, rgba(darken($brand-primary,70%), 0.2) 2px 2px 0, rgba(darken($brand-primary,80%), 0.2) 3px 3px 0);
+	}
+
+	h3{
+		padding:5px;
+		font-family:serif;
+		font-weight: 600;
+		font-size:2.6em;
+		color:$almost-white;
+		background:transparent;
+		border-bottom:solid 1px $almost-white;
+	}
+	.thumbnail{
+		h1,h2,h3,h4,h5,a{
+			color: $gray-darker;
+		}
+	}
+	form{
+		hr{
+			border: dotted 1px $gray-light;
+		}
+		.mini{
+			// 日付用
+			width:20%;
+		}
+	}
+	.container-full{
+		margin: 0 auto;
+		width: 100%;
+	}
+}

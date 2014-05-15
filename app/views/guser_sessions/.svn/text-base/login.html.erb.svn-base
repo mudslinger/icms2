@@ -1,0 +1,15 @@
+<%=render 'header'%>
+	<%#通知メッセージ、エラーメッセージ%>
+    
+      <div>
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+	  
+この機能をご利用いただくには、ログインが必要です。
+<%=link_to "FaceBookでログイン", fb_login_url %>
+
+<%=render 'footer'%>

@@ -1,0 +1,12 @@
+
+<%
+
+@category_sub_title = "";
+%>
+
+<%=render 'header_sub' %>
+
+<% each_headline( "etc",0)do |entry| %>
+<%=link_to entry.title, contents_detail_path_for(entry) %>gaga
+<%end%>
+ <%=render 'contents/template/brand/footer_sub' %>

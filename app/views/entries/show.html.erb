@@ -1,0 +1,133 @@
+<% content_for :head do %>
+ <title><%= @entry.title %></title>
+<%end%>
+
+<h1><%= @entry.title %></h1>
+
+<div class="block" id="block-forms">
+<div class="secondary-navigation">
+<ul class="wat-cf">
+
+<li class="first"><%=link_to "一覧に戻る", entries_path %></li>
+
+
+</ul>
+</div>
+<div class="content">
+<h2 class="title">カテゴリ:<%=@entry.form.title%></h2>
+<div class="inner">
+  
+  
+  <div class="field">
+  	タイトル:<br />
+    <%= @entry.title %><br />
+  </div>
+  
+  <%if @entry.form.use_content_field %>
+  <div class="field">
+    内容：<br />
+    <%=raw @entry.content %><br />
+  </div>
+  <%end%>
+  
+ 
+
+
+  
+  <!--カスタムフィールド-->
+  <table id="customfield">
+  
+  <% @entry.form.fields.each do |field|  %>
+  <tr>
+    <th class="cf_container"> <%=field.label %>: </th>
+	<td class="cf_container">
+     <% case field.ftype%>
+     <% when "text" #テキスト  %>
+       <%=@entry._cf(field.name) %>
+	   
+     <% when "textarea" #テキスト複数行  %>
+	   <%=@entry._cf(field.name)  %>
+	   
+     <% when "richtext" #リッチテキスト  %>
+	   <%=raw @entry._cf(field.name) %>
+	   	   
+     <% when "checkbox" #チェックボックス  %>
+	    <%=  @entry._cf(field.name).to_s.split(/[\r\n]+/).join(",") %>
+	 <% when "url" #url  %>
+	    <%=link_to @entry._cf(field.name), @entry._cf(field.name), :target => "_blank" %>
+	   
+	 <% when "datetime" #日付と時刻 %>		
+        <%=@entry._cf(field.name) %>
+	 <% when "date" #日付  %>		
+	    <%=@entry._cf(field.name) %>
+	 <% when "select" #ドロップダウン %>
+	    <%=@entry._cf(field.name) %>
+    <% when "radio" #ラジオボタン %>
+	   <%=@entry._cf(field.name) %>
+	<% when "file"  #ファイル %>
+	
+	     <%unless @entry._cf(field.name).blank? %>
+		    <%= link_to("ファイル",image_path(@entry._cf(field.name).url), :target => "_blank") %>
+		 <%end%>
+
+					
+	<% when "image" #画像 %>
+   
+	     <%unless @entry._cf(field.name).thumb.blank? %>
+		    <%= link_to(image_path(@entry._cf(field.name).url), :target => "_blank") do %>
+	   					<%=image_tag @entry._cf(field.name).thumb.url %>
+			 <%end%>
+		 <%end%>
+		 
+     <% end #end when %>
+	 
+	 </td>
+	 </tr>
+  <%end #fields.each %>
+  
+  </table>  
+  
+  
+  <div class="field" id="date">
+    掲載開始日<br />
+    <%= @entry.date_begin %>
+  </div>
+  
+  <div class="field" >
+    掲載終了日<br />
+    <%= @entry.date_end %>
+  </div>
+  
+
+  
+
+  <div class="field">
+  	現在の状態:<%=status_label(@entry.status) %>
+  </div>
+  <div class="field">
+    作成者:<br />
+    <%= @entry.created_by_name %>
+  </div>
+  
+    
+	  <div class="field">
+	    最終更新者:<br />
+	    <%= @entry.updated_by_name %>
+	  </div>
+	  
+	  <div class="field">
+	    作成日:<br />
+	    <%= @entry.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+		
+	  </div>
+	  <div class="field">
+	    更新日:<br />
+	    <%= @entry.updated_at.strftime("%Y年%m月%d日 %H:%M") %>
+	  </div>    
+  
+    
+
+</div>
+</div>
+</div>
+

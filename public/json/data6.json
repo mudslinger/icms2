@@ -1,0 +1,73 @@
+{
+  "title":{
+    "text":  "一株あたり当期純利益金額",
+    "style": "{font-size: 13px; color:#333333; text-align: center;}"
+  },
+
+  "y_legend":{
+    "text": "",
+    "style": "{color: #736AFF; font-size: 12px;}"
+  },
+
+  "elements":[
+    {
+      "type":      "line",
+      "alpha":     0.5,
+      "colour":    "#00EE00",
+      "font-size": 10,
+      "values" :   [14375.11,25159.72,14172,27,-219.54,3.93],
+      "dot-style": { "type": "anchor", "dot-size": 4, "halo-size": 1, "colour": "#00EE00", "sides": 5},
+      "text" : "一株あたり当期純利益金額（単位：円）"
+    },
+    {"type":"tags","values":[
+                    {"x":0,"y":14375.11},{"x":1,"y":25159.72},
+                    {"x":2,"y":14172.27},{"x":3,"y":-219.54},
+                    {"x":4,"y":3.93}
+            ],
+            "font-size":10,
+            "colour":"#000000",
+            "align-x":"center",
+            "text":"#y#"
+    }
+  ],
+
+  "x_axis":{
+    "stroke":1,
+    "tick_height":0,
+    "colour":"#888888",
+    "grid_colour":"#888888",
+    "text_align": "center",
+    "font-size": 8,
+    "labels": {
+        "labels": [
+            "第16期\n（平成21年1月期）",
+            "第17期\n（平成22年1月期）",
+            "第18期\n（平成23年1月期）",
+            "第19期\n（平成24年1月期）",
+            "第20期\n（平成25年1月期）"
+        ],
+        "size" : 9
+    }
+   },
+
+  "y_axis":{
+    "stroke":      1,
+    "tick_length": 3,
+    "colour":      "#888888",
+    "grid_colour": "#888888",
+    "offset":      0,
+    "max":         30000,
+    "min":         -10000,
+    "labels": {
+        "labels": [
+            {"y":-10000},
+            {"y":0},
+            {"y":10000},
+            {"y":20000},
+            {"y":30000}
+        ],
+        "size": 8
+    }
+  },
+  "bg_colour": "#FFFFFF"
+}

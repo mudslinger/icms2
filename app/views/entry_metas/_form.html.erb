@@ -1,0 +1,45 @@
+<%= form_for(@entry_meta) do |f| %>
+  <% if @entry_meta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entry_meta.errors.count, "error") %> prohibited this entry_meta from being saved:</h2>
+
+      <ul>
+      <% @entry_meta.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entry_id %><br />
+    <%= f.text_field :entry_id %>
+  </div>
+  <div class="field">
+    <%= f.label :field_id %><br />
+    <%= f.text_field :field_id %>
+  </div>
+  <div class="field">
+    <%= f.label :string_value %><br />
+    <%= f.text_field :string_value %>
+  </div>
+  <div class="field">
+    <%= f.label :text_value %><br />
+    <%= f.text_area :text_value %>
+  </div>
+  <div class="field">
+    <%= f.label :int_value %><br />
+    <%= f.text_field :int_value %>
+  </div>
+  <div class="field">
+    <%= f.label :date_value %><br />
+    <%= f.date_select :date_value %>
+  </div>
+  <div class="field">
+    <%= f.label :float_value %><br />
+    <%= f.text_field :float_value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

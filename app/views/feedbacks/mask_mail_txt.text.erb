@@ -1,0 +1,30 @@
+<% evals = ['非常に悪い','悪い','普通','良い','非常に良い'] %>
+<% unless body.age.nil? %>
+年齢: <%=age_opts.select{ |r| body.age == r[1]}.first.first %>
+性別: <%=body.male ? '男性' : '女性' unless body.male.nil? %>
+<% end %>
+<% unless body.shop.nil? %>
+店舗: <%=body.shop.name%>
+<% end %>
+<% unless body.visit_date.nil? %>
+来店日: <%=fd(body.visit_date)%>
+<% end %>
+<% unless body.visit_time.nil? %>
+時間帯: <%= time_opts.select{ |r| body.visit_time == r[1]}.first.first %>
+<% end %>
+<% unless body.repetition.nil? %>
+頻度: <%= rep_opts.select{ |r| body.repetition == r[1]}.first.first %>
+<% end %>
+<% unless body.menu.nil? %>
+メニュー: <%=body.menu.name%>
+<% end %>
+評価_Q: <%=evals[body.q+2]%>
+評価_S: <%=evals[body.s+2]%>
+評価_C: <%=evals[body.c+2]%>
+評価_A: <%=evals[body.a+2]%>
+メッセージ: -
+<%=body.message%>
+
+
+
+

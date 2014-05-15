@@ -1,0 +1,46 @@
+<div id="page_top"></div>
+
+<header class="navbar navbar-static-top bs-docs-nav navbar-fixed-top" id="top page_top" role="banner">
+	<div class="container">
+		<div class=" col-md-6">
+			<div class="navbar-header">
+			<!-- 	<h1>山岡家のラーメンは濃厚スープに極太麺。年中無休24時間営業中！</h1> -->
+				<a href='/index.html' title='山岡家ホーム'><img alt='山岡家' height='43' src='/images/logo.png' width='254'></a>
+			</div>
+		</div>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+		<div class="col-md-6">
+
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav navbar-right">
+					<!-- <li><a class='list_none' href='https://www.twitter.com/yamaokaya_pr' title='twitter' target="_blank"><img alt='twitter' height='20' src='/images/icon_twitter.png' width='20'></a></li>
+					<li><a class='list_none' href='https://www.facebook.com/yamaokaya' title='facebook' target="_blank"><img alt='facebook' height='20' src='/images/icon_facebook.png' width='20'></a></li> -->
+					<li class="pull-right">
+						<a title='about' class="dropdown-toggle" data-toggle="dropdown">about ▼</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href='/contents/etc/212/' title='このHPについて'>このHPについて</a></li>
+							<li><a href='/contents/etc/211/' title='サイトマップ'>サイトマップ</a></li>
+							<li><a href='/contents/etc/207/' title='SNSガイドライン'>SNSガイドライン</a></li>
+						</ul>
+					</li>
+					<li class="pull-right"><a href='/feedbacks.html' title='ご意見・ご感想'>ご意見・ご感想</a></li>
+					<li class="pull-right"><a href='/menus/categories/regular' title='メニュー'>メニュー</a></li>
+					<li class="pull-right"><a href='/shops/index.html' title='店舗'>店舗</a></li>
+					<li class="pull-right"><a href='http://coupon.yamaokaya.com/bm/p/f/tf.php?id=join' title='メルマガクーポン'>メルマガクーポン</a></li>
+				</ul>
+			</nav>
+			
+		</div>
+		<div class="snsbox clearfix">
+		<!-- 	<ul>
+				<li><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+				<li><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fyamaokaya2.itn21.net%2F&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" width="130px" allowTransparency="true"></iframe></li>
+			</ul> -->
+
+
+		</div><!--snsbox-->
+	</div>
+	
+</header>

@@ -1,0 +1,5 @@
+#header,#mainmenu,#footer,#category_selector {
+	display:none;
+}
+
+

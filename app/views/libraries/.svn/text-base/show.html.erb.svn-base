@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Created by:</b>
+  <%= @library.created_by %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%= @library.updated_by %>
+</p>
+
+<p>
+  <b>Entry:</b>
+  <%= @library.entry_id %>
+</p>
+
+<p>
+  <b>Libtype:</b>
+  <%= @library.libtype %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @library.label %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @library.description %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%= @library.file_name %>
+</p>
+
+<p>
+  <b>File name ext:</b>
+  <%= @library.file_name_ext %>
+</p>
+
+<p>
+  <b>File path:</b>
+  <%= @library.file_path %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%= @library.content_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_library_path(@library) %> |
+<%= link_to 'Back', libraries_path %>

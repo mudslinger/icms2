@@ -1,0 +1,67 @@
+
+
+<% content_for :head do %>
+<%= javascript_include_tag "tiny_mce/tiny_mce.js" %>
+<%= javascript_include_tag "admin_tiny_mce_init.js" %>
+<script type="text/javascript">
+	//tinymce_initに渡す
+	var _admin_tiny_mce_content_css =  "<%=stylesheet_path('wysiwyg_content.css')%>";
+	admin_tiny_mce_init(_admin_tiny_mce_content_css);
+</script>
+
+<!--カレンダー-->
+<%= stylesheet_link_tag "jquery.datepick.css"%>
+<%= javascript_include_tag "jquery.datepick.js" %>
+<%= javascript_include_tag "jquery.datepick-ja.js" %>
+<!--app-->
+<%= javascript_include_tag "rails", :cache => false %>
+<%= javascript_include_tag "application", :cache => false %>
+
+
+
+
+	
+<title><%= @entry.new_record? ? "ページの新規作成" : "ページの編集 : #{@entry.title}" %></title>
+<% end # content_for :head %>
+
+<% 
+@page_title = "Myページ";
+@page_id = "mypage";
+@category = "mypage" 
+@body_class = "edit"
+%> 
+
+   
+      <%=render 'contents/sub_header' %><img src="/common/images/title/title_mypage.png">
+<div id="right_inner">
+<h3><%= @entry.new_record? ? "新しいmyたびの作成" : "ページの編集 : #{@entry.title}" %></h3>
+
+        <div class="block" id="block-forms">
+          <div class="secondary-navigation">
+            <ul class="wat-cf clearfix" style="border:1px solid red;display:none;">
+
+<%#通知メッセージ、エラーメッセージ%>
+<% flash.each do |type, message| -%>
+  <div class="message <%= type %>">
+      <p><%= message %></p>
+   </div>
+<% end -%>
+
+              <li class="first"><%=link_to "戻る", favorites_path %></li>
+              
+
+            </ul>
+          </div>
+          <div class="content">
+
+            <div class="inner">
+
+<%= render 'form' %>
+            </div>
+		  </div>
+		</div>
+	  
+
+
+</div>
+<%=render 'contents/sub_footer' %>

@@ -1,0 +1,98 @@
+<%= form_for(@user) do |f| %>
+  <%#↓エラーメッセージ %>
+  <%=render :file => "_share/validation_message", :locals => {:record => @user } %>
+
+  <div class="field">
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <%if current_user.has_privilege?%>
+  
+  <div class="field">
+    <%= f.label :user_level, "ユーザー権限" %><br />
+	
+    <%= f.select(:user_level, user_level_options) %>
+	
+  </div>  
+  
+  <%end%>
+
+  <div class="field">
+    <%= f.label :emailaddress %><br />
+    <%= f.text_field :emailaddress %>
+  </div>
+
+  
+  <%if @user.new_record? %>
+	  <div class="field">
+	  	
+	    <%= f.label :password, "パスワード" %><br />
+	    <%= f.password_field :password, :autocomplete => "off" %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :password_confirmation, "パスワード(確認)" %><br />
+	    <%= f.password_field :password_confirmation %>
+	  </div>
+  
+  
+  <%else%>
+     ※パスワードを変更する場合のみ入力
+	  <div class="field">
+	  	
+	    <%= f.label :password, "新しいパスワード" %><br />
+	    <%= f.password_field :password, :autocomplete => "off" %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :password_confirmation, "新しいパスワード(確認)" %><br />
+	    <%= f.password_field :password_confirmation %>
+	  </div>
+  
+  <%end%>
+  
+  <%if current_user.has_privilege?%>
+       <div class="field">
+            このユーザーがアクセスできるカテゴリ
+	</div>
+    <div class="field">
+            <% Form.order("id").each_with_index do |frm,index| %>
+            <%= check_box_tag 'user[permitted_form_ids][]', frm.id, @user.permitted_form_ids.include?(frm.id), :id => "user_permitted_form_ids#{index}" %>
+			<%=label_tag "user_permitted_form_ids#{index}", frm.title %>
+            <%=raw cycle('','','<br/>') %>
+            <% end %>
+    </div>			
+			
+   <%end%>			
+   
+   <%unless @user.new_record? %>
+    <%=link_to "ログ表示", "#", { :id => "show_log"} %>
+
+	<script type="text/javascript">
+		$("#show_log").click(
+		function(){
+			$("#logarea").css("display", $("#logarea").css("display") == "none" ? "block" : "none" );
+		}
+		);
+		
+	</script>
+	<div id="logarea" style="display:none;">
+	  <div class="field">
+	    最終ログイン日時:&nbsp;
+	    <%= (@user.current_login_at && @user.current_login_at.strftime("%Y年%m月%d日 %H:%M")) || "なし" %>
+	  </div>
+	  <div class="field">
+	    ブラウザ:&nbsp;<%= @user.user_agent.blank? ? "情報無し" : @user.user_agent %>
+	  </div>
+	 </div>    
+   <%end%>  
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+
+<% end %>

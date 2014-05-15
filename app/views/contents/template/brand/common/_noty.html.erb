@@ -1,0 +1,156 @@
+ <div class="noty-slide hidden-xs">
+	<!-- Slide button -->
+     <div class="noty-button">
+		 <span>
+			<i class="fa fa-comments"></i>
+			<a href="#" class="btn btn-success btn-xs">5</a>
+		 </span>
+		 <span>
+			<i class="fa fa-user"></i>
+			<a href="#" class="btn btn-warning btn-xs">6</a>
+		 </span>
+     </div>
+     <div class="clearfix"></div>
+	 <!-- Content -->
+      <div class="noty-content">
+         
+			<!-- Bootstrap collapse starts -->
+			
+				<div class="panel-group" id="accordion">
+				  <div class="panel panel-default">
+				  
+					<!-- Heading -->
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						News
+					  </h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in">
+					
+				      <!-- Body content -->
+					  <!-- Message section -->
+					  <div class="panel-body noty-message">
+						<ul>
+							<% each_headline( "news",10 ) do |entry| %>
+								<li>
+									<span class="label label-danger pull-left">
+										<%=entry.cf.kikan_start.strftime("%m/%d")%>
+									</span>
+									<a href='<%=entry.cf.link %>'>
+										<%=entry.title %>
+									</a>
+								</li>
+							<% end %>
+						</ul>
+					  </div>
+					  
+					  <!-- Footer -->
+					  <div class="panel-footer">
+						<a href="#" class="btn btn-info btn-xs">View All</a> 
+						<a href="#" class="btn btn-default btn-xs pull-right">Reset</a>
+						<div class="clearfix"></div>
+					  </div>
+					  
+					</div>
+				  </div>
+				  
+				  <div class="panel panel-default">
+				  
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+						  <i class="fa fa-comments"></i> Chats <span class="label label-success pull-right">15</span>
+						</a>
+					  </h4>
+					</div>
+					
+					<div id="collapseTwo" class="panel-collapse collapse">
+					
+					<!-- Notification chats -->
+					  <div class="panel-body noty-chats">
+						
+						<ul>
+							  <li>
+								<!-- List item -->
+								<a href="#">Hi, How do you do? :)</a> <span class="label label-danger pull-right">10:42</span>
+								<div class="clearfix"></div>
+							  </li>
+							  <li>
+								<a href="#">Darling. I love you?</a> <span class="label label-info pull-right">20:42</span>
+								<div class="clearfix"></div>
+							  </li>
+							  <li>
+								<a href="#">What are you doing?</a> <span class="label label-warning pull-right">14:42</span>
+								<div class="clearfix"></div>
+							  </li>  
+							  <li>
+								<a href="#">Tomorrow, Football?</a> <span class="label label-success pull-right">14:42</span>
+								<div class="clearfix"></div>
+							  </li> 
+						</ul>
+						
+					  </div>
+					  
+					  <!-- Footer -->
+					  <div class="panel-footer">
+						<a href="#" class="btn btn-info btn-xs">View All</a> 
+						<a href="#" class="btn btn-default btn-xs pull-right">Reset</a>
+						<div class="clearfix"></div>
+					  </div>
+					  
+					</div>
+				  </div>
+				  
+				  <div class="panel panel-default">
+				  
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+						  <i class="fa fa-user"></i> Users <span class="label label-warning pull-right">35</span>
+						</a>
+					  </h4>
+					</div>
+					
+					<!-- Notification users -->
+					<div id="collapseThree" class="panel-collapse collapse">
+					  <div class="panel-body noty-users">
+						<ul>
+							 <li>
+								<a href="#">Ravi Kumar <b>24, CEO, Asho</b> </a> <span class="label label-warning pull-right">Free</span>
+								<div class="clearfix"></div>
+							  </li>
+							  <li>
+								<a href="#">Balaji <b>32, CTO, Goog</b> </a> <span class="label label-danger pull-right">Premium</span>
+								<div class="clearfix"></div>
+							  </li>
+							  <li>
+								<a href="#">Kumarasamy <b>15, CMO, Ravi</b> </a> <span class="label label-success pull-right">VIP</span>
+								<div class="clearfix"></div>
+							  </li> 
+							  <li>
+								<a href="#">Ashok <b>24, CFO, Yaho</b> </a> <span class="label label-info pull-right">Moderator</span>
+								<div class="clearfix"></div>
+							  </li>
+							  <li>
+								<a href="#">Ragavan <b>64, EOO, Tpnu</b> </a> <span class="label label-warning pull-right">Free</span>
+								<div class="clearfix"></div>
+							  </li>
+						</ul>
+					  </div>
+					  
+					  <!-- Footer -->
+					  <div class="panel-footer">
+						<a href="#" class="btn btn-info btn-xs">View All</a> 
+						<a href="#" class="btn btn-default btn-xs pull-right">Reset</a>
+						<div class="clearfix"></div>
+					  </div>
+					  
+					</div>
+				  </div>
+				</div>
+			
+			<!-- Bootstrap collapse ends -->
+         
+      </div>
+ </div>
+ <!-- Notification slide box ends -->

@@ -1,0 +1,37 @@
+<h1>Listing fields</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Description</th>
+    <th>Form</th>
+    <th>Required</th>
+    <th>Default</th>
+    <th>Ftype</th>
+    <th>Options</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fields.each do |field| %>
+  <tr>
+    <td><%= field.name %></td>
+    <td><%= field.label %></td>
+    <td><%= field.description %></td>
+    <td><%= field.form_id %></td>
+    <td><%= field.required %></td>
+    <td><%= field.default %></td>
+    <td><%= ftype_label(field.ftype) %></td>
+    <td><%= field.options %></td>
+    <td><%= link_to 'Show', field %></td>
+    <td><%= link_to 'Edit', edit_field_path(field) %></td>
+    <td><%= link_to 'Destroy', field, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Field', new_field_path %>

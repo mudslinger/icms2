@@ -1,0 +1,75 @@
+<%content_for :head do%>
+<script type="text/javascript">
+	// <![CDATA[
+	/*
+ $(document).ready(function() {
+ 	alert($("#uploaded_link").attr("href"));
+ 	$("#src").val("guhehe");
+	alert($("#src").val);	
+ });
+ */
+function setAndInsert(){
+	$("#src").val($("#uploaded_link").attr("href"));
+
+	//alert($("#alttext").contents().text());
+	//alert($("#titletext").contents().text());
+
+	$("#alt").val($("#alttext").contents().text());
+	$("#title").val($("#titletext").contents().text());
+	ImageDialog.insert();
+	
+}
+
+ // ]]>
+</script>
+
+<%end%>
+
+
+
+    <!-- form onsubmit="ImageDialog.insert();return false;" action="#" --> 
+	<%= form_for(@rfile, :html => { :multipart => true } ) do |f| %>
+		<div class="tabs">
+			<ul>
+				<li id="my_tab" class="current"><span><a href="javascript:mcTabs.displayTab('my_tab','my_panel');" onmousedown="return false;">アップロード</a></span></li>
+				<li><span><%=link_to "ギャラリー", rfiles_path %></span></li>
+				<li id="general_tab" ><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{#advimage_dlg.tab_general}</a></span></li>
+				<li id="appearance_tab"><span><a href="javascript:mcTabs.displayTab('appearance_tab','appearance_panel');" onmousedown="return false;">{#advimage_dlg.tab_appearance}</a></span></li>
+				<li id="advanced_tab"><span><a href="javascript:mcTabs.displayTab('advanced_tab','advanced_panel');" onmousedown="return false;">{#advimage_dlg.tab_advanced}</a></span></li>
+			</ul>
+		</div>
+
+		<div class="panel_wrapper">
+			
+			<div id="my_panel" class="panel current">
+				<fieldset>
+					<legend>アップロード</legend>
+										
+						<%if @rfile.file_path.thumb.url %>
+						  <% link_to(image_path(@rfile.file_path.url), :id => "uploaded_link") do %>
+						   <%if @rfile.image? %>  
+						   <%=image_tag @rfile.file_path.thumb.url %>
+						   <%else%>
+						   <%=image_tag "file_icon.gif" %>
+						   <%end%>
+						 <%end%>
+						<%end%>
+						<span id="alttext"><%=@rfile.label%></span>
+						<span id="titletext"><%=@rfile.description%></span>
+						<input  type="button"  value="{#insert}" onclick="setAndInsert()"  />
+				</fieldset>				
+			</div>	
+						
+            <%=render 'tabs' %>
+		
+	
+		</div>
+
+		<div class="mceActionPanel">
+			<!--
+			<input type="submit" id="insert" name="insert" value="{#insert}"  />
+			-->
+			<input  type="button" id="insert" value="{#insert}" onclick="ImageDialog.insert()"  />
+			<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+		</div>
+    <% end %>

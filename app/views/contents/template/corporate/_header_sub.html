@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+
+<title><%=@page_title%><%unless @category_title.blank? %><%unless @page_title.blank? %>｜<%end%><%=@category_title%><%end%>｜株式会社丸千代山岡家</title>
+<meta content="ラーメン,濃厚とんこつ,24時間営業" name="Keywords">
+<meta content="札幌市東区。北海道および東日本での直営ラーメン店の経営。企業・IR情報。" name="description">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<link href="/corporate/css2/normalize.css" rel="stylesheet">
+	<!-- Bootstrap用css START -->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+	<!-- Bootstrap用css END -->
+
+<link href="/corporate/css2/docs.min.css" rel="stylesheet">
+<link href="/corporate/css2/layout.css" rel="stylesheet">
+<link href="/corporate/css2/style.css" rel="stylesheet">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src='/corporate/js/jquery.smoothScroll.js'></script>
+<script src='/corporate/js/accordion.js'></script>
+<!--[if lt IE 9]>
+	<script src='/corporate/js/html5shiv.js'></script>
+	<script src='/corporate/js/respond.js'></script>
+	<script src='/corporate/js/IE9.js'></script>
+	<link href='/corporate/css/ie8.css' media='all' rel='stylesheet' type='text/css'>
+<![endif]-->
+</head>
+
+
+
+<body class='top'>
+
+
+<header>
+	<div id="head" class="navbar navbar-static-top bs-docs-nav clearfix" role="banner">
+     <div class='container'>
+		<div class="col-xs-8">
+			<h1>ラーメン山岡家を経営する株式会社丸千代山岡家</h1>
+		</div>
+		<div class="col-xs-4">
+			<ul class="list-inline"><li><a href='/contents/c_etc/241'>このHPについて</a></li><li><a href='/c_ir/contact/'>お問合せ</a></li><li><a href='/contents/c_etc/240'>サイトマップ</a></li></ul>
+		</div>
+		</div>
+	<div class='container'>
+		<div class="col-xs-8">
+		<figure><a href='/index.html'><img alt='株式会社丸千代山岡家' src='/corporate/images/logo.png'></a></figure>
+		</div>
+        <div class="col-xs-4 text-right">
+		<figure><img alt='株式会社丸千代山岡家' src='/corporate/images/logo2.png'></figure>
+		</div>
+		</div>
+		</div>
+	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+	<%=render 'contents/template/corporate/nav_sub' %>
+	</div>
+</header>
+
+
+
+<section class="indexContent" id="pagetop">
+<div class='container'>
+	<ol class="breadcrumb text-right">
+              <li>
+                <a href='/index.html' title='トップ'>
+                  トップ
+                </a>
+              </li>
+              
+              <%unless @category_title.blank? %>
+              <li>
+              <%unless @category_url.blank? %>
+               <a href='<%= @category_url %>'><%= @category_title %></a>
+               <% else %>
+                 <%= @category_title %> 
+               <%end%>
+              </li><%end%>
+              <li>
+                <%=@page_title%>
+              </li>
+	</ol>
+
+	<div class="clearfix">
+		<div class="page-header">
+			<h2><%=@page_title%></h2>
+		</div>
+		<hr class="trans-10">

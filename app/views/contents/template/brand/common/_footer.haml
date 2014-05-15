@@ -1,0 +1,75 @@
+.footer
+	.container
+		.row#footer
+			.col-md-10
+				.col-md-3.clearfix
+					%h4 厳選豚骨と水だけから。
+					%p
+						%a.thumbmail{href:'#'}
+							%img.img-thumbnail{src:'/assets/footer/soup.jpg'}
+						山岡家のスープはお店で丸3日煮込み続けて、4日目ににようやくお客様のもとへ届けられます。
+						そして4日目のスープには非常に繊細な火加減の調整が求められます。
+						この火加減の調整で、3日前の豚骨から、コク、甘みを引き出し、新しい豚骨から旨味を引き出す。
+						これが創業者・山岡正が長年かけて追い求めた究極のスープです。
+						敢えて、手間を掛ける、それが山岡家ブランド。
+				.col-md-3.clearfix
+					%h4 この麺だからこそ。
+					%p
+						%a.thumbmail{href:'#'}
+							%img.img-thumbnail{src:'/assets/footer/men.jpg'}
+					山岡家の麺は、
+					表面はソフトでありながら、芯が強く、小麦の香り高い特製の太麺を使用しています。
+					この麺を支えるのは、厳選された小麦と、
+					毎日の気温や湿度などに合わせて製造方法を変えて作る麺職人の熟練技。
+					この麺だからこそ、濃厚な豚骨スープの中にあっても、決して負けない、バランスのとれた一杯となるのです。
+				.col-md-3.clearfix
+					%h4 チャーシューも手作り。
+					%p
+						%a.thumbmail{href:'#'}
+							%img.img-thumbnail{src:'/assets/footer/tare.jpg'}
+					山岡家のチャーシューは肉本来の旨味を最も味わえる
+					肩ロースを使用。煮崩れしないように紐で縛った肩ロースの
+					塊を1時間弱茹で上げます。
+					これを、店舗で毎日継ぎ足し継ぎ足しで作っている秘伝の
+					特製タレに漬け込み、完成です。
+					手作りにこだわる山岡家では、1店舗1店舗でチャーシューを作っています。
+				.col-md-3.clearfix
+					%h4 新鮮なネギを手切りで。
+					%p
+						%a.thumbmail{href:'#'}
+							%img.img-thumbnail{src:'/assets/footer/negi.jpg'}
+					山岡家のネギは純国産。
+					店舗に届いたネギは、土をきれいに洗い流し、決められたサイズにカットします。
+					このカットしたネギを更にタテに半分に切ったものを包丁で細く切ったものが白髪ネギとなります。
+					この工程で、機械は一切使用しません。それは、ネギの味、香り、歯ごたえを極限まで引き出すため。
+					ここでも山岡家は、美味しいものをお客様に味わっていただくために、敢えて手間をかけています。
+			.col-md-2
+				.row
+					%form{method: :post,action:'http://coupon.yamaokaya.com/bm/p/f/tf.php?id=join',target: '_blank'}
+						%fieldset{name: 'mm'}
+							%legend メルマガ登録でクーポン・最新情報をGET!
+							.input-group
+								%input.form-control{type: :mail,name: 'form[mail]',placeholder: 'メールアドレスを入力'}
+								%span.input-group-btn
+									%input.btn.btn-default{type: :submit,name: 'regist', value: '登録'}
+.bottom-nav
+	.container
+		.row
+			.col-xs-6.col-sm-1.col-sm-offset-4
+				%a.btn.btn-link{href:'#'} ホーム
+			.col-xs-6.col-sm-1
+				%a.btn.btn-link{href:'#'} 店舗
+			.col-xs-6.col-sm-1
+				%a.btn.btn-link{href:'#'} メニュー
+			.col-xs-6.col-sm-1
+				%a.btn.btn-link{href:'#'} ご意見・ご感想
+				
+.copyright
+	.container
+		.row
+			%p.col-xs-12.text-center
+				&copy; 2014 Maruchiyo YAMAOKAYA Corp.
+= javascript_include_tag "//www.google.com/jsapi"
+= javascript_include_tag "//maps.google.com/maps/api/js?sensor=true"
+= javascript_include_tag "application"
+

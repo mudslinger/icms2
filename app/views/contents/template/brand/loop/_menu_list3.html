@@ -1,0 +1,91 @@
+<div class="clearfix">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<h4><%=@category1%><small><%=@category1_eng%></small></h4>
+		</div>
+	</div>
+	<div class="listBox">
+
+<ul class="list-unstyled clearfix">
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ノーマル' " )do |entry| %>
+<li>
+      <div class="col-sm-2">
+      <div class="thumbnail heightLine-group00">
+     <%=link_to contents_detail_path_for(entry) do %><img src="<%= entry.cf.photo1 %>" width="120" /><%end%>
+      <div class="caption">
+      <h5><%=link_to entry.title, contents_detail_path_for(entry) %></h5>
+      </div>
+      </div>
+      </div>
+    </a>
+  </li>
+ <%end%>
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ネギ' " )do |entry| %>
+<li>
+      <div class="col-sm-2">
+      <div class="thumbnail heightLine-group00">
+     <%=link_to contents_detail_path_for(entry) do %><img src="<%= entry.cf.photo1 %>" width="120" /><%end%>
+      <div class="caption">
+      <h5><%=link_to entry.title, contents_detail_path_for(entry) %></h5>
+      </div>
+      </div>
+      </div>
+    </a>
+  </li>
+ <%end%>
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'チャーシュー' " )do |entry| %>
+<li>
+      <div class="col-sm-2">
+      <div class="thumbnail heightLine-group00">
+     <%=link_to contents_detail_path_for(entry) do %><img src="<%= entry.cf.photo1 %>" width="120" /><%end%>
+      <div class="caption">
+      <h5><%=link_to entry.title, contents_detail_path_for(entry) %></h5>
+      </div>
+      </div>
+      </div>
+    </a>
+  </li>
+ <%end%>
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ネギチャーシュー' " )do |entry| %>
+<li>
+      <div class="col-sm-2">
+      <div class="thumbnail heightLine-group00">
+     <%=link_to contents_detail_path_for(entry) do %><img src="<%= entry.cf.photo1 %>" width="120" /><%end%>
+      <div class="caption">
+      <h5><%=link_to entry.title, contents_detail_path_for(entry) %></h5>
+      </div>
+      </div>
+      </div>
+    </a>
+  </li>
+ <%end%>
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ピリ辛' " )do |entry| %>
+<li>
+      <div class="col-sm-2">
+      <div class="thumbnail heightLine-group00">
+     <%=link_to contents_detail_path_for(entry) do %><img src="<%= entry.cf.photo1 %>" width="120" /><%end%>
+      <div class="caption">
+      <h5><%=link_to entry.title, contents_detail_path_for(entry) %></h5>
+      </div>
+      </div>
+      </div>
+    </a>
+  </li>
+ <%end%>
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'その他' " )do |entry| %>
+<li>
+      <div class="col-sm-2">
+      <div class="thumbnail heightLine-group00">
+     <%=link_to contents_detail_path_for(entry) do %><img src="<%= entry.cf.photo1 %>" width="120" /><%end%>
+      <div class="caption">
+      <h5><%=link_to entry.title, contents_detail_path_for(entry) %></h5>
+      </div>
+      </div>
+      </div>
+    </a>
+  </li>
+ <%end%>
+</ul>
+
+	</div>
+</div>

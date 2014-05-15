@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta content='ラーメン,濃厚とんこつ,24時間営業' name='Keywords'>
+    <title>★製作中x★山岡家コーポレートサイト</title>
+    <meta content='札幌市東区。北海道および東日本での直営ラーメン店の経営。企業・IR情報。' name='description'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <link href='/corporate/css/normalize.css' rel='stylesheet' type='text/css'>
+    <link href='/corporate/css/style.css' rel='stylesheet' type='text/css'>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+    <script src='/corporate/js/scrolltop.js'></script>
+    <script src='/corporate/js/accordion.js'></script>
+    <!--[if lt IE 9]>
+      <script src='/corporate/js/html5.js'></script>
+      <link href='/corporate/css/ie8.css' media='all' rel='stylesheet' type='text/css'>
+    <![endif]-->
+  </head>
+  <body class='top'>
+    <header>
+      <div class='container'>
+        <h1>ラーメン山岡家を経営する株式会社丸千代山岡家</h1>
+             <ul class='utilityLink'>
+          <li>
+            <a href='/contents/c_etc/241'>このHPについて</a>
+          </li>
+          <li>
+
+            <a href='/c_ir/contact/'>お問合せ</a>
+          </li>
+          <li>
+            <a href='/contents/c_etc/240'>サイトマップ</a>
+          </li>
+        </ul>
+        <figure class='logo'>
+          <a href='/index.html'>
+            <img alt='株式会社丸千代山岡家' src='/corporate/img/common/logo.png'>
+          </a>
+        </figure>
+        <!-- // header -->
+      </div>
+    </header>
+   
+   
+   
+   
+   
+   
+   
+   <%=render 'contents/template/corporate/nav_sub' %>
+    <div class='catchimg'>
+      ラーメンでお客様に喜んでもらう
+    </div>
+    <div class='container'>
+      <div class='layout-three-columns'>
+        <div class='col first'>
+          <section class='news'>
+            <h1>IR情報</h1>
+            
+            
+           <dl class='newsList'>
+              <% each_headline( "c_top_ir",3)do |entry| %>
+			  <dt><%=entry.cf.keisai_date.strftime("%Y/%m/%d") %></dt>
+              <dd><a href='<%=entry.cf.url %>'><%=entry.title %></a> </dd>
+			  <%end%>
+          </dl>
+          
+          
+            <a class='toList' href='/c_ir/library'>ニュース一覧</a>
+          </section>
+          <!-- //.news -->
+          <section class='anshin'>
+            <figure class='minCatch'><a href='#'>
+                <img alt='' src='/corporate/img/top/img_anshin.jpg'>
+              </a></figure>
+            <h1>プライオリティは「安全・安心」</h1>
+            <a class='category' href='/contents/c_business/184'>
+              事業概要
+            </a>
+            <p>
+              山岡家は、食の安全・安心を最優先に取り組んでいます。たとえば、第三者による衛生検査の実施、
+            </p>
+            <p class='more'>
+              <a href='/contents/c_business/188'>続きを読む</a>
+            </p>
+          </section>
+          <!-- //.anshin -->
+          <section class='onlyOne'>
+            <figure class='minCatch'>
+              <a href='/contents/c_business/185'>
+                <img alt='' src='/corporate/img/top/img_onlyOne.jpg'>
+              </a>
+            </figure>
+            <h1>唯一無二の個性</h1>
+            <a class='category' href='/contents/c_business/184'>
+              事業概要
+            </a>
+            <p>
+              山岡家のラーメンには、いくつものこだわりが隠されています。非常にインパクトがあり、癖になる個性的な味がします。
+            </p>
+            <p class='more'>
+              <a href='/contents/c_business/185'>続きを読む</a>
+            </p>
+          </section>
+          <!-- //.onlyOne -->
+        </div>
+        <!-- //col first -->
+        <div class='col second'>
+          <section class='aisatsu'>
+            <figure class='minCatch'><a href='/contents/c_greetings/180'><img alt='' src='/corporate/img/top/img_aisatsu.jpg'></a></figure>
+            <h1>ごまかしのない真剣勝負こそが山岡家の味</h1>
+            <a class='category' href='/contents/c_greetings/180'>
+              社長ごあいさつ
+            </a>
+            <p>
+              山岡家は創業以来、私自身が考える究極の美味しいラーメンの「３つの基本要素（麺・スープ・タレ）の
+            </p>
+            <p class='more'>
+              <a href='/contents/c_greetings/180'>続きを読む</a>
+            </p>
+          </section>
+          <!-- //.aisatsu -->
+          <section class='recruit'>
+            <figure class='minCatch'>
+              <a href='/contents/c_ir/200'>
+                <img alt='' src='/corporate/img/top/img_recruit.jpg'>
+              </a>
+            </figure>
+            <h1>山岡家で働いてみませんか？</h1>
+            <a class='category' href='/contents/c_ir/196'>
+              人財募集
+            </a>
+            <p>
+              山岡家は、店長の半数以上がパート・アルバイト出身。 充分すぎるほどのチャンスがあなたを待っています。
+            </p>
+            <p class='more'>
+              <a href='/contents/c_ir/200'>続きを読む</a>
+            </p>
+          </section>
+          <!-- //.recruit -->
+          <section class='history'>
+            <figure class='minCatch'>
+              <a href='/contents/c_profile/183'>
+                <img alt='' src='/corporate/img/top/img_history.jpg'>
+              </a>
+            </figure>
+            <h1>沿革</h1>
+            <a class='category' href='/contents/c_profile/183'>
+              会社情報
+            </a>
+            <p>
+              当社は現代表取締役山岡正が昭和55年２月に東京都江戸川区中央１丁目15番24号において (有)丸千代商事（出資金6,000千円）を設立し
+            </p>
+            <p class='more'>
+              <a href='/contents/c_profile/183'>続きを読む</a>
+            </p>
+          </section>
+          <!-- //.history -->
+        </div>
+        <!-- col second -->
+        <div class='col third'>
+          <section class='zaimuHighlight'>
+            <figure class='minCatch'>
+              <a href='/contents/c_ir/189'>
+                <img alt='' src='/corporate/img/top/img_zaimuHighLight.jpg'>
+              </a>
+            </figure>
+            <h1>財務ハイライト</h1>
+            <a class='category' href='/contents/c_ir/189'>
+              IR
+            </a>
+            <p>
+              弊社は、平成18年2月17日よりジャスダック証券取引所に株式を上場いたしております。 社員一同決意を新たに
+            </p>
+            <p class='more'>
+              <a href='/contents/c_ir/189'>続きを読む</a>
+            </p>
+          </section>
+          <!-- //.zaimuHighlight -->
+          <section class='realEstate'>
+            <figure class='minCatch'>
+              <a href='/contents/c_property/202'>
+                <img alt='' src='/corporate/img/top/img_realestate.jpg'>
+              </a>
+            </figure>
+            <h1>物件募集</h1>
+            <a class='category' href='/contents/c_property/202'>
+              物件募集
+            </a>
+            <p>
+              ロードサイド・ビルイン（テナント）に関する店舗物件情報を広く募集しております。
+            </p>
+            <p class='more'>
+              <a href='/contents/c_property/202'>続きを読む</a>
+
+            </p>
+          </section>
+          <!-- //.realEstate -->
+          <section class='irCalendar'>
+            <figure class='minCatch'>
+              <a href='/contents/c_ir/191'>
+                <img alt='' src='/corporate/img/top/img_ircalender.jpg'>
+              </a>
+            </figure>
+            <h1>IRカレンダー</h1>
+            <a class='category' href='/contents/c_ir/191'>
+              IR情報
+            </a>
+            <p>
+              決算発表、株主総会、事業報告等の年間予定をご案内します
+            </p>
+            <p class='more'>
+              <a href='/contents/c_ir/191'>続きを読む</a>
+            </p>
+          </section>
+          <!-- //.irCalendar -->
+        </div>
+        <!-- col third -->
+      </div>
+    </div>
+    <%=render 'contents/template/corporate/footer_sub' %>

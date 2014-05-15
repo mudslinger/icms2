@@ -1,0 +1,16 @@
+.carousel.slide#top-slide{data:{ride: :carousel}}
+	.carousel-inner
+		- idx = 0
+		-each_headline('slider',3) do |entry|
+			.item{class: if (idx+=1) == 1 then 'active' else 'inactive' end}
+				.carousel-caption
+					%h1= entry.cf.title1
+					%p.lead{class:entry.cf.NO1}= entry.cf.text1
+					%p
+						%a.btn.btn-primary.btn-lg{role: :button,href:entry.cf.link1} 続きを見る
+				%img{src:entry.cf.image1,alt:entry.title}
+	%a.left.carousel-control{href:'#top-slide',data:{slide: :prev}}
+		%span.glyphicon.glyphicon-chevron-left
+	%a.right.carousel-control{href:'#top-slide',data:{slide: :next}}
+		%span.glyphicon.glyphicon-chevron-right
+

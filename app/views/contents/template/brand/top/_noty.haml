@@ -1,0 +1,54 @@
+.noty-slide.hidden-xs
+	.noty-button
+		%span.glyphicon.glyphicon-glass.original-news
+		%span.glyphicon.glyphicon-music.facebook
+		%span.glyphicon.glyphicon-search.twitter
+		
+	.clearfix
+	.noty-content
+		.panel-group#accordion
+			.panel.panel-default
+				.panel-heading.original-news
+					%a.accordion-toggle{href: '#collapse-01',data:{toggle: :collapse,parent:'#accordion'}}
+						%h4.panel-title NEWS
+				.panel-collapse.collapase.in#collapse-01
+					.panel-body.noty-message
+						%table.table
+							- each_headline( "news",8 ) do |entry|
+								%tr
+									%td
+										%span.label.label-danger.pull-left
+											=entry.cf.kikan_start.strftime("%m/%d")
+									%td
+										%a.original-news{href:entry.cf.link}
+											%span.glyphicon.glyphicon-bullhorn
+											=entry.title
+					.panel-footer
+						%a.btn.btn-info.btn-xs{href:'#'} 一覧
+						.clearfix
+			.panel.panel-default
+				.panel-heading.facebook
+					%a.accordion-toggle{href: '#collapse-02',data:{toggle: :collapse,parent:'#accordion'}}
+						%h4.panel-title Facebook
+				.panel-collapse.collapse#collapse-02
+					.panel-body.noty-message.fb-like-box{data:{href:'https://www.facebook.com/yamaokaya',colorscheme:'light',header:'false',stream:'true',height:'250px',show:{faces:'false',border:'false'}}}
+				.clearfix
+			.panel.panel-default
+				.panel-heading.twitter
+					%a.accordion-toggle{href: '#collapse-03',data:{toggle: :collapse,parent:'#accordion'}}
+						%h4.panel-title Twitter
+				.panel-collapse.collapse#collapse-03
+					.panel-body.noty-message
+
+						%a.twitter-timeline{href:'https://twitter.com/yamaokaya_pr',data:{chrome: 'noheader',widget:{id:'365009217540730880'}}}
+							@yamaokaya_pr からのツイート
+						:coffeescript
+							!do(d=document,s='script',id='twitter-wjs')->
+								fjs=d.getElementsByTagName(s)[0]
+								p= if /^http:/.test(d.location) then 'http' else 'https'
+								if !d.getElementById(id)
+									js=d.createElement(s);
+									js.id=id;
+									js.src=p+"://platform.twitter.com/widgets.js";
+									fjs.parentNode.insertBefore(js,fjs)
+					.clearfix

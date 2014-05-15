@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @field.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @field.label %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @field.description %>
+</p>
+
+<p>
+  <b>Form:</b>
+  <%= @field.form_id %>
+</p>
+
+<p>
+  <b>Required:</b>
+  <%= @field.required %>
+</p>
+
+<p>
+  <b>Default:</b>
+  <%= @field.default %>
+</p>
+
+<p>
+  <b>Ftype:</b>
+  <%= @field.ftype %>
+</p>
+
+<p>
+  <b>Options:</b>
+  <%= @field.options %>
+</p>
+
+
+<%= link_to 'Edit', edit_field_path(@field) %> |
+<%= link_to 'Back', fields_path %>

@@ -1,0 +1,35 @@
+<% content_for :head do %>
+  <title>ログ</title>
+<% end %>
+    
+<div class="block" id="block-tables">
+
+  <div class="content">
+  	<h2 class="title">ログ</h2>
+  	<div class="inner">
+  		
+<table class="table">
+  <tr>
+    <th>日付</th>
+    <th>メッセージ</th>
+  </tr>
+
+<% @action_logs.each do |action_log| %>
+  <tr>
+    <td><%= action_log.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+    <td><%= action_log.message %></td>
+  </tr>
+<% end %>
+</table>
+
+
+</div>
+<div class="actions-bar wat-cf">
+  <%= paginate @action_logs %>
+</div>
+
+</div>
+</div>
+
+
+

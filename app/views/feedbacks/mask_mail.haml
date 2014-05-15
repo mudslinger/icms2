@@ -1,0 +1,89 @@
+- evals = ['非常に悪い','悪い','普通','良い','非常に良い']
+
+%body
+  :scss
+    ul{
+      li{
+        color:#E33;
+        font-size:13px;
+      }
+
+    }
+    .layout{
+      width:100%;
+      border:solid 1px #CCC;
+      empty-cells:show;
+      border-collapse:collapse;
+      table-layout:fixed;
+      font-size:13px;
+      th,td{
+        border: solid 1px #CCC;
+        img{
+          width:100%;
+        }
+      }
+      th{
+        background-color:#CCA;
+      }
+    }
+    .yamaokaya{
+      color:red;
+    }
+    .employee{
+      color:blue;
+    }
+    span.val{
+      font-size:20px;
+      font-weight:bold;
+    }
+
+  %table.layout
+    %col{width: '100px'}
+    %col{width: '*'}
+    %thead
+    %tfoot
+    %tbody
+      %tr
+        %th 年齢
+        %td= age_opts.select{ |r| body.age == r[1]}.first.first unless body.age.nil?
+      %tr
+        %th 性別
+        %td #{body.male ? '男性' : '女性' unless body.male.nil?}
+      - if body.shop
+        %tr
+          %th 店舗
+          %td= body.shop.name
+      - if body.visit_date
+        %tr
+          %th 来店日
+          %td= fd(body.visit_date)
+      - if body.visit_time
+        %tr
+          %th 時間帯
+          %td= time_opts.select{ |r| body.visit_time == r[1]}.first.first
+      - if body.repetition
+        %tr
+          %th 頻度
+          %td= rep_opts.select{ |r| body.repetition == r[1]}.first.first
+      - if body.menu
+        %tr
+          %th メニュー
+          %td #{body.menu.name}(#{body.menu.price}円)
+      %tr
+        %th 評価
+        %td
+          %span.q.val{class: "v#{body.q}"}
+            Q:
+            = evals[body.q+2]
+          %span.s.val{class: "v#{body.s}"}
+            S:
+            = evals[body.s+2]
+          %span.c.val{class: "v#{body.c}"}
+            C:
+            = evals[body.c+2]
+          %span.a.val{class: "v#{body.a}"}
+            A:
+            = evals[body.a+2]
+      %tr
+        %th メッセージ
+        %td= body.message_i

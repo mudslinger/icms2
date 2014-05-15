@@ -1,0 +1,10 @@
+<%
+@page_title = "会社概要";
+@category_title = "会社概要";
+@category_sub_title = "";
+%>
+<%=render 'contents/template/corporate/header_sub' %>
+<% each_headline( "c_business",0)do |entry| %>
+<%=link_to entry.title, contents_detail_path_for(entry) %>gaga
+<%end%>
+<%=render 'contents/template/corporate/footer_sub' %>

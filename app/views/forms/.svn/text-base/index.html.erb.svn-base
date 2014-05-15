@@ -1,0 +1,50 @@
+<% content_for :head do %>
+  <title>カテゴリ定義一覧</title>
+ 
+<% end #content_for :head %>
+
+
+<div class="block" id="block-tables">
+
+
+  <div class="content">
+  	<h2 class="title">カテゴリ定義一覧</h2>
+<div class="inner">
+<table   class="table">
+  <tr>
+    <th >名称</th>
+    <th >説明</th>
+    <th >キー名</th>
+    
+    
+    <th></th>
+	<th></th>
+  </tr>
+
+<% @forms.each do |form| %>
+  <tr>
+    <td><%= link_to form.title, edit_form_path(form) %></td>
+    <td><%= truncate(form.comment, :length => 15, :omission => "...")  %></td>
+	<td><%= form.template_name %></td>
+    
+    
+    <td><%= link_to '削除', form, :confirm => 'カテゴリに登録されたデータも削除されます。よろしいですか？', :method => :delete %></td>
+	<td><%= link_to 'コピー', new_form_path(:copy => true, :id => form.id ) %></td>
+  </tr>
+<% end %>
+</table>
+        <div class="actions-bar wat-cf">
+          <div class="actions">
+          	
+			<%=button_to_function "新規作成", "location.href='" + new_form_path + "'" %>
+         </div>
+           <%= paginate @forms %>
+        </div>
+</div>
+</div>
+</div>
+
+<br />
+
+
+

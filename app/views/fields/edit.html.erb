@@ -1,0 +1,22 @@
+<% content_for :head do %>
+  <title>フィールドの編集</title>
+ 
+<% end #content_for :head %>
+
+
+
+
+        <div class="block" id="block-forms-2">
+          <div class="secondary-navigation">
+          </div>
+          <div class="content">
+            <h2 class="title">フィールドの編集</h2>
+            <div class="inner">
+<%= render 'form' %>
+
+
+<%= link_to '戻る', edit_form_path(@field.form_id) %>
+
+</div>
+</div>
+</div>

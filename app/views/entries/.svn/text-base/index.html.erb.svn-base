@@ -1,0 +1,187 @@
+<% content_for :head do %>
+  <title>ページ一覧(<%=selected_category_name(@searchform["form_id"])%>)</title>
+  
+  
+  <script type="text/javascript" charset="utf-8">
+    // <![CDATA[
+
+
+    $(document).ready(function() {
+      
+      $('.table :checkbox.toggle').each(function(i, toggle) {
+        $(toggle).change(function(e) {
+          $(toggle).parents('table:first').find(':checkbox:not(.toggle)').each(function(j, checkbox) {
+            checkbox.checked = !checkbox.checked;
+          })
+        });
+      });
+	  
+	  /**
+	   * ctrlキーを押しながら新しいページボタンを押すと別ウィンドウ(tab)で開く
+	   * 
+	   */
+	  $("#button_new_page").click(function (e) {
+		
+		  //alert(e.ctrlKey);
+		  if(e.ctrlKey){
+		  	$("form#new_entry_form").attr("target", "_blank");
+		  }else{
+		  	$("form#new_entry_form").attr("target", "_self");
+		  }
+		  $("form#new_entry_form").submit();
+	  
+	  });
+	  
+	  	  
+    });
+	
+	function category_changed(){
+		//alert($("#entries_form").context.nodeName);
+		document.getElementById("entries_form").submit();
+	}
+	
+	function reset_search(){
+		$("#searchform_keyword").val("");
+		document.getElementById("entries_form").submit();
+	}
+	
+    // ]]>
+  </script>
+  
+<% end #content_for :head %>
+
+
+
+ <h2 class="title">ページ一覧</h2>
+
+
+<div class="block" id="block-tables">
+
+
+  
+  	
+	  <div class="secondary-navigation">
+	    <ul class="wat-cf">
+	      <li class="first <%=@searchform['status'] == 'draft' ? 'active' : '' %>"><%=link_to "下書き", entries_path('searchform[status]' => "draft") %></li>
+	      <li class="<%=@searchform['status'] == 'pending' ? 'active' : '' %>"><%=link_to "承認待ち", entries_path('searchform[status]' => "pending") %></li>
+	      <li class="<%=@searchform['status'] == 'publish' ? 'active' : '' %>"><%=link_to "公開済み", entries_path('searchform[status]' => "publish") %></li>
+		  <li class="<%=@searchform['status'] == 'all' ? 'active' : '' %>"><%=link_to "すべて", entries_path('searchform[status]' => "all") %></li>
+		  <li class="<%=@searchform['status'] == 'trash' ? 'active' : '' %>"><%=link_to "ゴミ箱", entries_path('searchform[status]' => "trash") %></li>
+		  
+	
+	    </ul>
+	  </div>
+	
+   
+    <div class="content">
+  
+      <div class="inner">
+		
+		
+      <%= form_for :searchform, :url => entries_path,   :html => {:class => "form", :method =>"get", :id => "entries_form" } do |f| %>
+		<div style="float:left;padding:10px">
+		<span style="font-weight:bold">
+		<%=selected_category_name(@searchform["form_id"]) %>
+		</span>
+		</div>
+       <div style="padding:10px;text-align:right;">
+	    検索語句：<%=text_field_tag "searchform[keyword]", @searchform["keyword"] %>
+		<%=submit_tag "検索"%>
+		<%=button_to_function "リセット",  "reset_search()"%>
+	    <span id="category_selector">
+    	カテゴリ:<%=select_tag "searchform[form_id]", options_for_select_form_id(@searchform["form_id"]), :onchange => "category_changed()" %>
+		</span>
+		<%=button_to_function "新しいページの作成", nil ,{ :id => "button_new_page" } %>
+		
+		<%if print_function_enabled %>
+		  <%=button_to_function "印刷" , "window.open('" + contents_page_print_path(:name => 'job' ,  :media => 'print' )  + "')", :style => "margin-left:4px"  %> 
+		<%end%>
+		
+		</div>
+		
+        <div class="actions-bar wat-cf">
+          <%= paginate @entries %>
+        </div>
+				
+        <table class="table">
+        
+          <tr>
+            <th class="first"><input type="checkbox" class="checkbox toggle" /></th>
+		    <th>タイトル</th>
+		    <th>カテゴリ</th>
+		    <th>作成者</th>
+		    <th>状態</th>
+			<th>最終更新日</th>
+		    <th></th>
+		    
+
+          </tr>
+
+		  
+		  
+		<% @entries.each do |entry| %>
+		  <tr class="<%=cycle('odd','even')%>">
+		  	<td><%=check_box_tag("checked_entries[]", entry.id, false,  :class => 'checkbox'  ) %></td>
+		    <td>
+
+				<%if has_kousin_kengen?(entry) %>
+				  <%= link_to( (entry.title.blank? ? "無題" : entry.title), edit_entry_path(entry)) %>
+				<%else%>
+				  <%#↓表示専用画面へのリンク%>
+				  <%= link_to( (entry.title.blank? ? "無題" : entry.title), entry_path(entry)) %>
+				<%end%>
+				</td>
+		    <td><%= entry.form.title %></td>
+		    <td><%= entry.created_by_name %></td>
+		    <td><%= status_label(entry.status) %></td>
+			<td><%= entry.updated_at.strftime("%m月%d日 %H:%M") %></td>
+		    <td><%= link_to '表示', entry, :target => "_blank" %></td>
+		    
+		  </tr>
+		<% end %>
+		
+		<% if @entries.empty? %>
+		  <tr class="even">
+		  	<td></td>
+		  	<td colspan="6">条件に合致するデータはありません</td>
+  	  	  </tr>
+		<%end%>				  
+		  
+        </table>
+        <div class="actions-bar wat-cf">
+          <div class="actions">
+          	<%case @searchform['status'] ; when "draft", "pending" %>
+            <button class="button" type="submit" name="button_trash" value="trash">
+              <%=image_tag "web-app-theme/icons/cross.png" , :alt => "ゴミ箱"  %>ゴミ箱
+            </button>
+			<%when "trash" %>
+            <button class="button" type="submit" name="button_delete" value="delete">
+              <%=image_tag "web-app-theme/icons/cross.png" , :alt => "完全に削除"  %>完全に削除
+            </button>
+
+			<%when "publish" %>
+			<button class="button" type="submit" name="button_cancel_syounin" value="syounin_cancel">
+				承認取り消し
+			</button>
+			
+			<%end #case %>
+			
+			
+			<%if import_function_enabled %>
+			  <%=button_to_function "データ取込" , "location.href=('" + data_torikomi_path  + "')"  %> 
+			  <%=button_to_function "CSV出力" , "location.href=('" + entries_path( :format => "csv")  + "')"  %>
+			<%end%>			
+			
+          </div>
+		  <%= paginate @entries %>
+
+
+        </div>
+      <% end #form %>
+	  <%#新規作成用ダミーフォーム。%>
+	  <%= form_for :searchform, :url => new_entry_path(:form_id => @searchform["form_id"]),   :html => {:method =>"get", :id => "new_entry_form" } do |f| %>
+	  <%=hidden_field_tag "form_id", @searchform["form_id"] %>
+	  <% end #form %>
+    </div>
+  </div>
+</div>

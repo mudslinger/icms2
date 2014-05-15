@@ -1,0 +1,65 @@
+
+<%=render 'contents/template/brand/common/head' %>
+<% @price = @entry.cf.price.to_i %>
+<% @tax = @entry.cf.price.to_i / 1.08 %>
+<% @tax_price = @tax.ceil %>
+
+<body class="categoryClassName Shop">
+
+
+<%=render 'contents/template/brand/common/header' %>
+
+<section>
+	<header class="clearfix">
+		<div class="title">
+			<div class="container">
+				<h1 class="col-xs-12">メニュー</h1>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+			<ol class="breadcrumb col-xs-12">
+				<li><a href='/index.html' title='トップ'>トップ</a></li>
+				<li><a href='/menus/'>メニュー</a></li>
+				<li><%=@entry.title%></li>
+				<li class="pull-right"><img src="/images/fb-btn.png"></li>
+			</ol>
+	</div>
+
+	<div class="menuList container clearfix">
+
+<!--
+		<img src="/images/menus/slide_1.jpg" width="100%" height="auto" alt="XO醤と２種類のネギのコラボレーション" />
+-->
+		<hr class="trans-00">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2><%=@entry.title%></h2>
+
+			</div>
+		</div>
+	<div class="col-xs-3"></div>
+	<div class="col-sm-6 panel-menu">
+        <div class="text-center"><img src="<%= @entry.cf.photo1%>" /></div>
+        <div class="col-md-12">
+	        <div class="text-left"><%= raw @entry.content%></div>
+	        <div class="text-right"><p class="price" style="font-size:300%;"><strong class="text-danger"><%= raw @entry.cf.price%></strong><span class="yen">円</span><span class="zeikomi">(税込)</span><br class="prise-sp" /><span class="zeinuki">税抜本体価格</span><strong class="text-danger"><%= raw @tax_price %></strong><span class="yen">円</span></p></div>
+        </div>
+	</div>
+	<div class="col-xs-3"></div>
+        <hr class="trans-40">
+		
+
+	</div>
+</section>
+
+
+
+<%=render 'contents/template/brand/common/footer' %>
+
+
+
+
+

@@ -1,0 +1,32 @@
+
+<%
+@page_title = "ラーメン山岡家　XXX";
+@category_title = "店舗情報";
+@category_sub_title = "";
+%>
+
+<%=render 'contents/template/brand/header_sub' %>
+
+
+<dl> 
+<dd> <a title="このHPについて" href="/">トップページ</a> </dd>
+<dd> <a title="このHPについて" href="/news">新着情報一覧</a>
+
+<% each_headline( "news", 0)do |entry| %><dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd><%end%>
+
+
+</dd>
+<dd> <a title="このHPについて" href="/shops">店舗</a>
+<% each_headline( "shops", 9999)do |entry| %><dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd><%end%>
+</dd>
+<dd> <a title="このHPについて" href="/menus/">メニュー</a>
+<% each_headline( "menus", 9999)do |entry| %><dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd><%end%>
+</dd>
+ <dd> <a title="このHPについて" href="/contents/etc/212/">このHPについて</a> </dd>
+<dd> <a title="このHPについて" href="/contents/etc/212/">SNSガイドライン</a> </dd>
+ <dd> <a title="このHPについて" href="/feedbacks.html">ご意見・ご感想</a> </dd>
+<dd> <a title="このHPについて" href="/contents/etc/213/">メルマガクーポン</a></dd>
+ </dl>
+
+
+<%=render 'contents/template/brand/footer_sub' %>

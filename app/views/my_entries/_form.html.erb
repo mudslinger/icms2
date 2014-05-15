@@ -1,0 +1,80 @@
+
+
+<%= form_for(@entry, :url => (@entry.new_record? ? my_entries_path : my_entry_path(@entry.id) ) ,  :html => {:multipart => true, :class => "form"}) do |f| %>
+  <%= f.hidden_field :form_id %>
+  
+  <%#↓エラーメッセージ %>
+  <%=render :file => "_share/validation_message", :locals => {:record => @entry } %>
+  
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, :class => "text_field" %>
+  </div>
+  
+  <%if @entry.form.use_content_field %>
+  <div class="field">
+    <%= f.label :content, "内容" %><br />
+    <%= f.text_area :content, :rows=>"15", :cols=>"80", :class => "wysiwyg" %>
+  </div>
+  <%end%>
+  
+ 
+
+
+  
+  <!--カスタムフィールド-->
+  <table id="customfield">
+ 
+  <% @entry.form.fields.each do |field|  %>
+  <tr>
+    <th class="cf_container"> <%=field.label %>: </th>
+    <td class="cf_container">
+    <%=cf_tag field.name, @entry %>
+	 
+	 &nbsp;
+	 <% if field.required? %>
+	   ※必須
+	 <%end%>
+	 &nbsp;
+	 
+	 <%=field.description %>
+	 <%#=field.name %> 
+	 <%#=field.ftype %>
+    </td>
+  </tr>
+  <%end #fields.each %>
+  
+  </table>  
+  
+  
+  <div class="field" id="date">
+
+    <%= f.hidden_field :date_begin %>
+
+  </div>
+  
+
+  <div class="actions" id="button" >
+
+	
+	
+  	  <%= f.submit "保存する", :class => "button", :name=>"submit_action[kettei]", :disable_with => '登録中...' %>
+	
+	
+
+  </div>
+  
+  
+  <%unless @entry.new_record? %>
+	  <div class="field" style="display:none">
+	    作成日<br />
+	    <%= @entry.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+		
+	  </div>
+	  <div class="field" style="display:none">
+	    更新日<br />
+	    <%= @entry.updated_at.strftime("%Y年%m月%d日 %H:%M") %>
+	  </div>    
+  <%end%>
+    
+<% end %>

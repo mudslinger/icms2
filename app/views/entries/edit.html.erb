@@ -1,0 +1,84 @@
+<% content_for :head do %>
+<%= javascript_include_tag "tiny_mce/tiny_mce.js" %>
+<%= javascript_include_tag "admin_tiny_mce_init.js" %>
+<script type="text/javascript">
+	//tinymce_initに渡す
+	var _admin_tiny_mce_content_css =  "<%=stylesheet_path('wysiwyg_content.css')%>";
+	admin_tiny_mce_init(_admin_tiny_mce_content_css);
+</script>
+
+<script type="text/javascript">
+
+	$(document).ready( function (){
+		
+		var toggleDisplay_set_date_end = function (){
+			if($("#set_date_end").attr("checked") ){
+				/*
+				var year = parseInt($("#entry_date_begin_1i").val());
+				$("#entry_date_end_1i").val(year + 1);
+				$("#entry_date_end_2i").val($("#entry_date_begin_2i").val());
+				$("#entry_date_end_3i").val($("#entry_date_begin_3i").val());
+				$("#entry_date_end_4i").val($("#entry_date_begin_4i").val());
+				$("#entry_date_end_5i").val($("#entry_date_begin_5i").val());
+				*/
+				$("#div_date_end").css("display", "block");
+			}else{
+				$("#entry_date_end_1i").val("");
+				$("#entry_date_end_2i").val("");
+				$("#entry_date_end_3i").val("");
+				$("#entry_date_end_4i").val("");
+				$("#entry_date_end_5i").val("");
+				$("#div_date_end").css("display", "none");
+			}
+			
+			
+		}
+		
+		
+		$("#set_date_end").change(function(){
+			toggleDisplay_set_date_end();
+     	});
+		toggleDisplay_set_date_end();
+	});
+	
+
+	
+</script>
+
+
+
+<!--カレンダー-->
+<%= stylesheet_link_tag "jquery.datepick.css"%>
+<%= javascript_include_tag "jquery.datepick.js" %>
+<%= javascript_include_tag "jquery.datepick-ja.js" %>
+
+
+
+
+
+	
+<title><%= @entry.new_record? ? "ページの新規作成" : "ページの編集 : #{@entry.title}" %></title>
+<% end # content_for :head %>
+
+<h1><%= @entry.new_record? ? "ページの新規作成" : "ページの編集 : #{@entry.title}" %></h1>
+
+        <div class="block" id="block-forms">
+          <div class="secondary-navigation">
+            <ul class="wat-cf">
+
+              <li class="first"><%=link_to "一覧に戻る", entries_path %></li>
+              
+
+            </ul>
+          </div>
+          <div class="content">
+            <h2 class="title">カテゴリ:<%=@entry.form.title%></h2>
+            <div class="inner">
+
+<%= render 'form' %>
+            </div>
+		  </div>
+		</div>
+	  
+
+

@@ -1,0 +1,175 @@
+
+<%=render 'contents/template/brand/common/head' %>
+
+
+<body class="categoryClassName Shop">
+<%=render 'contents/template/brand/common/header' %>
+
+
+<section>
+	<header>
+		<div class="title">
+			<div class="container clearfix">
+				<div class="col-xs-12">
+					<h1><span>Shop</span>店舗情報</h1>
+				</div>
+			</div>
+		</div>
+		<a name="area01" id="area01"></a>
+	</header>
+
+	<div class="container">
+				<h2>店舗一覧</h2>
+
+	</div>
+
+	<div class="container">
+		<ol class="breadcrumb col-xs-12">
+			<li><a href='/index.html' title='トップ'>トップ</a></li>
+			<li>店舗情報</li>
+			<li class="pull-right"><img src="/images/tweet.jpg">　<img src="/images/fb-btn.png"></li>
+		</ol>
+	</div>
+
+	<div class='container'>
+
+
+<div class="mapwrap clearfix">
+	<div class="map-left clearfix col-md-4 col-sm-12 col-xs-12">
+		<div class="imagemapWrap">
+			<p class="lead maptext">山岡家の店舗は全国137店舗（平成26年1月現在）。<br>お近くの山岡家にぜひお越しください。</p>
+			<p class="hidden-xs">ご覧になりたい地域をクリックしてください。</p>
+			<figure class='imagemap'>
+				<img src="/images/shop/img_map_japan.png"  alt='日本地図' usemap='#Map' width='320' height='336' />
+				<map name='Map'>
+					<area alt='北海道' coords='218,5,311,4,313,85,217,81' href='#area01' shape='poly' title='北海道'>
+					<area alt='東北地方' coords='216,156,230,84,266,91,249,163,232,153' href='#area02' shape='poly' title='東北地方'>
+					<area alt='関東地方' coords='216,190,218,177,206,165,217,157,231,156,247,167,248,193' href='#area03' shape='poly' title='関東地方'>
+					<area alt='中部・東海・北陸地方' coords='165,148,173,222,212,192,214,179,194,148' href='#area04' shape='poly' title='中部・東海・北陸地方'>
+					<area alt='近畿地方' coords='145,175,142,209,169,206,165,175' href='#area05' shape='poly' title='近畿地方'>
+					<area alt='九州地方' coords='75,217,98,206,116,223,103,252,87,250' href='#area06' shape='poly' title='九州地方'>
+				</map>
+			</figure>
+			<figure>
+				<div class="sp_imagemap">
+					<!--p align="center"><img src="/images/shop/img_sp_map_japan.png"  alt='日本地図スマホ版' height='225' width='250' /></p-->
+					<form name="maplist" class="maplist" method="post">
+						<select onchange="location.href=value">
+							<option value="">ご覧になりたい地域を選択してください</option>
+							<option value="#area01">北海道</option>
+							<option value="#area02">東北地方</option>
+							<option value="#area03">関東地方</option>
+							<option value="#area04">中部・東海・北陸地方</option>
+							<option value="#area05">近畿地方</option>
+							<option value="#area06">九州地方</option>
+						</select>
+					</form>
+				</div>
+			</figure>
+		</div>
+	</div><!--mapleft-->
+
+	<div class="col-md-8 col-sm-12 col-xs-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>北海道地方</h3>
+			</div>
+		</div>
+		<div class="clearfix">
+			<% @pblock_category = "shops";@pref_code = "201";@pref_name = "札幌";%><%=render 'contents/template/brand/loop/shop_list' %>   
+			<% @pblock_category = "shops";@pref_code = "202";@pref_name = "道央地区";%><%=render 'contents/template/brand/loop/shop_list' %><% @pblock_category = "shops";@pref_code = "204";@pref_name = "道北地区";%><%=render 'contents/template/brand/loop/shop_list' %>   
+			<% @pblock_category = "shops";@pref_code = "203";@pref_name = "道南地区";%><%=render 'contents/template/brand/loop/shop_list' %>   
+			<% @pblock_category = "shops";@pref_code = "205";@pref_name = "道東地区";%><%=render 'contents/template/brand/loop/shop_list' %> 
+		</div>
+		<a name="area02" id="area02"></a>
+		<hr class="trans-40">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>東北地方</h3>
+			</div>
+		</div>
+		<div class="clearfix">
+			<% @pblock_category = "shops";@pref_code = "2";@pref_name = "青森県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "5";@pref_name = "秋田県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "3";@pref_name = "岩手県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "4";@pref_name = "宮城県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "6";@pref_name = "山形県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "7";@pref_name = "福島県" %><%=render 'contents/template/brand/loop/shop_list' %>  
+		</div>
+		<a name="area03" id="area03"></a>
+		<hr class="trans-40">
+
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>関東地方</h3>
+			</div>
+		</div>
+		<div class="clearfix">
+			<% @pblock_category = "shops";@pref_code = "8";@pref_name = "茨城県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "9";@pref_name = "栃木県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "10";@pref_name = "群馬県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "12";@pref_name = "千葉県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "11";@pref_name = "埼玉県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "13";@pref_name = "東京都" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "14";@pref_name = "神奈川県" %><%=render 'contents/template/brand/loop/shop_list' %> 
+		</div>
+		<a name="area04" id="area04"></a>
+		<hr class="trans-40">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>中部・東海・北陸地方</h3>
+			</div>
+		</div>
+		<div class="clearfix">
+			<% @pblock_category = "shops";@pref_code = "19";@pref_name = "山梨県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "22";@pref_name = "静岡県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "20";@pref_name = "長野県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "23";@pref_name = "愛知県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "21";@pref_name = "岐阜県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "24";@pref_name = "三重県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "16";@pref_name = "富山県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "17";@pref_name = "石川県" %><%=render 'contents/template/brand/loop/shop_list' %>  
+		</div>
+		<a name="area05" id="area05"></a>
+		<hr class="trans-40">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>近畿地方</h3>
+			</div>
+		</div>
+		<div class="clearfix">
+			<% @pblock_category = "shops";@pref_code = "26";@pref_name = "京都府" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "27";@pref_name = "大阪府" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "28";@pref_name = "兵庫県" %><%=render 'contents/template/brand/loop/shop_list' %>
+		</div>
+		<a name="area06" id="area06"></a>
+		<hr class="trans-40">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>九州地方</h3>
+			</div>
+		</div>
+		<div class="clearfix">
+			<% @pblock_category = "shops";@pref_code = "40";@pref_name = "福岡県" %><%=render 'contents/template/brand/loop/shop_list' %>
+			<% @pblock_category = "shops";@pref_code = "0";@pref_name = "熊本県" %><%=render 'contents/template/brand/loop/shop_list' %>
+		</div>
+		<hr class="trans-40">
+
+
+</section>
+</div><!--mapright-->
+
+</div><!--mapwrap-->
+
+
+<%=render 'contents/template/brand/common/footer' %>
+
+
+
+
+

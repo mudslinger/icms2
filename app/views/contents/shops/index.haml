@@ -1,0 +1,80 @@
+!!! 5
+/[if lt IE 7] <html class="ie6 datauri_na" lang="ja">
+/[if IE 7] <html class="ie7 datauri_na" lang="ja">
+/[if IE 8] <html class="ie8 datauri_na" lang="ja">
+/[if gt IE 8] <!--> <html class="modearn datauri_avlbl" lang="ja"> <!--
+=render 'contents/template/brand/common/head'
+%body.shop
+	=render 'contents/template/brand/common/header'
+	.after-nav.container-full
+		.container
+			.row
+				%h2.col-xs-12
+					%span.glyphicon.glyphicon-globe
+					店舗一覧
+	.container
+		.row
+			%ol.breadcrumb.col-xs-6.pull-left
+				%li
+					%a{href:'/index.html',title:'トップ'} トップ
+				%li
+					店舗情報
+			-#SNSボタンの読み込み
+			=render 'contents/template/brand/common/sns'
+	.container#main
+		.col-md-8.col-sm-12.col-xs-12.pull-right
+			.jumbotron
+				%p.lead 山岡家の店舗は全国137店舗（平成26年1月現在）。<br>お近くの山岡家にぜひお越しください。
+			%h3 北海道地方
+			.clearfix
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "201";@pref_name = "札幌"
+					= render 'contents/template/brand/loop/shop_list'
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "202";@pref_name = "道央地区"
+					=render 'contents/template/brand/loop/shop_list'
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "203";@pref_name = "道南地区"
+					=render 'contents/template/brand/loop/shop_list'
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "205";@pref_name = "道東地区"
+					=render 'contents/template/brand/loop/shop_list'
+			%h3 東北地方
+			.clearfix
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "2";@pref_name = "青森県"
+					= render 'contents/template/brand/loop/shop_list'
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "5";@pref_name = "秋田県"
+					=render 'contents/template/brand/loop/shop_list'
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "3";@pref_name = "岩手県"
+					=render 'contents/template/brand/loop/shop_list'
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "4";@pref_name = "宮城県"
+					=render 'contents/template/brand/loop/shop_list'
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "6";@pref_name = "山形県"
+					=render 'contents/template/brand/loop/shop_list'
+				.col-md-3.col-xs-12
+					- @pblock_category = "shops";@pref_code = "7";@pref_name = "福島県"
+					=render 'contents/template/brand/loop/shop_list'
+			%h3 関東地方
+			%h3 中部地方
+			%h3 近畿地方
+			%h3 九州地方
+
+		.col-md-4.pull-left.hidden-xs.hidden-sm.imagemap-wrap
+			%p ご覧になりたい地域をクリックしてください。
+			%figure
+				%img{src:"/assets/shop/img_map_japan.png",alt:'日本地図',usemap:'#map',width:'100%' }
+				%map{name: 'map'}
+					%area{alt:'北海道',title:'北海道',coords:'218,5,311,4,313,85,217,81',shape:'poly',href:'#area01'}
+					%area{alt:'東北地方',title:'東北地方',coords:'216,156,230,84,266,91,249,163,232,153',shape:'poly',href:'#area02'}
+					%area{alt:'関東地方',title:'関東地方',coords:'216,190,218,177,206,165,217,157,231,156,247,167,248,193',shape:'poly',href:'#area03'}
+					%area{alt:'中部・東海・北陸地方',title:'中部・東海・北陸地方',coords:'165,148,173,222,212,192,214,179,194,148',shape:'poly',href:'#area04'}
+					%area{alt:'近畿地方',title:'近畿地方',coords:'145,175,142,209,169,206,165,175',shape:'poly',href:'#area05'}
+					%area{alt:'九州地方',title:'九州地方',coords:'75,217,98,206,116,223,103,252,87,250',shape:'poly',href:'#area06'}
+
+	=render 'contents/template/brand/common/footer'
+!= "</html>"

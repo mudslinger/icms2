@@ -1,0 +1,58 @@
+
+<%=render 'contents/template/brand/common/head' %>
+
+<body class="categoryClassName Shop">
+
+
+<%=render 'contents/template/brand/common/header' %>
+
+
+<section>
+	<header>
+		<div class="title">
+			<div class="container clearfix">
+					<h1 class="col-xs-12"><span><i>E</i>tc</span>その他</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2><%=@entry.title%></h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<ol class="breadcrumb col-xs-12">
+			<li><a href='/index.html' title='トップ'>トップ</a></li>
+
+			<li><%=@entry.title%></li>
+			<li class="pull-right"><img src="/images/tweet.jpg">　<img src="/images/fb-btn.png"></li>
+
+		</ol>
+	</div>
+
+	<div class='container'>
+
+
+
+		<div class="clearfix">
+			<div class="col-md-12">
+				<%= raw @entry.content %>
+
+		</div>
+		<hr class="trans-40">
+
+	</div>
+</section>
+
+
+
+<%=render 'contents/template/brand/common/footer' %>
+
+
+
+
+

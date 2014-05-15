@@ -1,0 +1,88 @@
+<script type="text/javascript">
+// <![CDATA[
+/*
+function setAndInsert(){
+	_CopyPropertyToOtherGeneralTab();
+	ImageDialog.insert();
+	
+}
+
+function _ImagePreviewt(){
+	_CopyPropertyToOtherGeneralTab();
+	var uploaded_link = $("#uploaded_link").val();
+	ImageDialog.showPreviewImage(uploaded_link);
+	mcTabs.displayTab('general_tab','general_panel');
+}
+
+function _CopyPropertyToOtherGeneralTab(){
+	var uploaded_link = $("#uploaded_link").val();
+	$("#src").val(uploaded_link);
+	$("#alt").val($("#alttext").val());
+	$("#title").val($("#titletext").val());
+	
+}
+
+function presetGeneralPanelField(uploaded_link, alttext, titletext){
+	$("#src").val(uploaded_link);
+	$("#alt").val(alttext);
+	$("#title").val(titletext);
+	
+}
+*/
+
+var icmCtrl = {
+	objects : [],
+	
+	imageSelected : function(index, file_path_url){
+		
+		obj = this.objects[index];
+		//alert(obj.rfile.file_path.url);
+		if(obj){
+			
+			rf = obj.rfile;//json形式変更互換性のため残す
+			if(!rf){
+				rf = obj;
+			}
+			
+			this.presetGeneralPanelField(file_path_url, rf.label, rf.description);
+			this.preview(file_path_url);	
+		}
+	},
+	presetGeneralPanelField: function(uploaded_link, alttext, titletext){
+
+		$("#src").val(uploaded_link);
+		$("#alt").val(alttext);
+		$("#title").val(titletext);
+	},
+	preview : function(uploaded_link){
+		ImageDialog.showPreviewImage(uploaded_link);
+		mcTabs.displayTab('general_tab','general_panel');		
+	},
+	
+	uploadFormClicked : function(){
+		var uploaded_link = $("#uploaded_link").val();
+		this.copyUploadPanelToGeneralPanel();
+		this.preview(uploaded_link);			
+	},
+	
+	chaeckAndImageDialog_insert : function(){
+		if($("#src").val() == ""){
+			if ($("#uploaded_link").val() != "") {
+				this.copyUploadPanelToGeneralPanel();
+			}
+		}
+		ImageDialog.insert();		
+		
+	},
+	copyUploadPanelToGeneralPanel: function(){
+		var uploaded_link = $("#uploaded_link").val();
+		
+		var alttext = $("#alttext").val();
+		var titletext = $("#titletext").val();		
+		this.presetGeneralPanelField(uploaded_link, titletext, alttext);		
+	}
+	
+	
+};
+// ]]>
+</script>

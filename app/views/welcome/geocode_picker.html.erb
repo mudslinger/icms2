@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>地図</title>
+
+
+<script src="http://www.google.com/jsapi"></script>
+<script>
+  google.load("jquery", "1.5.2");
+</script>
+</head>
+
+<body style="padding:0px;margin:0px;background-color:#ccc">
+
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&region=JP"></script>
+<script type="text/javascript">
+	
+function parse_param(){
+	 var paramStr = window.location.search.split("?")[1];
+	 var arr = [];
+	 if(paramStr){
+		 var pairs = paramStr.split("&");
+		 for(var i in pairs){
+		 	var pairStr = pairs[i];
+			var pair = pairStr.split("=");
+			var name = pair[0];
+			var value = decodeURIComponent(pair[1]);
+			//console.log(name + " = " + value);
+			arr[name] = value;
+		 }
+	 	
+	 }
+	 return arr;
+}	
+	
+$(function(){
+
+});
+</script>
+
+<script type="text/javascript">
+$(function() {
+	var geocoder = new google.maps.Geocoder();
+
+	var geoOptions = {};
+	var params = parse_param();
+	//緯度経度が指定されたらそちらを優先
+	var initial_latlng_str = params["latlng"];
+	if(initial_latlng_str){
+		var latlng_arr = initial_latlng_str.split(",");
+		/*
+		var loc = {
+			"lat" : Number(latlng_arr[0]),
+			"lng" : Number(latlng_arr[1]) 
+		};
+		*/
+
+<!-- 緯度・経度欄への反映 START -->
+		document.getElementById("latitude").value = latlng_arr[0];
+		document.getElementById("longitude").value = latlng_arr[1];
+<!-- 緯度・経度欄への反映 END   -->
+
+		var loc = new google.maps.LatLng(latlng_arr[0], latlng_arr[1]);
+		geoOptions["location"] = loc;
+	}else{
+		//住所地名から
+		var initial_adress =params["address"]; 
+		if(! initial_adress){
+			initial_adress = $("#default_address").val();
+		}
+		geoOptions["address"] = initial_adress;
+	}
+
+	geocoder.geocode( geoOptions, function(data, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			var latlng = data[0].geometry.location;
+
+<!-- 緯度・経度の微調整 START -->
+	if(initial_latlng_str){
+            latlng = loc;
+	}
+<!-- 緯度・経度の微調整 END   -->
+
+			var myOptions = {
+				zoom : 15,
+				center : latlng,
+				mapTypeId : google.maps.MapTypeId.ROADMAP
+			};
+
+			var map = new google.maps.Map(document.getElementById("map"),
+					myOptions);
+			var marker = new google.maps.Marker( {
+				position : latlng,
+				map : map,
+				draggable : true
+			});
+
+			google.maps.event.addListener(marker, 'dragend', function(event) {
+				var lng = marker.getPosition().lng();
+				var lat = marker.getPosition().lat();
+
+				$("input#latitude").val(lat);
+				$("input#longitude").val(lng);
+				;
+			});
+
+		} else {
+			alert("住所が不正です: " + status);
+		}
+	});
+
+});
+</script>
+<script type="text/javascript">
+
+
+$(function(){
+        $("input#ok").click(function(event){
+			
+				var params = parse_param();
+				
+                var lat = $("input#latitude").val();
+                var lng = $("input#longitude").val();
+
+<!-- 緯度・経度欄の確認 START -->
+                // window.opener.$("input#" + params["id_to_set"]).val(lat + "," + lng);
+                if ( lat != "" && lng != "" ) {
+                    window.opener.$("input#" + params["id_to_set"]).val(lat + "," + lng);
+                }
+<!-- 緯度・経度欄の確認 END   -->
+
+                window.close();
+        });
+
+
+});
+
+
+</script>
+
+<input type="hidden" id="default_address" value="<%=AppConfig.get('geocode_default_address')%>"/>
+
+<div id="map" style="height:400px;width:100%"></div>
+
+<div id="control" style="text-align:center;background-color:#ccc;padding:5px;">
+<label for="latitude">緯度:</label>
+<input id="latitude" type="text">
+<label for="longitude">経度:</label>
+<input id="longitude" type="text">
+<input type="submit" id="ok" value="決定" />
+</div>
+
+
+</body>
+</html>

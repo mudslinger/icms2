@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  created_by: 1
+  updated_by: 1
+  entry_id: 1
+  libtype: MyString
+  label: MyString
+  description: MyString
+  file_name: MyString
+  file_name_ext: MyString
+  file_path: MyString
+  content_type: MyString
+
+two:
+  created_by: 1
+  updated_by: 1
+  entry_id: 1
+  libtype: MyString
+  label: MyString
+  description: MyString
+  file_name: MyString
+  file_name_ext: MyString
+  file_path: MyString
+  content_type: MyString

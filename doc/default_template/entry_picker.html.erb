@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript" >
+		  google.load("jquery", "1.5.2");
+		</script>
+		
+	</head>
+	<body>
+		
+<script type="text/javascript">
+//GETパラメータ解析	
+function parse_param(){
+	 var paramStr = window.location.search.split("?")[1];
+	 var arr = [];
+	 if(paramStr){
+		 var pairs = paramStr.split("&");
+		 for(var i in pairs){
+		 	var pairStr = pairs[i];
+			var pair = pairStr.split("=");
+			var name = pair[0];
+			var value = decodeURIComponent(pair[1]);
+			//console.log(name + " = " + value);
+			arr[name] = value;
+		 }
+	 	
+	 }
+	 return arr;
+}	
+	
+
+
+$(function(){
+	//class="entry_selector"がクリックされた
+    $(".entry_selector").click(function(event){
+		//data-id="xxx" の中身を取得
+    	var id = $(this).data('id');//選択された記事のID
+		//data-title="xxx" の中身を取得
+		var title  = $(this).data('title');
+        
+        var params = parse_param();
+        //親ウィンドウの隠しフィールドに記事のIDをセット
+        window.opener.$("input#" + params["id_to_set"]).val(id);
+		//タイトルもセット
+		window.opener.$("#" + params["id_to_set_title"]).text(title);
+		
+        window.close();
+    });
+    
+    
+});
+
+
+</script>		
+		<ul>
+		<% each_headline("job") do |entry| %>
+		  <li>
+		  	<%=link_to entry.title, contents_detail_path_for(entry) , :target => "_blank" %>
+			&nbsp;&nbsp;&nbsp;
+		  	<%=link_to "✓選択する", "#", :class => "entry_selector", "data-id" => "#{entry.id}", "data-title" => "#{entry.title}" %>
+		    
+		  </li>
+		<%end%>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+.navbar.navbar-inverse#header
+	.container
+		.navbar-header
+			%button.navbar-toggle{type: 'button',data:{toggle: :collapse,target:'navbar-collapse'}}
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+			%a{href: '/index.html'}
+				%img{src: '/assets/logo.png',alt:'ラーメン山岡家'}
+		.navbar-collapse.collapse
+			%ul.nav.navbar-nav.navbar-right
+				%li.active
+					%a{href:'/index.html'} ホーム
+				%li
+					%a{href:'/shops/index.html'} 店舗
+				%li
+					%a{href:'/menus/categories/regular'} メニュー
+				%li
+					%a.dropdown-toggle{href:'#',data:{toggle: :dropdown}}
+						about
+						%b.caret
+					%ul.dropdown-menu
+						%li
+							%a{href:'/contents/etc/212',title: 'このHPについて',tabindex: -1} このHPについて
+						%li
+							%a{href:'/contents/etc/211',title: 'サイトマップ',tabindex: -1} サイトマップ
+						%li
+							%a{href:'/contents/etc/207',title: 'SNSガイドライン',tabindex: -1} SNSガイドライン
+				%li
+					%a{href:'/feedbacks.html'} ご意見・ご感想

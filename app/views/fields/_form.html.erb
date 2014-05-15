@@ -1,0 +1,50 @@
+<%= form_for(@field) do |f| %>
+<%= f.hidden_field :form_id %>
+
+  <%#↓エラーメッセージ %>
+  <%=render :file => "_share/validation_message", :locals => {:record => @field } %>
+
+  <div class="field">
+    <%= f.label :name, "ID" %><br />
+    <%= f.text_field :name %>※半角英数のみ
+  </div>
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5 %>
+  </div>
+  <div class="field">
+    <%= f.label :required %><br />
+    <%= f.select :required, [["任意",0],["必須",1]] %>
+  </div>
+  <div class="field">
+    <%= f.label :default %><br />
+    <%= f.text_field :default %>
+  </div>
+  <div class="field">
+    <%= f.label :ftype %><br />
+    <%= f.select :ftype, ftype_options %>
+  </div>
+  <div class="field">
+    <%= f.label :options %><br />※改行で区切って入力してください。<br />
+	各要素は値, ラベルのようにカンマで区切る<br />
+    <%= f.text_area :options, :rows => 5 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :options2 %><br />
+	
+    <%= f.text_field :options2 %>
+	</div>
+  
+  <div class="field">
+    <%= f.label :sortkey %><br />
+    <%= f.text_field :sortkey %>
+  </div>  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

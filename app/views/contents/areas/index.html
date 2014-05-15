@@ -1,0 +1,209 @@
+
+<%
+@page_title = "ラーメン山岡家　XXX";
+@category_title = "店舗情報";
+@category_sub_title = "";
+%>
+
+<%=render 'header_sub' %>
+
+
+
+
+
+ <% each_headline( "areas", 0)do |entry| %>	
+<li><%=link_to entry.title, contents_detail_path_for(entry) %></li>
+<%end%>	
+
+
+
+      <!-- ページ内容はcontentに入れる -->
+      <div class='content'>
+        <h2>見出し２</h2>
+        <h3>見出し３</h3>
+        <h4>見出し４</h4>
+        <h5>見出し５</h5>
+        <h6>見出し６</h6>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                見出し
+              </th>
+              <th>
+                見出し
+              </th>
+              <th>
+                見出し
+              </th>
+            </tr>
+          </thead>
+          <tr>
+            <th>見出し</th>
+            <td>
+              セル中身
+              <br>
+              セル中身
+            </td>
+            <td>セル中身</td>
+          </tr>
+          <tr>
+            <th>見出し見出し</th>
+            <td>セル中身</td>
+            <td>セル中身</td>
+          </tr>
+          <tr>
+            <th>見出し見出し</th>
+            <td>セル中身</td>
+            <td>セル中身</td>
+          </tr>
+          <tr>
+            <th>見出し見出し</th>
+            <td>セル中身</td>
+            <td>セル中身</td>
+          </tr>
+        </table>
+        <ul>
+          <li>
+            <a href='#'>番号なしリスト</a>
+          </li>
+          <li>
+            <a href='#'>番号なしリスト</a>
+          </li>
+          <li>
+            <a href='#'>番号なしリスト</a>
+          </li>
+        </ul>
+        <ol>
+          <li>
+            <a href='#'>番号付きリスト</a>
+          </li>
+          <li>
+            <a href='#'>番号付きリスト</a>
+          </li>
+          <li>
+            <a href='#'>番号付きリスト</a>
+          </li>
+        </ol>
+        <p>
+          段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト
+          <strong>
+            強調強調強調強調強調
+          </strong>
+          段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト
+        </p>
+        <dl>
+          <dt>見出し</dt>
+          <dd>説明</dd>
+          <dt>見出し</dt>
+          <dd>説明</dd>
+          <dt>見出し</dt>
+          <dd>説明</dd>
+        </dl>
+        <h2>H2 見出しテキストが入ります。</h2>
+        <div class='cols'>
+          <div class='colLeft'>
+            <p>
+              pテキストが入ります。pテキストが入ります。<strong>pテキストが入ります。pテキストが入ります。</strong>pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。
+            </p>
+            <blockquote>
+              <p>
+                blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。<strong>blockquoteテキストが入ります。</strong>blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。blockquoteテキストが入ります。
+              </p>
+            </blockquote>
+            <h3>H3 見出しテキストが入ります。</h3>
+            <dl>
+              <dt>dtテキスト（x2）</dt>
+              <dd>ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。</dd>
+            </dl>
+            <dl>
+              <dt>dtテキストdtテキスト（x2）</dt>
+              <dd>ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。ddテキストが入ります。</dd>
+            </dl>
+            <p><img alt='ALTが入ります。' class='Left' height='150' src='http://dummyimage.com/200x200/7d767d/ffffff.png' width='200'></p>
+            <p>
+              pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。
+            </p>
+            <p><img alt='ALTが入ります。' class='Right' height='150' src='http://dummyimage.com/200x200/7d767d/ffffff.png' width='200'></p>
+            <p>
+              pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。
+            </p>
+          </div>
+          <div class='colRight'>
+            <h4>H4 見出しテキストが入ります。</h4>
+            <p><img alt='ALTが入ります。' class='Right' height='150' src='http://dummyimage.com/200x200/7d767d/ffffff.png' width='200'></p>
+            <p>
+              pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。
+            </p>
+            <h5>H5 見出しテキストが入ります。</h5>
+            <ul>
+              <li>ul > liテキストが入ります。ul > liテキストが入ります。</li>
+              <li>ul > liテキストが入ります。ul > liテキストが入ります。</li>
+              <li>ul > liテキストが入ります。ul > liテキストが入ります。</li>
+              <li>ul > liテキストが入ります。ul > liテキストが入ります。</li>
+              <li>ul > liテキストが入ります。ul > liテキストが入ります。</li>
+            </ul>
+            <ol>
+              <li>ol > liテキストが入ります。ol > liテキストが入ります。</li>
+              <li>ol > liテキストが入ります。ol > liテキストが入ります。</li>
+              <li>ol > liテキストが入ります。ol > liテキストが入ります。</li>
+              <li>ol > liテキストが入ります。ol > liテキストが入ります。</li>
+              <li>ol > liテキストが入ります。ol > liテキストが入ります。</li>
+            </ol>
+            <h6>H6 見出しテキストが入ります。</h6>
+            <p><img alt='ALTが入ります。' class='Left' height='150' src='http://dummyimage.com/200x200/7d767d/ffffff.png' width='200'></p>
+            <p>
+              pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。pテキストが入ります。
+            </p>
+            <table>
+              <caption>表のキャプション</caption>
+              <thead>
+                <tr>
+                  <th>
+                    <span>thead >th</span>
+                  </th>
+                  <td>
+                    thead >td
+                  </td>
+                  <td>thead >th</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>tbody >th</th>
+                  <td>tbody >td</td>
+                  <td>tbody >td</td>
+                </tr>
+                <tr>
+                  <th>tbody >th</th>
+                  <td>tbody >td</td>
+                  <td>tbody >td</td>
+                </tr>
+                <tr>
+                  <th>tbody >th</th>
+                  <td>tbody >td</td>
+                  <td>tbody >td</td>
+                </tr>
+                <tr>
+                  <th>tbody >th</th>
+                  <td>tbody >td</td>
+                  <td>tbody >td</td>
+                </tr>
+                <tr>
+                  <th>tbody >th</th>
+                  <td>tbody >td</td>
+                  <td>tbody >td</td>
+                </tr>
+                <tr>
+                  <th>tbody >th</th>
+                  <td>tbody >td</td>
+                  <td>tbody >td</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //section -->
+ <%=render 'footer_sub' %>

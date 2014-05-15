@@ -1,0 +1,21 @@
+<% content_for :head do %>
+  <title>ユーザー設定</title>
+<% end %>
+    
+
+
+        <div class="block" id="block-forms">
+          <div class="secondary-navigation">
+            
+          </div>
+          <div class="content">
+            <h2 class="title">ユーザー設定</h2>
+            <div class="inner">
+
+<%= render 'form' %>
+
+<%= link_to '戻る', users_path %>
+
+</div>
+</div>
+</div>

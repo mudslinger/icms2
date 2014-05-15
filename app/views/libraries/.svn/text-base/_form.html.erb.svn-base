@@ -1,0 +1,70 @@
+<%= form_for(@library, :html => { :multipart => true } ) do |f| %>
+  <% if @library.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= (@library.errors.count) %> prohibited this library from being saved:</h2>
+
+      <ul>
+      <% @library.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= @library.created_by_name %>
+    <%#= f.hidden_field :created_by_id %>
+  </div>
+  <div class="field">
+    
+    <%#= f.hidden_field :updated_by_id %>
+  </div>
+  <div class="field">
+    <%= f.label :entry_id %><br />
+    <%= f.hidden_field :entry_id %>
+  </div>
+  <div class="field">
+    <%= f.label :libtype %><br />
+    <%= f.hidden_field :libtype %>
+  </div>
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :file_name %><br />
+    <%= f.hidden_field :file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :file_name_ext %><br />
+    <%= f.hidden_field :file_name_ext %>
+  </div>
+  <div class="field">
+    <%= f.label :file_path %><br />
+    <%= f.file_field :file_path %>
+	<%#↓バリデーションに失敗してフォームを再描画したとき、ファイルが消えないようにする%>
+	<%= f.hidden_field :file_path_cache %>
+	<%#= @library.file_path_cache %>
+	<br>
+	<%if @library.file_path.thumb.url %>
+	  <%= link_to(@library.file_path.url) do %>
+	   <%if @library.image? %>  
+	   <%=image_tag @library.file_path.thumb.url %>
+	   <%else%>
+	   <%=image_tag "file_icon.gif" %>
+	   <%end%>
+	 <%end%>
+	<%end%>
+  </div>
+  <div class="field">
+    <%= f.label :content_type %><br />
+    <%= f.hidden_field :content_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

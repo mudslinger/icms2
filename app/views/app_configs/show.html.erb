@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cron1 triggered at:</b>
+  <%= @app_config.cron1_triggered_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_app_config_path(@app_config) %> |
+<%= link_to 'Back', app_configs_path %>

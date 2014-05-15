@@ -1,0 +1,55 @@
+
+<%=render 'contents/template/brand/common/head' %>
+
+<body class="categoryClassName Shop">
+<%=render 'contents/template/brand/common/header' %>
+
+
+<section>
+	<header>
+		<div class="title">
+			<div class="container clearfix">
+				<div class="col-xs-6">
+					<h1><span><i>S</i>hop</span>店舗情報</h1>
+				</div>
+				<div class="col-xs-6">
+					<p class='text-right'><a class='additional' href='shops.html#' style="display:none">カテゴリートップへ戻る</a></p>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href='index.html' title='トップ'>トップ</a></li>
+			<li><a href="/shops/index.html">店舗情報</a></li>
+		</ol>
+	</div>
+
+<div class='container'>
+
+
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<h2>近畿地方</h2>
+	</div>
+</div>
+<div class="clearfix">
+	 <% @pblock_category = "shops";@pref_code = "26";@pref_name = "京都府" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "27";@pref_name = "大阪府" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "28";@pref_name = "兵庫県" %><%=render 'contents/template/brand/loop/shop_list' %>
+
+</div>
+</div>
+
+</section>
+
+
+
+<%=render 'contents/template/brand/common/footer' %>
+
+
+
+
+

@@ -1,0 +1,6 @@
+<h1>Editing entry_meta</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @entry_meta %> |
+<%= link_to 'Back', entry_metas_path %>

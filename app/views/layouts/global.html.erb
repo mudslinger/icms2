@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%#ユーザーがログインしていない状態でつかう%>
+  
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/warehouse/style", "web-app-theme/override", :cache => false %>
+  <%= javascript_include_tag_default  %>
+  
+  <%= csrf_meta_tag %>
+
+  <%#<title>タグ,ページ固有のCSS/Javascript等のhead要素は下記インクルード内で指定 
+  %>  
+  <%= yield :head %>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+    </div>    
+	
+	<%#通知メッセージ、エラーメッセージ%>
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+	  
+	  <div id="main">
+        <%= yield %>
+      </div>
+	  
+	  
+    </div>    
+  </div>
+</body>
+</html>

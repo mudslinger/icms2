@@ -1,0 +1,59 @@
+
+<%=render 'contents/template/brand/common/head' %>
+
+<body class="categoryClassName Shop">
+<%=render 'contents/template/brand/common/header' %>
+
+
+<section>
+	<header>
+		<div class="title">
+			<div class="container clearfix">
+				<div class="col-xs-6">
+					<h1><span><i>S</i>hop</span>店舗情報</h1>
+				</div>
+				<div class="col-xs-6">
+					<p class='text-right'><a class='additional' href='shops.html#' style="display:none">カテゴリートップへ戻る</a></p>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href='index.html' title='トップ'>トップ</a></li>
+			<li><a href="/shops/index.html">店舗情報</a></li>
+		</ol>
+	</div>
+
+<div class='container'>
+
+
+
+
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<h2>関東地方</h2>
+	</div>
+</div>
+<div class="clearfix">
+	 <% @pblock_category = "shops";@pref_code = "8";@pref_name = "茨城県" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "9";@pref_name = "栃木県" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "10";@pref_name = "群馬県" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "12";@pref_name = "千葉県" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "11";@pref_name = "埼玉県" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "13";@pref_name = "東京都" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "14";@pref_name = "神奈川県" %><%=render 'contents/template/brand/loop/shop_list' %> 
+
+</div>
+</section>
+
+
+
+<%=render 'contents/template/brand/common/footer' %>
+
+
+
+
+

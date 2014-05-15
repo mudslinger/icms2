@@ -1,0 +1,61 @@
+<%= form_for(@user, :url => user_profile_path(:id => @user.id )) do |f| %>
+  <%#↓エラーメッセージ %>
+  <%=render :file => "_share/validation_message", :locals => {:record => @user } %>
+
+  <div class="field">
+    <%= f.label :login %><br />
+    <%= @user.login %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= @user.name %>
+  </div>
+  
+  
+  
+  <div class="field">
+    <%= f.label :user_level, "ユーザー権限" %><br />
+	
+    <%= @user.user_level_label %>
+	
+  </div>  
+  
+  
+
+  <div class="field">
+    <%= f.label :emailaddress %><br />
+    <%= f.text_field :emailaddress %>
+  </div>
+
+  
+  
+     ※パスワードを変更する場合のみ入力
+	  <div class="field">
+	  	
+	    <%= f.label :password, "新しいパスワード" %><br />
+	    <%= f.password_field :password, :autocomplete => "off" %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :password_confirmation, "新しいパスワード(確認)" %><br />
+	    <%= f.password_field :password_confirmation %>
+	  </div>
+  
+  <%if AppConfig.get("fb_enabled")%>
+    <div class="field">
+    	<%if @user.fb_login_enabled? %>
+		  FaceBookによるログイン機能はオンになっています。<br/>
+		  <%=link_to "⇒FaceBookによるログイン機能を解除する" , fb_assoc_cancel_user_profiles_path, :onclick => 'return confirm("この操作によりFaceBookによるログインができなくなります。よろしいですか？");'%>
+		<%else%>
+		  FaceBookによるログイン機能はオフになっています。<br/>
+		  <%=link_to "⇒FaceBookによるログイン機能を有効にする" , fb_assoc_url%>
+		<%end%>
+  	  
+  	</div> 
+  <%end%>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+
+<% end %>

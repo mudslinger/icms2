@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  entry_id: 1
+  field_id: 1
+  string_value: MyString
+  text_value: MyText
+  int_value: 1
+  date_value: 2011-02-08
+  float_value: 1.5
+
+two:
+  entry_id: 1
+  field_id: 1
+  string_value: MyString
+  text_value: MyText
+  int_value: 1
+  date_value: 2011-02-08
+  float_value: 1.5

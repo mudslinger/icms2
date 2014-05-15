@@ -1,0 +1,23 @@
+<%= form_for(@app_config) do |f| %>
+  <%#↓エラーメッセージ %>
+  <%=render :file => "_share/validation_message", :locals => {:record => @app_config } %>
+
+  <div class="field" style="display:none;">
+    <%= f.label :cron1_triggered_at %><br />
+    <%= f.datetime_select :cron1_triggered_at %>
+  </div>
+  
+  <div class="field">
+   
+    <%= f.radio_button :maintenance_mode, "maintenance" %>メンテナンスモード<br/><br/>
+	
+	<%= f.radio_button :maintenance_mode, "normal" %>通常モード
+  </div>
+  
+  <div style="height:1em">
+  </div>
+
+  <div class="actions">
+    <%= f.submit :confirm => "モードを変更します。よろしいですか？" %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<%=render 'header'%>
+
+	<%#通知メッセージ、エラーメッセージ%>
+    
+      <div>
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+
+<ul>
+  <li>この機能をご利用いただくには、初めにユーザー登録が必要です。</li>
+  <li>ユーザー登録にはFaceBookアカウントが必要です。</li>
+</ul>  
+<%=link_to "FaceBook IDでユーザー登録する", fb_signup_url, :confirm => "ユーザー登録します。続行しますか？" %>
+
+<%=render 'footer'%>

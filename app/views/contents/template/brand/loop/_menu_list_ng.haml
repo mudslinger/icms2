@@ -1,0 +1,17 @@
+.col-xs-12
+  .panel.panel-default.panel-menu
+    .panel-heading
+      %h4.panel-title
+        =@category1
+        %small=@category1_eng
+    -@category2 = 'ノーマル'
+    =content_for :thumbnail
+    .panel-body
+      -each_headline( "menus", 0,where: "{category0} = '#{@category0}' and {category1} = '#{@category1}'")do |entry|
+        .col-md-2.col-sm-4.col-xs-12
+          .picture.well
+            .tags
+            .actions
+              =link_to entry.title, contents_detail_path_for(entry),class:['btn','btn-link']
+            =link_to contents_detail_path_for(entry) do
+              %img{src:entry.cf.photo1.gsub('.jpg','.png').gsub('/photo/','/photo-ng2/')}

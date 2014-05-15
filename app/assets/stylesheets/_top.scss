@@ -1,0 +1,144 @@
+body.top{
+	.ticker{
+		background-color: $gray;
+		height:25px;
+		position: relative;
+		overflow: hidden;
+		padding-top:5px;
+
+	}
+	#ticker{
+		position: relative;
+		left: 3000px;
+		height:25px;
+	}
+	#menu{
+		@include bg('bg_menu.jpg');
+	}
+	#shop{
+		@include bg('bg_shop.jpg');
+	}
+	.carousel-inner{
+		width:100%;
+		max-height: 900px !important;
+		img{
+			width:100%;
+		}
+	}
+	.carousel-caption{
+		max-width: 80%;
+		padding: 0 20px;
+		margin:0 auto;
+		top:45%;
+		bottom:auto;
+		text-align:center;
+		h1{
+			font-size:300%;
+		}
+	}
+	/* Notification slide box */
+	.noty-slide{
+		position: fixed;
+		top: 90px;
+		left:-282px;
+		z-index:100000;
+		.noty-content{
+			@include opacity(0.9);
+			padding:10px;
+			width: 280px;
+			min-height:350px;
+			background:$gray-dark;
+			border: 1px solid #bbb;
+			border-left:0px;
+			border-top-right-radius:7px;
+			border-bottom-right-radius:7px;
+			.panel{
+				margin-bottom:7px;
+			}
+			.panel-heading{
+				padding-top:2px;
+				padding-bottom:2px;
+				h4{
+					color:$almost-white;
+					font-size:14px;
+					font-weight:600;
+					vertical-align: middle;
+				}
+				a h4:before{
+					white-space: nowrap;
+				}
+				&.original-news{
+					background:$brand-primary;
+					a h4:before{
+						content: url(/assets/top/icon.png);
+					}
+				}
+				&.facebook{
+					background-color: #3B5998;
+					a h4:before{
+						content: url(/assets/top/facebook.png);
+					}
+				}
+				&.twitter{
+					background-color: #55ACEE;
+					a h4:before{
+						content: url(/assets/top/twitter.png);
+					}
+				}
+			}
+			.panel-body{
+				padding:0px;
+				background:$almost-white;
+				a{
+					color:$gray-darker;
+					&:hover{
+						color:$brand-primary;
+					}
+				}
+			}
+
+			.panel-footer{
+				padding:10px 10px;
+				border-top:1px solid #ddd;
+				background:#f8f8f8;
+			}
+
+		}
+		.noty-button{
+			@include opacity(0.9);
+			background:$gray-dark;
+			text-align: center;
+			width: 50px;
+			display: block;
+			position: absolute;
+			z-index: 100;
+			left: 280px;
+			top: 50px;
+			cursor: pointer;
+			border:1px solid #bbb;
+			border-left:0px;
+			border-top-right-radius:3px;
+			border-bottom-right-radius:3px;
+			span{
+				display:block;
+				width:100%;
+				border-bottom:1px solid #ccc;
+				height:55px;
+				line-height:55px;
+				position:relative;
+				&:last-child{
+					border-bottom:0px;
+				}
+				&.original-news{
+					background:$brand-primary;
+				}
+				&.facebook{
+					background-color: #3B5998;
+				}
+				&.twitter{
+					background-color: #55ACEE;
+				}
+			}
+		}
+	}
+}

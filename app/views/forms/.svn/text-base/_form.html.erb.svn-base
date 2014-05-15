@@ -1,0 +1,141 @@
+<%= form_for(@form, :html => { :onsubmit => "setSortedFieldIds()" }) do |f| %>
+
+  
+  <%#↓エラーメッセージ %>
+  <%=render :file => "_share/validation_message", :locals => {:record => @form } %>
+
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :template_name, "キー名称" %><br />
+    <%= f.text_field :template_name %>※半角英数のみ
+  </div>
+  <div class="field">
+    <%= f.label :comment, "説明" %><br />
+    <%= f.text_area :comment, :rows => 5 %>
+  </div>
+  <div class="field">
+  <%= f.check_box :use_content_field%>標準フィールド(本文内容)を使用する
+  <br/>
+  </div>
+  <div class="field" style="margin-top:1em">
+<%unless @form.new_record? %>  
+	カスタムフィールド
+	<table class="table">
+	  <tr>
+	  	<th></th>
+	  	<th>表示名</th>
+	    <th>名称</th>
+	    <th>説明</th>
+	    <th>タイプ</th>
+	    <th>必須</th>
+		<!--
+	    <th>順番</th>
+	    -->
+
+	    <th></th>
+	  </tr>
+	
+	<% @form.fields.each_with_index do |field,i| %>
+	  <tr>
+	  	<td><%=i+1 %></td>
+	  	<td><%= link_to field.label, edit_field_path(field) %></td>
+	    <td><%= field.name %></td>
+	    <td><%= truncate(field.description, :length => 15, :omission => "...") %></td>
+	    <td><%= ftype_label(field.ftype) %></td>
+
+	    <td><%= field.required? ? "必須" : "" %></td>
+		
+		<!--
+	    <td>
+	    	<%= link_to '↑', field_path(field, :form_id => @form.id, :update_order => "up"), :method => :put %>
+		
+		    <%= link_to '↓', field_path(field, :form_id => @form.id, :update_order => "down"), :method => :put %>
+			
+			
+		</td>
+	    -->
+	    
+	    <td><%= link_to '削除', field, :confirm => 'フィールドに登録されたデータも削除されます。よろしいですか？', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	
+	<%if @form.fields.empty?  %>
+	  <tr>
+	  	<td colspan="6">フィールドは定義されていません</td>
+	  </tr>
+	<% end %>
+	</table>
+	
+	<br />
+	
+	<%= link_to 'フィールドの追加', new_field_path( :form_id => @form.id) %>
+<%end%>
+  </div>
+	  
+<br />  
+<%unless @form.new_record? %>  
+	<script type="text/javascript">
+// <![CDATA[
+		
+	$(function() {
+		$( "#sortable" ).sortable();
+		$( "#sortable" ).disableSelection();
+	});
+	
+	function setSortedFieldIds(){
+		var ids = [];
+		$("#sortable > *").each(function(){
+			var id   = $(this).attr("id");
+			ids.push(id);
+		});
+		$("#sorted_field_ids").val(ids.join(","));
+		
+	}
+	// ]]>
+	</script>
+	<style>
+		#sortable li{
+			cursor:move;
+		}
+	
+	</style>
+
+<div>
+	フィールドの並び替え(ドラッグアンドドロップしてください)
+<ul id="sortable">
+	<% @form.fields.each_with_index do |field,i| %>
+	<li id="field_id_<%=field.id%>" style="border:1px solid #ccc;"><%= field.label %></li>
+	<%end%>
+</ul>
+</div>
+
+<div style="padding-top:1em"></div>
+    <div class="field">
+           このカテゴリにアクセス可能なユーザー
+	</div>
+    <div class="field">
+            <% User.order("id").each_with_index do |usr,index| %>
+			<span style="margin-right:1em">
+            <%= check_box_tag 'form[permitted_user_ids][]', usr.id, @form.permitted_user_ids.include?(usr.id), :id => "form_permitted_user_ids#{index}" %>
+			<%=label_tag "form_permitted_user_ids#{index}",usr.name %>
+			</span>
+            <%=raw cycle('','','<br/>') %>
+            <% end %>
+    </div>	
+	
+<%end%>
+
+  <div class="actions" style="padding:1em 1em 1em 1em">
+  	<%if @form.new_record? %>
+	<%= f.submit "作成" %>
+	<%else%>
+    <%= f.submit "保存" %>
+	<%end%>
+  </div>
+  <%=hidden_field_tag "sorted_field_ids" %>
+<% end %>
+
+

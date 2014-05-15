@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/warehouse/style", "web-app-theme/override", :cache => false %>
+  <%= custom_stylesheet_link_tag %>
+  <%= javascript_include_tag_default  %>
+  
+  <%= csrf_meta_tag %>
+
+  <%#<title>タグ,ページ固有のCSS/Javascript等のhead要素は下記インクルード内で指定 
+  %>  
+  <%= yield :head %>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><%=link_to AppConfig.get("app_title"), root_path %></h1>
+      <div id="user-navigation">
+        <ul class="wat-cf">
+          <li><%=link_to current_user.name, edit_user_profile_path(:id => 1) %>さん</li>
+          <li><%=link_to "メニュー", admin_menu_path %></li>
+          
+          <li><%=link_to("ログアウト", logout_path, :class => "logout")%></li>
+        </ul>
+      </div>
+	  
+      <div id="main-navigation">
+
+        <ul class="wat-cf">
+          <li class="first"><%=link_to "トップメニュー", admin_menu_path %></li>
+        </ul>
+      </div>
+	  
+    </div>    
+	
+	<%#通知メッセージ、エラーメッセージ%>
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+	  
+	  
+	  <div id="mainmenu" style="float:left;width:180px;padding-right:1em" >
+	  
+
+
+		
+		<%admin_menu_list.sub.each do |menu|%>
+		   <h3 >
+		   	  <%=link_to menu.title, menu.path %>
+			  </h3>
+			  <%if menu.sub #サブメニュー %>
+			    <ul style="margin-left:0em" id="main_menu">
+			    <%menu.sub.each do |menu_sub| %>
+				  <li>
+				  	<%if menu_sub.selected  %>
+					<span ><%=menu_sub.title%></span>
+					<%else %>
+			       <%=link_to menu_sub.title, menu_sub.path %>
+				   <%end %>
+				   </li>
+			    <%end %>
+				</ul>
+			  <%end%>
+
+		<%end%>
+
+
+	  </div>
+
+      
+	  <div id="main">
+
+	  	
+		
+		
+        <%= yield %>
+		
+	
+		
+		
+		
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %><%= AppConfig.get("app_title") %></p>
+          </div>      
+        </div>
+      </div>
+	  
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>	  
+	  
+    </div>    
+  </div>
+</body>
+</html>

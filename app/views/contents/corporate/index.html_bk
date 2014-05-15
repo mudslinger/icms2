@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+
+<title>店舗情報｜株式会社丸千代山岡家</title>
+<meta content="ラーメン,濃厚とんこつ,24時間営業" name="Keywords">
+<meta content="札幌市東区。北海道および東日本での直営ラーメン店の経営。店舗・メニュー紹介。" name="description">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<link href="/corporate/css2/normalize.css" rel="stylesheet">
+
+	<!-- Bootstrap用css START -->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+	<!-- Bootstrap用css END -->
+
+<link href="/corporate/css2/docs.min.css" rel="stylesheet">
+<link href="/corporate/css2/layout.css" rel="stylesheet">
+<link href="/corporate/css2/style.css" rel="stylesheet">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src='/assets/js/jquery.smoothScroll.js'></script>
+<script src='/assets/js/accordion.js'></script>
+<!--[if lt IE 9]>
+	<script src='/corporate/js/html5.js'></script>
+	<link href='/corporate/css/ie8.css' media='all' rel='stylesheet' type='text/css'>
+<![endif]-->
+</head>
+
+
+
+<body class='top'>
+<header id="head">
+	<div class='container'>
+		<div class="col-xs-6">
+			<h1>ラーメン山岡家を経営する株式会社丸千代山岡家</h1>
+		</div>
+		<div class="col-xs-6 text-right">
+			<ul class="list-inline"><li><a href='/contents/c_etc/241'>このHPについて</a></li><li><a href='/c_ir/contact/'>お問合せ</a></li><li><a href='/contents/c_etc/240'>サイトマップ</a></li></ul>
+		</div>
+		<figure><a href='/index.html'><img alt='株式会社丸千代山岡家' src='/corporate/images/logo.png'></a></figure>
+	</div>
+</header>
+
+<nav>
+	<div class='container'>
+		<ul>
+			<li class="col-xs-2 text-center"><a href='/contents/c_greetings/180'>社長ごあいさつ</a></li>
+			<li class="col-xs-2 text-center"><a href='#'>会社情報</a><ul class='subMenu'><li><a href='/contents/c_profile/182'>会社概要</a></li><li><a href='/contents/c_profile/183'>沿革</a></li></ul></li>
+			<li class="col-xs-2 text-center"><a href='#'>事業</a><ul class='subMenu'><li><a href='/contents/c_business/184'>事業概要</a></li><li><a href='/contents/c_business/185'>商品の強み</a></li><li><a href='/contents/c_business/186'>心地よいお店づくり</a></li><li><a href='/contents/c_business/188'>食の安心・安全</a></li><li><a href='/contents/c_business/187'>出店ポリシー</a></li></ul></li>
+			<li class="col-xs-2 text-center"><a href='/contents/c_ir/201'>IR</a><ul class='subMenu'><li><a href='/contents/c_ir/189'>財務ハイライト</a></li><li><a href='/contents/c_ir/190'>財務情報</a></li><li><a href='/contents/c_ir/191'>IRカレンダー</a></li><li><a href='/c_ir/library'>IRライブラリ</a></li><li><a href='/contents/c_ir/193'>株式情報（株式・株価・配当・手続き情報の集約）</a></li><li><a href='/contents/c_ir/194'>免責事項</a></li><li><a href='/contents/c_ir/195'>よくあるご質問</a></li></ul></li>
+			<li class="col-xs-2 text-center"><a href='/contents/c_ir/200'>人財</a><ul class='subMenu'><li><a href='/contents/c_ir/196'>パート・アルバイト</a></li><li><a href='/contents/c_ir/197'>新卒・第2新卒</a></li></ul></li>
+			<li class="col-xs-2 text-center"><a href='/contents/c_property/202'>物件募集</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div class='catchimg'>ラーメンでお客様に喜んでもらう</div>
+
+<section class="indexContent">
+<div class='container'>
+
+	<div class="clearfix">
+		<div id="indexNews" class="col-md-4">
+			<h2>IR情報</h2>
+	  	<dl>
+			  <% each_headline( "c_top_ir",3)do |entry| %>
+				<dt><%=entry.cf.keisai_date.strftime("%Y/%m/%d") %></dt><dd><a href='http://v3.eir-parts.net/EIR/View.aspx?cat=tdnet&amp;sid=1125743'><a href='<%=entry.cf.url %>'><%=entry.title %></a></a> </dd>
+			  <%end%>
+			</dl>
+
+			<a class="btn btn-primary btn-lg active" role="button" href='/c_ir/library'>ニュース一覧</a>
+		</div>
+		<div class="col-md-4">
+			<div class="panel">
+				<figure><a href='#'><img alt='' src='/corporate/images/img_anshin.jpg'></a></figure>
+				<h2>プライオリティは「安全・安心」<small><a href='/contents/c_business/184'>事業概要</a></small></h2>
+				<p>山岡家は、食の安全・安心を最優先に取り組んでいます。たとえば、第三者による衛生検査の実施、</p>
+				<p><a class="btn btn-primary btn-lg active" role="button" href='/contents/c_business/188'>続きを読む</a></p>
+			</div>
+		</div>
+		<div class="col-md-4">
+
+			<div class="panel">
+				<figure><a href='/contents/c_business/185'><img alt='' src='/corporate/images/img_onlyOne.jpg'></a></figure>
+				<h2>唯一無二の個性<small><a href='/contents/c_business/184'>事業概要</a></small></h2>
+				<p>山岡家のラーメンには、いくつものこだわりが隠されています。非常にインパクトがあり、癖になる個性的な味がします。</p>
+				<p><a class="btn btn-primary btn-lg active" role="button" href='/contents/c_business/185'>続きを読む</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearfix">
+		<div class="col-md-4">
+			<div class="panel">
+				<figure class='minCatch'><a href='/contents/c_greetings/180'><img alt='' src='/corporate/images/img_aisatsu.jpg'></a></figure>
+				<h2>ごまかしのない真剣勝負こそが山岡家の味<small><a href='/contents/c_greetings/180'>社長ごあいさつ</a></small></h2>
+				<p>山岡家は創業以来、私自身が考える究極の美味しいラーメンの「３つの基本要素（麺・スープ・タレ）の</p>
+				<p><a class="btn btn-primary btn-lg active" role="button" href='/contents/c_greetings/180'>続きを読む</a></p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel">
+				<figure><a href='/contents/c_ir/200'><img alt='' src='/corporate/images/img_recruit.jpg'></a></figure>
+				<h2>山岡家で働いてみませんか？<small><a href='/contents/c_ir/196'>人財募集</a></h2>
+				<p>山岡家は、店長の半数以上がパート・アルバイト出身。 充分すぎるほどのチャンスがあなたを待っています。</p>
+				<p><a class="btn btn-primary btn-lg active" role="button" href='/contents/c_ir/200'>続きを読む</a></p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel">
+				<figure><a href='/contents/c_profile/183'><img alt='' src='/corporate/images/img_history.jpg'></a></figure>
+				<h2>沿革<small><a href='/contents/c_profile/183'>会社情報</a></small></h2>
+				<p>当社は現代表取締役山岡正が昭和55年２月に東京都江戸川区中央１丁目15番24号において (有)丸千代商事（出資金6,000千円）を設立し</p>
+				<p><a class="btn btn-primary btn-lg active" role="button" href='/contents/c_profile/183'>続きを読む</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearfix">
+		<div class="col-md-4">
+			<div class="panel">
+				<figure><a href='/contents/c_ir/189'><img alt='' src='/corporate/images/img_zaimuHighLight.jpg'></a></figure>
+				<h2>財務ハイライト<small><a class='category' href='/contents/c_ir/189'>IR</a></small></h2>
+				<p>弊社は、平成18年2月17日よりジャスダック証券取引所に株式を上場いたしております。 社員一同決意を新たに</p>
+				<p><a class="btn btn-primary btn-lg active" role="button" href='/contents/c_ir/189'>続きを読む</a></p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel">
+				<figure><a href='/contents/c_property/202'><img alt='' src='/corporate/images/img_realestate.jpg'></a></figure>
+				<h2>物件募集<small><a class='category' href='/contents/c_property/202'>物件募集</small></a></h2>
+				<p>ロードサイド・ビルイン（テナント）に関する店舗物件情報を広く募集しております。</p>
+				<p><a class="btn btn-primary btn-lg active" role="button" href='/contents/c_property/202'>続きを読む</a></p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel">
+				<figure><a href='/contents/c_ir/191'><img alt='' src='/corporate/images/img_ircalender.jpg'></a></figure>
+				<h2>IRカレンダー<small><a class='category' href='/contents/c_ir/191'>IR情報</a></small></h2>
+				<p>決算発表、株主総会、事業報告等の年間予定をご案内します</p>
+				<p><a class="btn btn-primary btn-lg active" role="button" href='/contents/c_ir/191'>続きを読む</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+<hr class="trans-40">
+
+
+<footer>
+<div class='container'>
+	<div id='pageTop'><a href='#pagetop'>ページ上部に戻る</a></div>
+	<div class="col-md-3">
+		<ul><li><a href='/contents/c_greetings/180'>社長ごあいさつ</a></li><li>会社情報<ul><li><a href='/contents/c_profile/182'>会社概要</a></li><li><a href='/contents/c_profile/183'>沿革</a></li></ul><li>事業<ul><li><a href='/contents/c_business/184'>事業概要</a></li><li><a href='/contents/c_business/185'>商品の強み</a></li><li><a href='/contents/c_business/186'>心地よいお店づくり</a></li><li><a href='/contents/c_business/188'>食の安心・安全</a></li><li><a href='/contents/c_business/187'>出店ポリシー</a></li></ul></li></ul>
+	</div>
+	<div class="col-md-3">
+		<ul><li><a href='/contents/c_ir/201'>IR</a><ul><li><a href='/contents/c_ir/189'>財務ハイライト</a></li><li><a href='/contents/c_ir/190'>財務情報</a></li><li><a href='/contents/c_ir/191'>IRカレンダー</a></li><li><a href='/c_ir/library'>IRライブラリ</a></li><li><a href='/contents/c_ir/193'>株式情報（株式・株価・配当・手続き情報の集約）</a><li><li><a href='/contents/c_ir/194'>免責事項</a></li><li><a href='/contents/c_ir/195'>よくあるご質問</a></li></ul></li></ul>
+	</div>
+	<div class="col-md-3">
+		<ul><li><a href='/c_ir/contact/'>お問合せ</a></li><li><a href='/contents/c_property/202'>物件募集</a></li><li><a href='/contents/c_recruit/200/'>人財</a><ul><li><a href='/contents/c_recruit/196/'>パート・アルバイト</a></li><li><a href='/contents/c_recruit/197/'>新卒・第2新卒</a></li></ul></li><li><a href='/contents/c_etc/241/'>このHPについて</a></li></ul>
+	</div>
+</div>
+<p class='text-center'>&copy;2014 Maruchiyo YAMAOKAYA Corp.</p>
+</footer>
+
+</body>
+</html>

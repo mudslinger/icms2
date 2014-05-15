@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  label: MyString
+  description: MyText
+  form_id: 1
+  required: 1
+  default: MyString
+  ftype: MyString
+  options: MyString
+
+two:
+  name: MyString
+  label: MyString
+  description: MyText
+  form_id: 1
+  required: 1
+  default: MyString
+  ftype: MyString
+  options: MyString

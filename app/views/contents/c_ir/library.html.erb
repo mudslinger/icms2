@@ -1,0 +1,165 @@
+
+<% 
+@page_title = "IRライブラリ"
+@category_title = "IR"
+
+
+ %>
+<%=render 'contents/template/corporate/header_sub' %>
+<script language="JavaScript">
+<!--
+function _NewWindow(url)
+{
+  if (url != '')
+  {
+    window.open(url, '_pam','width=350,height=350');
+  }
+}
+
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+
+//財務ハイライト用ススクリプト
+function chkLgic(intGroup, strCode) {
+	var strKey = intGroup.replace("/", "");
+	var tIndex;
+	switch (strKey.length) {
+		case 6: tIndex = 0; break;
+		case 2: tIndex = 1; break;
+		default: return false;
+	}
+	var arrElm = document.getElementsByName("download_files[]");
+	var arrStr;
+	var blAllChecked = true;
+	for (i=0; i < arrElm.length; i++) {
+		arrStr = arrElm[i].value.split(":");
+		if (arrStr[tIndex]==strKey) {
+			if (!arrElm[i].checked) {
+				blAllChecked = false;
+				break;
+			}
+		}
+	}
+	for (i=0; i < arrElm.length; i++) {
+		var arrStr = arrElm[i].value.split(":");
+		if (arrStr[tIndex]==strKey) {
+			arrElm[i].checked = !blAllChecked;
+		}
+	}
+}
+
+function ChgDLType(typeVal){
+	var count = 0;
+	var sidList = new Array();
+	for(i=0 ; i<document.dummy.elements.length ; i++) {
+		if(document.dummy.elements[i].checked) {
+			count++;
+			sidList.push(document.dummy.elements[i].value.split(":")[2].toString());
+		}
+	}
+	if(count < 1) {
+		alert('チェックがありません。');
+		return false;
+	}
+	if(count > 34) {
+		alert('チェック(1度にダウンロード)できるのは、30個までです。');
+		return false;
+	}else{
+	document.dummy.action = "http://v3.eir-parts.net/EIR/Download.aspx?cat=zaimu&type=" + typeVal + "&sid_list=" + sidList.toString();
+	document.dummy.submit();
+	}
+}
+
+//現在の「年」を取得
+var nowYear = (new Date()).getFullYear();
+
+//言語属性
+function GetLanguageStatus() {
+    var docUrl = document.URL;
+    if (docUrl.indexOf("ln=", 0) > -1) {
+        var KariLnStat = document.URL.split("ln=");
+        if (KariLnStat.length > 1) {
+            return KariLnStat[1].substring(0, 2);
+        }
+    }
+    return "ja";
+}
+
+//過去の開示書類リンク
+function LinkURL(Temp){
+    if(Temp == "press1"){
+        location.href = "/c_ir/library/" + nowYear +".html";
+    }else{
+        location.href = "/c_ir/library.html";
+    }
+    //"?code=3399" + "&template=" + Temp + "&year=" + nowYear + "&ln=" + GetLanguageStatus();
+}
+
+//過去の開示書類リンク（1年前に遡る版）
+function LinkURLBefore(Temp,FromDiscY){
+    //過去情報リンクの年設定（2年以上の蓄積があれば1年前へリンクする）
+    var linkKakoYear = nowYear - 1;
+    if(linkKakoYear < FromDiscY){linkKakoYear = FromDiscY};
+    location.href = "/c_ir/library/" + linkKakoYear +".html";
+}
+
+//過去情報一覧からの戻るリンク
+function LinkBackURL(Temp,ExStat){
+	location.href = "/c_ir/library.html";
+}
+
+var yuho2008_stat=0;
+-->
+</script>
+<style type="text/css">
+  table{
+    width:100%;
+    margin:0px;
+    padding:0px;
+  }
+  td{
+    margin:0px;
+    background-color:#FFFFFF;
+  }
+  td.date{
+    background-color:#CCCCFF;
+    border:solid 1px #cccccc;
+    padding:2px;
+  }
+  td.contents{
+    border:solid 1px #cccccc;
+    text-align:left;
+    padding:2px;
+  }
+  td.title{
+    border:none;
+    color:#444444;
+    font-size:12px;
+  }
+  th{
+    background-color:#FFF;
+    border:solid 1px #cccccc;
+  }
+  table .txt10{
+    background-color:#FFF;
+    border:solid 1px #cccccc;
+  }
+  span.txt10{
+    border:none;
+  }
+  #footer2,#download{
+    text-align:left;
+  }
+</style>
+<!--
+
+<div id="widearea">
+-->
+
+  <%=raw @body%>
+<!--  
+</div>
+-->
+<%=render 'contents/template/corporate/footer_sub' %>

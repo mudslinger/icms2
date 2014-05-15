@@ -1,0 +1,94 @@
+10
+
+dir
+810
+svn://192.168.249.253/icms/app/views
+svn://192.168.249.253
+
+
+
+2014-02-23T20:21:30.911294Z
+807
+kawahara
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d5edf3b1-7539-45f7-809a-78288fdceb25
+
+user_profiles
+dir
+
+rfiles
+dir
+
+forms
+dir
+
+app_configs
+dir
+
+entry_metas
+dir
+
+welcome
+dir
+
+kaminari
+dir
+
+contents
+dir
+
+global
+dir
+
+layouts
+dir
+
+users
+dir
+
+_share
+dir
+
+action_logs
+dir
+
+favorites
+dir
+
+replies
+dir
+
+user_sessions
+dir
+
+fields
+dir
+
+user_mailer
+dir
+
+entries
+dir
+
+guser_sessions
+dir
+
+libraries
+dir
+
+my_entries
+dir
+

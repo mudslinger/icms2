@@ -1,0 +1,53 @@
+<% content_for :head do %>
+  <title>ユーザー一覧</title>
+<% end %>
+    
+<div class="block" id="block-tables">
+
+  <div class="content">
+  	<h2 class="title">ユーザー一覧</h2>
+  	<div class="inner">
+  		<form action="#" class="form">
+
+<table class="table">
+	<tbody>
+  <tr class="first">
+    <th>名前</th>
+    <th>ログインID</th>
+    <th>権限</th>
+
+    
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr class="<%= cycle('odd', 'even')%>">
+
+    <td><%= link_to user.name, edit_user_path(user) %></td>
+    <td><%= user.login %></td>
+	<td><%= user.user_level_label %></td>
+    
+    <td><%= link_to '削除', user, :confirm => '本当に削除しますか?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+        <div class="actions-bar wat-cf">
+          <div class="actions">
+          	
+			<%=button_to_function "新規作成", "location.href='" + new_user_path + "'" %>
+         </div>
+           <%= paginate @users %>
+        </div>
+		
+
+</form>
+</div>
+</div>
+
+<br />
+
+
+
+
+</div>

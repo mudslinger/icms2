@@ -1,0 +1,47 @@
+!!! 5
+/[if lt IE 7] <html class="ie6 datauri_na" lang="ja">
+/[if IE 7] <html class="ie7 datauri_na" lang="ja">
+/[if IE 8] <html class="ie8 datauri_na" lang="ja">
+/[if gt IE 8] <!--> <html class="modearn datauri_avlbl" lang="ja"> <!--
+=render 'contents/template/brand/common/head'
+%body.menus
+	=render 'contents/template/brand/common/header'
+	.after-nav.container-full
+		.container
+			.row
+				%h2.col-xs-12
+					%span.glyphicon.glyphicon-globe
+					=@entry.title
+	.container
+		.row
+			%ol.breadcrumb.col-xs-6.pull-left
+				%li
+					%a{href:'/index.html',title:'トップ'} トップ
+				%li
+					%a{href:'/menus/',title: 'メニュー'} メニュー
+				%li=@entry.title
+			-#SNSボタンの読み込み
+			=render 'contents/template/brand/common/sns'
+		.row
+			.col-sm-8.col-sm-offset-2.col-xs-12.thumbnail
+				.caption.col-sm-10.col-sm-offset-1
+					%p.text-left= raw @entry.content
+				%img{src:@entry.cf.photo1}
+				.caption.col-sm-10.col-sm-offset-1
+					%p.text-right
+						%strong.text-danger#price=@entry.cf.price
+						%span.yen 円
+						%span.zeikomi (税込み)
+						%span.zeinuki 税抜本体価格
+						%strong.text-danger#wotax=(@entry.cf.price.to_i / 1.08).ceil
+						%span.yen 円
+
+	=render 'contents/template/brand/common/footer'
+
+!= "</html>"
+
+
+
+
+
+

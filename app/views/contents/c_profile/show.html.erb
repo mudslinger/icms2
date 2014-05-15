@@ -1,0 +1,21 @@
+<%
+@page_title = @entry.title;
+@category_title = "会社情報";
+@category_sub_title = "";
+%>
+
+
+
+
+<%=render 'contents/template/corporate/header_sub' %>
+
+<%if @page_title=="沿革" %>		
+<%=render 'contents/template/corporate/profile/history' %>
+<%else%>
+ <section class='content'><%= raw@entry.content%></section>
+<%end %>
+
+
+</section>
+
+<%=render 'contents/template/corporate/footer_sub' %>

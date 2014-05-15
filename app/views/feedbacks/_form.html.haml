@@ -1,0 +1,146 @@
+
+= form_for @feedback,url:{action: :send_message,format: :html}, html: {class: "form-inline",role: "form"} do |f|
+  - if @feedback.errors.any?
+    .row
+      #error_explanation{title:"#{@feedback.errors.count}件のエラーがあります。"}
+        - @feedback.errors.full_messages.each do |msg|
+          %li= msg
+      .readme_first{style:'margin:3px;'}
+  %fieldset{name: 'about_you'}
+    %legend お客様について
+    .row
+      .col-md-4.col-xs-12
+        =f.label :name ,class: :required
+        %span.cord_red ※
+        =f.text_field :name,:size => 48,placeholder: '山岡 太郎', :class => "form-control"
+      .col-md-4.col-xs-12
+        =f.label :age ,class: :required
+        =f.select :age,age_opts,{include_blank: '----'},{class: 'form-control'}
+      .col-md-4.col-xs-12
+        =f.label :male ,class: :required
+        =f.select :male,{'男性' => true, '女性' => false},{include_blank: '----'},{class: 'form-control'}
+    %hr
+    .row
+      .col-md-6.col-xs-12
+        =f.label :mail_addr,class: :required
+        %span.cord_red ※
+        =f.text_field :mail_addr,placeholder: 'taro@yamaokaya.com',size:48, :class => "form-control"
+      .col-md-6.col-xs-12
+        =f.label :mail_addr_confirmation,class: :required
+        %span.cord_red ※
+        =f.text_field :mail_addr_confirmation,placeholder: '確認のため、同じアドレスを入力してください。',size:48, :class => "form-control"
+    %hr
+    .row
+      .col-md-7.col-xs-12
+        =f.label :address	  
+        =f.text_field :address,size:80, :class => "form-control"
+      .col-md-5.col-xs-12
+        =f.label :phone
+        =f.text_field :phone,placeholder: '090-1234-5678', :class => "form-control"
+    %hr
+  %fieldset{name: 'about_shop'}
+    %legend ご来店時の店舗の状況
+    .row
+      .col-md-6.col-xs-12
+        =f.label :shop_id
+        =f.select :shop_id,option_groups_from_collection_for_select(Area.level1.active.sorted,:shops, :name, :id, :name,selected_key = @feedback.shop_id),{include_blank: '----'},{class: 'form-control'}
+        %button#search_shop{'style' => 'display:none', 'data-return-id' => 'feedback_shop_id','data-href' => url_for(action: :search),:type => 'button',title:'位置情報を利用してお近くの店舗を検索します。'} お近くの店舗を検索
+      .col-md-6.col-xs-12
+        =f.label :visit_date
+        .col-md-12
+          =f.date_select :visit_date,{start_year:1.years.ago.year,end_year:1.years.since.year,use_month_numbers:true,default:Time.now,date_separator: '/'},{class: ['form-control','mini']}
+    %hr
+    .row
+      .col-md-6.col-xs-12
+        =f.label :visit_time
+        =f.select :visit_time,time_opts,{include_blank: '----'},{class: 'form-control'}
+      .col-md-6.col-xs-12
+        =f.label :repetition
+        =f.select :repetition,rep_opts,{include_blank: '----'},{class: 'form-control'}
+        =f.hidden_field :lat,id: :lat
+        =f.hidden_field :lng,id: :lng
+        =f.hidden_field :ip_addr
+    %hr
+  %fieldset{name: 'about_qsca'}
+    %legend お食事やサービスについて
+    .row  	
+      .col-md-6.col-xs-12
+        =f.label :menu_id
+        =f.select :menu_id,option_groups_from_collection_for_select(Genre.order_by_sort,:menus, :name, :id, :name,selected_key = @feedback.menu_id),{include_blank: '----'},{class: 'form-control'}
+    %hr
+    .row
+      .col-md-6.col-xs-12
+        =f.label :q
+        .radio.col-xs-12
+          - (0..4).each do |i|
+            =f.label "q_#{i-2}" do
+              =f.radio_button :q,i-2
+              = t("activerecord.attributes.feedback.q_#{i-2}")
+          
+          =f.label :q_nil do
+            =f.radio_button :q,nil
+            = t("activerecord.attributes.feedback.q_nil")
+      .col-md-6.col-xs-12
+        =f.label :s
+        .radio.col-xs-12
+          - (0..4).each do |i|
+            =f.label "s_#{i-2}" do
+              =f.radio_button :s,i-2
+              = t("activerecord.attributes.feedback.s_#{i-2}")
+          =f.label :s_nil do
+            =f.radio_button :s,nil
+            = t("activerecord.attributes.feedback.s_nil")
+    %hr
+    .row
+      .col-md-6.col-xs-12
+        =f.label :c
+        .radio.col-xs-12
+          - (0..4).each do |i|
+            =f.label "c_#{i-2}" do
+              =f.radio_button :c,i-2
+              = t("activerecord.attributes.feedback.c_#{i-2}")
+          =f.label :c_nil do
+            =f.radio_button :c,nil
+            = t("activerecord.attributes.feedback.c_nil")
+      .col-md-6.col-xs-12
+        =f.label :a
+        .radio.col-xs-12
+          - (0..4).each do |i|
+            =f.label "a_#{i-2}" do
+              =f.radio_button :a,i-2
+              = t("activerecord.attributes.feedback.a_#{i-2}")
+            
+          =f.label :a_nil do
+            =f.radio_button :a,nil
+            = t("activerecord.attributes.feedback.a_nil")
+    %hr
+  %fieldset{name: 'message'}
+    %legend ご意見・ご感想がありましたらご記入ください。
+    .row
+      .col-md-12.col-xs-12=f.text_area :message,:size => "80x8", :class => "form-control"
+    %hr
+  %fieldset{name: 'reply'}
+    %legend ご返信について
+    .row
+      .col-md-6.col-xs-12
+        = f.label :reply
+        = f.radio_button :reply,false,checked: true
+        = f.label :reply_false
+        = f.radio_button :reply,true
+        = f.label :reply_true
+    %hr
+  %fieldset{name: 'remarks'}
+    .row
+      .col-xs-12
+        %ul  
+          %li ご入力いただいた情報は暗号化されて送信されます。
+          %li お問合せ、ご意見すべてに、必ずしも返信をお約束するものではありません。ご了承くださいませ。
+          %li メールアドレスの入力には特にご注意ください。間違ったアドレスが入力された場合、ご返信させていただけないことがございます。
+          %li
+            お客様の環境（セキュリティソフトなど）により、まれに正しく送信されない場合がございます。
+            その際は、お手数ですがセキュリティソフトをいったん無効にしていただくか、
+            %a{href:"mailto:info@yamaokaya.com"} info@yamaokaya.com
+            まで直接ご意見をお寄せ下さいますよう、お願い申し上げます。
+      .col-xs-12.text-center
+        = f.submit '送信', class: "btn btn-primary"
+  #aja{title:'お近くの店舗を表示しています'} 

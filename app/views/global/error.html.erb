@@ -1,0 +1,8 @@
+<% content_for :head do %>
+  <title>エラー</title>
+<%end%>
+
+  <%#↓エラーメッセージ %>
+  <%unless @record.blank?%>
+  <%=render :file => "_share/validation_message", :locals => {:record => @record } %>
+  <%end%>

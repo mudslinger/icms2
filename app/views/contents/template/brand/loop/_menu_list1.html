@@ -1,0 +1,76 @@
+<div class="row">
+<div class="type">
+<%=@category1%><span><%=@category1_eng%></span></div>
+
+<ul class="menu">
+
+
+
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ノーマル' " )do |entry| %>
+<li><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</li>
+<%end%>
+
+
+
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ネギ' " )do |entry| %>
+<li><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</li>
+<%end%>
+
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'チャーシュー' " )do |entry| %>
+<li><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</li>
+<%end%>
+
+
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ネギチャーシュー' " )do |entry| %>
+<li><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</li>
+<%end%>
+
+
+<% arr = each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ピリ辛' " )
+   cnt = arr.count
+%>
+<%if cnt == 0 %><li></li>
+<%else%>
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'ピリ辛' " )do |entry| %>
+<li><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</li>
+<%end%>
+<%end%>
+
+
+<% arr = each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'その他' " )
+   cnt = arr.count
+%>
+<%if cnt == 0 %><li></li>
+<%else%>
+<% each_headline( "menus", 0,:where => "{category0} = '#{@category0}' and {category1} = '#{@category1}' and {category2} = 'その他' " )do |entry| %>
+<li><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</li>
+<%end%>
+<%end%>
+
+
+</ul>
+</div>

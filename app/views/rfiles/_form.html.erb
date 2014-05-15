@@ -1,0 +1,117 @@
+
+
+
+
+    <!-- form onsubmit="ImageDialog.insert();return false;" action="#" --> 
+	<%= form_for(@rfile,  :html => { :multipart => true } ) do |f| %>
+		<div class="tabs">
+			<ul>
+				<li id="my_tab" class="current"><span><a href="javascript:mcTabs.displayTab('my_tab','my_panel');" onmousedown="return false;">アップロード</a></span></li>
+				<li><span><%=link_to "ギャラリー", rfiles_path %></span></li>
+				<li id="general_tab" ><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{#advimage_dlg.tab_general}</a></span></li>
+				<li id="appearance_tab"><span><a href="javascript:mcTabs.displayTab('appearance_tab','appearance_panel');" onmousedown="return false;">{#advimage_dlg.tab_appearance}</a></span></li>
+				<li id="advanced_tab"><span><a href="javascript:mcTabs.displayTab('advanced_tab','advanced_panel');" onmousedown="return false;">{#advimage_dlg.tab_advanced}</a></span></li>
+			</ul>
+		</div>
+
+		<div class="panel_wrapper">
+			
+			<div id="my_panel" class="panel current">
+				<fieldset>
+					<legend>ファイルの選択</legend>
+										
+					  <% if @rfile.errors.any? %>
+					    <div id="error_explanation">
+					      <ul>
+					      <% @rfile.errors.full_messages.each do |msg| %>
+					        <li><%= msg %></li>
+					      <% end %>
+					      </ul>
+					    </div>
+					  <% end %>
+					
+			
+					  
+					  
+					    <%= f.hidden_field :entry_id %>
+					  
+					  
+					  
+					    <%= f.hidden_field :libtype %>
+					  
+					  <div class="field">
+					    <%= f.label :label, "タイトル" %><br />
+					    <%= f.text_field :label, :id => "titletext" %>
+					  </div>
+					  <div class="field">
+					    <%= f.label :description, "説明" %><br />
+					    <%= f.text_field :description, :id => "alttext" %>
+					  </div>
+					  
+					  
+					    <%= f.hidden_field :file_name %>
+					  
+					  
+					  
+					    <%= f.hidden_field :file_name_ext %>
+					  
+					  
+					    
+					    <%= f.file_field :file_path %>
+						<%#↓バリデーションに失敗してフォームを再描画したとき、ファイルが消えないようにする%>
+						<%= f.hidden_field :file_path_cache %>
+						<br>
+
+					  
+					    <%= f.hidden_field :content_type %>
+					  
+					  <div class="actions">
+					  	<%if @rfile.new_record? %>
+					    <%= f.submit "アップロード" %>
+						<%else%>
+						<%= f.submit "更新" %>
+						<%end%>
+					  </div>
+					  
+					  <div class="field">
+						<%unless @rfile.file_path.blank? %>
+						  <%=hidden_field_tag("uploaded_link", image_path(@rfile.file_path.url), :id => "uploaded_link") %>
+						  <%= link_to "javascript:icmCtrl.uploadFormClicked()"  do %>
+						   <%if @rfile.image? %>  
+						   <%=image_tag @rfile.file_path.thumb.url %>
+						   <%else%>
+						   <%=image_tag "file_icon.gif" %>
+						   <%end%>
+						 <%end%>
+						 <!--
+						 <input  type="button"  value="{#insert}" onclick="setAndInsert()"  />
+						 -->
+						 <br>
+						 <input  type="button"  value="プレビュー" onclick="icmCtrl.uploadFormClicked()"  />
+						<%end%>
+					  </div>
+					  
+					  					  
+							
+
+					
+				</fieldset>				
+			</div>	
+			
+			<%#その他タブの表示%>			
+            <%=render 'tabs' %>
+		
+	
+		</div>
+
+		<div class="mceActionPanel">
+			<!--
+			<input type="submit" id="insert" name="insert" value="{#insert}"  />
+			<input  type="button" id="insert" value="{#insert}" onclick="ImageDialog.insert()"  />
+			-->
+			
+			
+			<input  type="button" id="insert" value="{#insert}" onclick="icmCtrl.chaeckAndImageDialog_insert();"  />
+			<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+		</div>
+    <% end %>

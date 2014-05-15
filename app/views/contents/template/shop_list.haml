@@ -1,0 +1,7 @@
+- #%h4{id:"pblock_#{@pref_name}"}=@pref_name
+.panel.panel-default
+	.panel-heading
+		%h4.panel-title=@pref_name
+.list-group
+	- each_headline( @pblock_category, 999,  :where => "{pref_code} = '#{@pref_code}'" )do |entry|
+		=link_to entry.title, contents_detail_path_for(entry),class:'list-group-item'

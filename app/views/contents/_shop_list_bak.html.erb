@@ -1,0 +1,9 @@
+
+<h4 id="pblock_<%=@pref_name%>"><%=@pref_name%></h4>
+<ul>
+	<% each_headline( @pblock_category, 999,  :where => "{pref_code} = '#{@pref_code}'" )do |entry| %>	
+<li><%=link_to entry.title, contents_detail_path_for(entry) %></li>
+<%end%>	
+</ul>
+
+

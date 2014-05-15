@@ -1,0 +1,34 @@
+%section.topnav
+	.tab-container
+		%ul.nav.nav-tabs
+			%li.active
+				%a{href:'#tab1',data:{toggle:'tab'}} 新着情報
+			%li
+				%a{href:'#tab2',data:{toggle:'tab'}}= image_tag 'top/icon_twitter_in_tab.png',alt:'Twitter',size: '20x20'
+			%li
+				%a{href:'#tab3',data:{toggle:'tab'}}= image_tag 'top/icon_facebook_in_tab.png',alt:'Facebook',size: '20x20'
+		%ul.panel.tab-content
+			%li#tab1.tab-pane.active
+				%table
+					- each_headline('news',10) do |entry|
+						%tr
+							%th=entry.cf.kikan_start.strftime('%Y/%m/%d')
+							%td
+								%a{href:entry.cf.link}
+								=entry.title
+				%a.toList{href:'news/index.html'} 一覧を見る
+			%li#tab2.tab-pane
+				%a.twitter-timeline{href:'https://twitter.com/yamaokaya_pr',data:{widget:{id:'365009217540730880'}}}
+					@yamaokaya_pr からのツイート
+				:coffeescript
+					!do(d=document,s='script',id='twitter-wjs')->
+						fjs=d.getElementsByTagName(s)[0]
+						p= if /^http:/.test(d.location) then 'http' else 'https'
+						if !d.getElementById(id)
+							js=d.createElement(s);
+							js.id=id;
+							js.src=p+"://platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore(js,fjs)
+			%li#tab3.tab-pane
+				.fb-like-box{data:{href:'',width:'300px',colorscheme:'light',header:false,stream:true,show:{faces:false,border:true}}}
+

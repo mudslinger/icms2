@@ -1,0 +1,20 @@
+<%=render "header" %>
+
+デフォルトテンプレート
+<h1>
+  <%= @entry.title %>
+</h1>
+
+<table border="1">
+        <tr>
+   <th>タイトル</th>
+   <td><%= @entry.title %></td>
+   </tr>
+
+
+</table>
+<div style="width:20em;">
+
+  <%=raw @entry.content %>
+</div>
+<%=render "footer" %>

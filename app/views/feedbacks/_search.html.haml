@@ -1,0 +1,5 @@
+- @shops.each do |s|
+  .smart_select{"data-shop-id" => s.id}
+    =raw s.small_static_map
+    .txt= s.name
+%p.remarks GPS非搭載機種(PCなど)の場合、正しい結果が表示されないことがあります。

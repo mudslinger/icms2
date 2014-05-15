@@ -1,0 +1,49 @@
+
+
+<div id="indexSlider">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/images/mainimage.jpg" width="100%" height="auto" alt="" />
+      <div class="carousel-caption">
+		<h1 class="text-center">entry.cf.title1</h1>
+		<p class="entry.cf.NO1 text-center">entry.cf.text1<br /><a class="btn btn-primary btn-lg" role="button" href="entry.cf.link1">続きを見る</a></p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="/images/mainimage.jpg" width="100%" height="auto" alt="" />
+      <div class="carousel-caption">
+		<h1 class="text-center">entry.cf.title1</h1>
+		<p class="entry.cf.NO1 text-center">entry.cf.text1<br /><a class="btn btn-primary btn-lg" role="button" href="entry.cf.link1">続きを見る</a></p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="/images/mainimage.jpg" width="100%" height="auto" alt="" />
+      <div class="carousel-caption">
+		<h1 class="text-center">entry.cf.title1</h1>
+		<p class="entry.cf.NO1 text-center">entry.cf.text1<br /><a class="btn btn-primary btn-lg" role="button" href="entry.cf.link1">続きを見る</a></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<!--
+<div id='maximage'>
+<% each_headline( "slider", 5)do |entry| %>	
+<div>
+	<img src="<%=entry.cf.image1%>" width="100%" height="auto" alt="<%=entry.title%>" />
+
+	<h1 class="text-center"><%=entry.cf.title1%></h1>
+	<p class="<%=entry.cf.NO1%> text-center"><%=entry.cf.text1%><br /><a class="btn btn-primary btn-lg" role="button" href="<%=entry.cf.link1%>">続きを見る</a></p>
+</div>
+<%end%>	
+</div>
+-->
+

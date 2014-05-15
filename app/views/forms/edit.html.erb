@@ -1,0 +1,23 @@
+<% content_for :head do %>
+  <title>カテゴリの編集</title>
+  
+  <%= javascript_include_tag "jquery-ui-1.8.10.custom.min.js" %>
+<%end%>
+
+
+
+        <div class="block" id="block-forms-2">
+          <div class="secondary-navigation">
+          </div>
+          <div class="content">
+            <h2 class="title">カテゴリの編集</h2>
+            <div class="inner">
+
+<%= render 'form' %>
+
+
+<%= link_to '戻る', forms_path %> | <%=link_to "csvダウンロード", form_download_path(:form_id => @form.id, :format => "csv") %>
+
+</div>
+</div>
+</div>

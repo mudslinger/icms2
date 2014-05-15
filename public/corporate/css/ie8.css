@@ -1,0 +1,13 @@
+/* for ie8 */
+footer #pageTop a{
+		
+		background: url("../img/common/bullet_18x18_gray.png") no-repeat 5px 50%;
+		background-color:#dfdfdf;
+
+		}
+
+		section h2{
+	background: rgb(255,255,255); /* Old browsers */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1eeec',GradientType=0 ); /* IE6-8 */
+
+}

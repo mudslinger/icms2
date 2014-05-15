@@ -1,0 +1,123 @@
+
+<%=render 'contents/template/brand/common/head' %>
+
+<body class="categoryClassName Shop">
+
+
+<%=render 'contents/template/brand/common/header' %>
+
+<section>
+	<header class="clearfix">
+		<div class="title">
+			<div class="container">
+				<h1 class="col-xs-12">メニュー</h1>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2>メニュー</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<ol class="breadcrumb col-xs-12">
+			<li><a href='/index.html' title='トップ'>トップ</a></li>
+			<li>メニュー</li>
+			<li class="pull-right"><img src="/images/fb-btn.png"></li>
+		</ol>
+	</div>
+
+	<div class="menuList container clearfix">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+		    <div class="item active">
+		      <img src="/images/menus/slide_1.jpg" width="100%" height="auto" alt="XO醤と２種類のネギのコラボレーション" />
+		    </div>
+
+		    <div class="item">
+		      <img src="/images/menus/slide_2.jpg" width="100%" height="auto" alt="XO醤と２種類のネギのコラボレーション" />
+		    </div>
+
+		  </div>
+		
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		  </a>
+		</div>
+	</div>
+
+		<a name="menu_top"></a><!--追加-->
+		<hr class="trans-40"><!--追加-->
+		
+		<!--リンク start-->
+		<div class="menu-tab">
+			<div class="tab_nav container clearfix">
+				<ul class="nav nav-tabs">
+						<li class="text-center"><a href="categories/regular">レギュラー</a></li>
+						<li class="text-center"><a href="categories/set">セットメニュー</a></li>
+						<li class="text-center"><a href="categories/limited">期間限定</a></li>
+						<li class="text-center"><a href="categories/topping">トッピング</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--リンク end-->
+		
+	<div class="menuList container clearfix">
+		<a name="menu_soy_sauce">&nbsp;</a><!--追加-->
+		<hr class="trans-00"><!--追加-->
+
+<%@category0 = "レギュラー";@category1 = "醤油"; @category1_eng = "　Soy Sauce"%>
+<%=render 'contents/template/brand/loop/menu_list3' %>
+
+		<a name="menu_miso"></a><!--追加-->
+		<hr class="trans-00"><!--追加-->
+
+<%@category0 = "レギュラー";@category1 = "味噌";@category1_eng = "　Miso"%>
+<%=render 'contents/template/brand/loop/menu_list3' %>
+
+		<a name="menu_salt"></a><!--追加-->
+		<hr class="trans-00"><!--追加-->
+
+<%@category0 = "レギュラー";@category1 = "塩";@category1_eng = "　Salt"%>
+<%=render 'contents/template/brand/loop/menu_list3' %>
+
+		<a name="menu_special_miso"></a><!--追加-->
+		<hr class="trans-00"><!--追加-->
+
+<%@category0 = "レギュラー";@category1 = "特製味噌";@category1_eng = "　Special Miso"%>
+<%=render 'contents/template/brand/loop/menu_list3' %>
+
+		<a name="menu_hot_miso"></a><!--追加-->
+		<hr class="trans-00"><!--追加-->
+
+<%@category0 = "レギュラー";@category1 = "辛味噌";@category1_eng = "　Hot Miso"%>
+<%=render 'contents/template/brand/loop/menu_list3' %>
+
+		<hr class="trans-00"><!--追加-->
+
+	</div>
+</section>
+
+
+
+<%=render 'contents/template/brand/common/footer' %>
+
+
+
+
+

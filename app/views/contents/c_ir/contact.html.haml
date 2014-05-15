@@ -1,0 +1,52 @@
+
+- @page_title = "お問い合わせフォーム";
+= render 'contents/template/corporate/header_sub'
+
+
+- flash.each do |type, message|
+  =message
+= form_for @ir_message ,url:{action: :send_message} do |f|
+  - if @ir_message.errors.any?
+    #error_explanation{title:"#{@ir_message.errors.count}件のエラーがあります。"}
+      - @ir_message.errors.full_messages.each do |msg|
+        %li= msg
+		
+		
+  %section.content
+    %dl
+      %dt お名前
+      %dd
+        =f.label :name ,class: :required
+        =f.text_field :name,:size => 15
+      %dd
+        =f.label :name_f
+        =f.text_field :name_f,:size => 25
+  
+      %dd
+        =f.label :company_name_f
+        =f.text_field :company_name_f,:size => 25
+      %dt ご連絡先
+      %dd
+        =f.label :phone
+        =f.text_field :phone,:size => 20
+      %dd
+        =f.label :mail_addr,class: :required
+        =f.text_field :mail_addr,:size => 20
+      %dd
+        =f.label :address
+        =f.text_field :address,:size => 50
+      %dt=f.label :message,class: :required
+      %dd
+        =f.text_area :message,:size => "60x8"
+      %ul
+        %li ご入力いただいた情報は暗号化されて送信されます。
+        %li メールアドレスの入力には特にご注意ください。間違ったアドレスが入力された場合、ご返信させていただけないことがございます。
+        %li
+          お客様の環境（セキュリティソフトなど）により、まれに正しく送信されない場合がございます。
+          その際は、お手数ですがセキュリティソフトをいったん無効にしていただくか、
+          %a{href: 'mailto:info@yamaokaya.com'} info@yamaokaya.com
+          まで直接ご意見をお寄せ下さいますよう、お願い申し上げます。
+    .actions{align: :center}
+      = f.submit '送信'
+
+= render 'contents/template/corporate/footer_sub'

@@ -1,0 +1,35 @@
+<% content_for :head do %>
+<title>その他</title>
+<%end%>
+
+<script type="text/javascript">
+// <![CDATA[
+$(document).ready(function(){
+  $("#intext").keypress(function (e) {
+	
+  alert(e.which);
+  
+   });
+   
+  $("#intext").click(function (e) {
+	
+  alert(e.ctrlKey);
+  
+   });
+   	
+});	
+// ]]>
+</script>
+
+<ul>           
+		<li><%=link_to "lib",  libraries_path %>
+           <li><%=link_to  "キャッシュクリア",  admin_sweep_cache_path %>
+           <li><%=link_to  "トリガー", admin_triggers_sweep_cache_path %>
+           <li><%=link_to  "アプリケーションのリロード",  admin_app_reload_path %>
+		   
+		   
+</ul>
+
+
+<input type="text" id="intext">
+<p id="disp"></p>

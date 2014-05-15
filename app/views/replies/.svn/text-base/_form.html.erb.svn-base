@@ -1,0 +1,23 @@
+<%= form_for(@reply) do |f| %>
+  
+  <%#↓エラーメッセージ %>
+  <%=render :file => "_share/validation_message", :locals => {:record => @reply } %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :mailaddress %><br />
+    <%= f.text_field :mailaddress %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "次へ" %>
+  </div>
+<% end %>

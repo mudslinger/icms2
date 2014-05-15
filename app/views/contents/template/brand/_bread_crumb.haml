@@ -1,0 +1,11 @@
+%nav.breadcrumb.clearfix
+  %ul
+    %li
+      %a{href:'/index.html',title:'トップ'}
+    %li
+      - unless @category_url.blank?
+        %a{href:@category_url}=@category_title
+      -else
+        =@category_title
+    %li
+      =@page_title

@@ -1,0 +1,35 @@
+<h1>Listing entry_metas</h1>
+
+<table>
+  <tr>
+    <th>Entry</th>
+    <th>Field</th>
+    <th>String value</th>
+    <th>Text value</th>
+    <th>Int value</th>
+    <th>Date value</th>
+    <th>Float value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entry_metas.each do |entry_meta| %>
+  <tr>
+    <td><%= entry_meta.entry_id %></td>
+    <td><%= entry_meta.field_id %></td>
+    <td><%= entry_meta.string_value %></td>
+    <td><%= entry_meta.text_value %></td>
+    <td><%= entry_meta.int_value %></td>
+    <td><%= entry_meta.date_value %></td>
+    <td><%= entry_meta.float_value %></td>
+    <td><%= link_to 'Show', entry_meta %></td>
+    <td><%= link_to 'Edit', edit_entry_meta_path(entry_meta) %></td>
+    <td><%= link_to 'Destroy', entry_meta, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entry meta', new_entry_meta_path %>

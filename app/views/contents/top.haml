@@ -1,0 +1,29 @@
+!!! 5
+/[if lt IE 7] <html class="ie6 datauri_na" lang="ja">
+/[if IE 7] <html class="ie7 datauri_na" lang="ja">
+/[if IE 8] <html class="ie8 datauri_na" lang="ja">
+/[if gt IE 8] <!--> <html class="modearn datauri_avlbl" lang="ja"> <!--
+=render 'contents/template/brand/common/head'
+%body.top
+	-#OK
+	=render 'contents/template/brand/top/fb_pre'
+	=render 'contents/template/brand/top/noty'
+
+	-#OK
+	=render 'contents/template/brand/common/header_top'
+	-#OK
+	=render 'contents/template/brand/top/maximage'
+	-#MADA
+	-#render 'contents/template/brand/common/topnav'
+
+	-#OK
+	=render 'contents/template/brand/top/menu'
+
+	-#OK
+	=render 'contents/template/brand/top/shop'
+	-#MADA
+	=#render 'contents/template/brand/top/topnav2'
+
+	-#OK
+	=render 'contents/template/brand/common/footer'
+!= "</html>"

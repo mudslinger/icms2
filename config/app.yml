@@ -1,0 +1,12 @@
+--- 
+
+#misato_rss_url: http://192.168.252.203/~kawahara/rss.xml
+app_title: "yamaokaya"
+#承認依頼メールにURLを記載するときに使用する。
+base_url: "http://192.168.252.59:3000/"
+#MAPデフォルト表示
+geocode_default_address : "島根県出雲市今市町"
+fb_enabled: false
+fb_app_id: "311158882320848"
+fb_app_secret: "9d40e0bb021f33c4eeaa9e0e2bc499d2"
+fb_user_permitted_form_name: "job"

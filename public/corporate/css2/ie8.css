@@ -1,0 +1,48 @@
+section .title {
+	background: #000; /* Old browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#585858', endColorstr='#030303',GradientType=0 );
+  /* IE6-8 */
+}
+.redbutton,
+a.btn {
+	background: #bc0301; /* Old browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d67070', endColorstr='#da0000',GradientType=0 ); /* IE6-8 */
+}
+section.menu{
+	margin-top: 64%;
+	
+}
+
+body.top{
+
+		background: url("../images/mainimage.jpg") ;
+
+	background-color: #000;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: 50% 0%;
+	}
+body.shops,
+body.categoryClassName{
+	background:url("../images/bg_shops.jpg");
+	background-color: #000;
+	background-size: auto;
+	background-position: 50% 129px;
+	background-repeat: no-repeat;
+	}
+
+nav.breadCrumb {
+line-height: 120px;
+width: 100%;
+height: 120px;
+}
+nav.breadCrumb ul{
+	position: absolute;
+	right: 0;
+}
+section.topnav > ul >li{
+			background: rgb(255,255,255); /* Old browsers */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=1 ); /* IE6-8 */
+			height: 40px;
+}
+

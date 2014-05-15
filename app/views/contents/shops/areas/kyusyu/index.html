@@ -1,0 +1,43 @@
+
+<%=render 'contents/template/brand/common/head' %>
+
+<body class="categoryClassName Shop">
+<%=render 'contents/template/brand/common/header' %>
+
+
+<section>
+	<header>
+		<div class="title">
+			<div class="container clearfix">
+				<div class="col-xs-6">
+					<h1><span><i>S</i>hop</span>店舗情報</h1>
+				</div>
+				<div class="col-xs-6">
+					<p class='text-right'><a class='additional' href='shops.html#' style="display:none">カテゴリートップへ戻る</a></p>
+				</div>
+			</div>
+		</div>
+	</header>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<h2>九州地方</h2>
+	</div>
+</div>
+<div class="clearfix">
+ <% @pblock_category = "shops";@pref_code = "40";@pref_name = "福岡県" %><%=render 'contents/template/brand/loop/shop_list' %>
+ <% @pblock_category = "shops";@pref_code = "0";@pref_name = "熊本県" %><%=render 'contents/template/brand/loop/shop_list' %>
+
+
+</div>
+
+</section>
+
+
+
+<%=render 'contents/template/brand/common/footer' %>
+
+
+
+
+

@@ -1,0 +1,49 @@
+<dl class="dl-horizontal sitemap">
+	<dt><a title="トップページ" href="/">トップページ</a></dt>
+	<dd></dd>
+	<dd><a title="新着情報一覧" href="/news">新着情報一覧</a>
+		<% each_headline( "news", 0)do |entry| %>
+			<dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd>
+		<%end%>
+	</dd>
+	<dd><a title="店舗" href="/shops">店舗</a>
+		<% each_headline( "shops", 9999)do |entry| %>
+			<dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd>
+		<%end%>
+	</dd>
+	<dd><a title="メニュー" href="/menus/">メニュー</a>
+		<% each_headline( "menus", 9999)do |entry| %>
+			<dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd>
+		<%end%>
+	</dd>
+	<dd><a title="このHPについて" href="/contents/etc/212/">このHPについて</a></dd>
+	<dd><a title="SNSガイドライン" href="/contents/etc/207/">SNSガイドライン</a></dd>
+	<dd><a title="ご意見・ご感想" href="/feedbacks.html">ご意見・ご感想</a></dd>
+	<dd><a title="メルマガクーポン" href="http://coupon.yamaokaya.com/bm/p/f/tf.php?id=join">メルマガクーポン</a></dd>
+</dl>
+
+<!--
+<dl class="dl-horizontal"> 
+	<dt><a title="トップページ" href="/">トップページ</a></dt>
+	<dd></dd>
+	<dd><a title="新着情報一覧" href="/news">新着情報一覧</a>
+		<% each_headline( "news", 0)do |entry| %>
+			<dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd>
+		<%end%>
+	</dd>
+	<dd><a title="店舗" href="/shops">店舗</a>
+		<% each_headline( "shops", 9999)do |entry| %>
+			<dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd>
+		<%end%>
+	</dd>
+	<dd><a title="メニュー" href="/menus/">メニュー</a>
+		<% each_headline( "menus", 9999)do |entry| %>
+			<dd>&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to entry.title, contents_detail_path_for(entry) %></dd>
+		<%end%>
+	</dd>
+	<dd><a title="このHPについて" href="/contents/etc/212/">このHPについて</a></dd>
+	<dd><a title="SNSガイドライン" href="/contents/etc/207/">SNSガイドライン</a></dd>
+	<dd><a title="ご意見・ご感想" href="/feedbacks.html">ご意見・ご感想</a></dd>
+	<dd><a title="メルマガクーポン" href="http://coupon.yamaokaya.com/bm/p/f/tf.php?id=join">メルマガクーポン</a></dd>
+</dl>
+-->

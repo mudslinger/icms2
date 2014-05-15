@@ -1,0 +1,32 @@
+!!! 5
+/[if lt IE 7] <html class="ie6 datauri_na" lang="ja">
+/[if IE 7] <html class="ie7 datauri_na" lang="ja">
+/[if IE 8] <html class="ie8 datauri_na" lang="ja">
+/[if gt IE 8] <!--> <html class="modearn datauri_avlbl" lang="ja"> <!--
+=render 'contents/template/brand/common/head'
+%body.feedbacks
+	=render 'contents/template/brand/common/header'
+	-#お礼等メッセージの表示
+	.flash
+	-flash.each do |type,message|
+		.message
+			=type
+			%p=message
+	.after-nav.container-full
+		.container
+			.row
+				%h2.col-xs-12
+					%span.glyphicon.glyphicon-globe
+					ご意見・ご感想
+	.container
+		.row
+			%ol.breadcrumb.col-xs-6.pull-left
+				%li
+					%a{href:'/index.html',title:'トップ'} トップ
+				%li ご意見・ご感想
+			-#SNSボタンの読み込み
+			=render 'contents/template/brand/common/sns'
+	=yield
+	=render 'contents/template/brand/common/footer'
+!= "</html>"
+

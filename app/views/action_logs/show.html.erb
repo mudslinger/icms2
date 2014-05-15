@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @action_log.name %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @action_log.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_action_log_path(@action_log) %> |
+<%= link_to 'Back', action_logs_path %>

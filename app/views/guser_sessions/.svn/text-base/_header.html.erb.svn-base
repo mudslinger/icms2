@@ -1,0 +1,6 @@
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript" >google.load("jquery", "1.6.2");</script>
+
+
+  <%= javascript_include_tag "rails", :cache => false %>
+  <%= javascript_include_tag "application", :cache => false %>

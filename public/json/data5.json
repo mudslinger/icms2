@@ -1,0 +1,68 @@
+{
+  "title":{
+    "text":  "一株あたり純資産額",
+    "style": "{font-size: 13px; color:#333333; text-align: center;}"
+  },
+
+  "elements":[
+    {
+      "type":      "line",
+      "alpha":     0.5,
+      "colour":    "#EE0000",
+      "font-size": 10,
+      "values" :   [153331.57,173509.71,182949.02,1558.95,1513.03],
+      "dot-style": { "type": "anchor", "dot-size": 4, "halo-size": 1, "colour": "#EE0000", "sides": 5},
+      "text" : "一株あたり純資産額（単位：円）"
+    },
+    {"type":"tags",
+            "values":[
+                    {"x":0,"y":153331.57,"text":"153331.57"},{"x":1,"y":173509.71,"text":"173509.71"},
+                    {"x":2,"y":182949.02,"text":"182949.02"},{"x":3,"y":1558.95,"text":"1558.95"},
+                    {"x":4,"y":1513.03,"text":"1513.03"}
+            ],
+            "font-size":10,
+            "colour":"#000000",
+            "align-x":"center",
+            "text":"#y#"
+    }
+  ],
+
+  "x_axis":{
+    "stroke":1,
+    "tick_height":0,
+    "colour":"#888888",
+    "grid_colour":"#888888",
+    "text_align": "center",
+    "font-size": 8,
+    "labels": {
+        "labels": [
+            "第16期\n（平成21年1月期）",
+            "第17期\n（平成22年1月期）",
+            "第18期\n（平成23年1月期）",
+            "第19期\n（平成24年1月期）",
+            "第20期\n（平成25年1月期）"
+        ],
+        "size" : 9
+    }
+   },
+
+  "y_axis":{
+    "stroke":      1,
+    "tick_length": 3,
+    "colour":      "#888888",
+    "grid_colour": "#888888",
+    "offset":      0,
+    "max":         200000,
+    "min":         0,
+    "labels": {
+        "labels": [
+            {"y":50000},
+            {"y":100000},
+            {"y":150000},
+            {"y":200000}
+        ],
+        "size": 8
+    }
+  },
+  "bg_colour": "#FFFFFF"
+}

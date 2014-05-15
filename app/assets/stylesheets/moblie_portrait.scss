@@ -1,0 +1,174 @@
+/* ------------------------------------------------
+* iPhone横向き以下用スタイル　（iPad縦向き（768px）未満に対応）
+-------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+	body {
+		font-size: 80% !important;
+		.type-pc { display: none; }
+		.type-sp { display: block; }
+		p, dl, ul, ol { max-width: 100%; }
+		.colLeft, .colRight {
+			float: none; 
+			width: 98%;
+		}
+		header{
+			padding:0 !important; 
+			background: #000;
+			h1{
+				display:none;
+			}
+			.container{
+				height:50px !important;
+				padding:0 !important;
+			}
+			nav{
+				display: none;
+				background: #000;
+				position: absolute;
+				width: 100%;
+				ul{
+					padding-left: 0px;
+					position: relative;
+					top: 0px;
+					left: 0;
+					background: #000;
+					li{
+						display: block;
+						float: none;
+						background: #000;
+						text-indent: 10px;
+					}
+					&.first,&.second{
+						position: relative;
+						top: auto;
+						right: 0;
+						li{
+							height: auto; 
+							line-height: auto; 
+							font-size: 12px;
+							a{
+								background: #000; 
+								display: block; 
+								height: 44px; 
+								border-bottom: 1px solid #ccc; 
+								line-height: 44px; 
+								background: none; 
+								padding: 0; 
+								margin-right: 0;
+							}
+						}
+						li:last-child a{
+							border-bottom: none;
+						}
+					}
+				}
+			}
+		}
+		section header h1.pageName{
+			display:block;
+		}
+		table{
+			margin-left: 2%;
+		}
+		footer{
+			.box{
+				margin:0 auto;
+				dl dd{
+					border: solid 1px gray;
+					a{
+						width: 100%;
+						display: block;
+						padding-left: 5%;
+					}
+				}
+			}
+			.box_wrap{
+				padding-left:0px;
+			}
+			.copyright{
+				margin-top:15px;
+			}
+			li{
+				padding-top: 5px;
+				padding-bottom: 5px;
+				border: solid 1px gray;
+				text-align: center;
+				a{
+					display:block;
+				}
+			}
+		}
+		.bs-docs-nav{
+			padding-top:10px;
+		}
+		.navbar-nav{
+			margin:0!important;
+			> li > a{
+				padding:5px 0 5px 10px!important; 
+				color:#FFF !important; 
+				font-size:14px!important;
+				border-bottom:1px solid #555;
+			}
+		}
+	}
+	body.top{
+		section{
+			h2{
+				background: none;
+				font-size: 18px;
+				font-weight: normal;
+				border: none;
+				height: auto;
+				line-height: 1.4;
+				padding: 0;
+				margin: 0.5em auto; 
+			}
+			p{
+				font-size: 14px!important;
+			}
+			.jumbotron{
+				padding: 40px 5px 0 5px!important;
+				background: none;
+			}
+		}
+		a.sp-menu-btn {
+			display: block; 
+			position: absolute; 
+			top: 0; 
+			right: 0; 
+			width: 42px;
+		}
+		.navbar-header{
+			a img{
+				width:28%;
+				height:auto;
+				margin-top:4px; 
+			}
+		}
+		.nav-tabs,.tab-content{
+			font-size:13px;
+		}
+		.navbar-nav{
+			a{
+				background: black !important;
+			}
+			> li > .dropdown-menu{
+				padding:0;
+			}
+		}
+		.thumnail h5{
+			line-height:0;
+		}
+		.panel h2{
+			margin: 0 0px;
+			padding: 10px 0px 10px 0px;
+			border-radius: 0px;
+			font-size: 1.6em;
+			text-shadow: 0 1px 0 rgba(0,0,0,1.0);
+			background: rgba(178,3,3,1.0) url(../images/ico-title.png) no-repeat 25% 0.2em;
+			width: 100%;
+			padding-left: 55%;
+			margin-left: 0%;
+		}
+	}
+}

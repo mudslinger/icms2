@@ -1,0 +1,59 @@
+
+
+<tr><th><%=@category1%><span><%=@category1%></span></th>
+ <% each_headline( "menus", 0,:where => "{category1} = '#{@category1}' and {category2} = 'ノーマル'" )do |entry| %>
+<td><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</td>
+<%end%>
+
+
+
+ <% each_headline( "menus", 0,:where => "{category1} = '#{@category1}' and {category2} = 'ネギ'" )do |entry| %>
+<td><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</td>
+<%end%>
+
+
+
+ <% each_headline( "menus", 0,:where => "{category1} = '#{@category1}' and {category2} = 'チャーシュー'" )do |entry| %>
+<td><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</td>
+<%end%>
+
+
+ <% each_headline( "menus", 0,:where => "{category1} = '#{@category1}' and {category2} = 'ネギチャーシュー'" )do |entry| %>
+<td><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</td>
+<%end%>
+
+ <% each_headline( "menus", 0,:where => "{category1} = '#{@category1}' and {category2} = 'ピリ辛'" )do |entry| %>
+ 
+<td><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</td>
+<%end%>
+
+ <% each_headline( "menus", 0,:where => "{category1} = '#{@category1}' and {category2} = 'その他'" )do |entry| %>
+<td><%=link_to contents_detail_path_for(entry) do %>
+<img src="<%= entry.cf.photo1 %>" width="120" />
+<%end%>
+<%=link_to entry.title, contents_detail_path_for(entry) %>
+</td>
+<%end%>
+
+
+</tr>

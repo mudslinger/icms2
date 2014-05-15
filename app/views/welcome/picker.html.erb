@@ -1,0 +1,26 @@
+<script>
+function mycallback(){
+
+alert("hogehoeg");
+alert(opener.document);
+opener.document.getElementById('src').value = "afo";
+window.close();
+}
+
+
+function clo(){
+      // 親ウインドウを取得する(IE用)
+      if(!opener) {
+        opener = dialogArguments;
+      }
+      
+      returnValue = "hoge";
+      close();	
+}
+
+</script>
+
+<input type="button" onclick="clo()" value="決定">
+
+<%=link_to "tugi" , "/admin/picker" %>
+<a href="./image2.htm">fufu</a>

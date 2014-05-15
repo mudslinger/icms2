@@ -1,0 +1,127 @@
+
+
+<%= form_for(@entry,  :html => {:multipart => true, :class => "form"}) do |f| %>
+  <%= f.hidden_field :form_id %>
+  
+  <%#↓エラーメッセージ %>
+  <%=render :file => "_share/validation_message", :locals => {:record => @entry } %>
+  
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, :class => "text_field" %>
+  </div>
+  
+  <%if @entry.form.use_content_field %>
+  <div class="field">
+    <%= f.label :content, "内容" %><br />
+    <%= f.text_area :content, :rows=>"15", :cols=>"80", :class => "wysiwyg" %>
+  </div>
+  <%end%>
+  
+ 
+
+
+  
+  <!--カスタムフィールド-->
+  <table id="customfield">
+ 
+  <% @entry.form.fields.each do |field|  %>
+  <tr>
+    <th class="cf_container"> <%=field.label %>: </th>
+    <td class="cf_container">
+    <%=cf_tag field.name, @entry %>
+	 
+	 &nbsp;
+	 <% if field.required? %>
+	   ※必須
+	 <%end%>
+	 &nbsp;
+	 
+	 <%=field.description %>
+	 <%#=field.name %> 
+	 <%#=field.ftype %>
+    </td>
+  </tr>
+  <%end #fields.each %>
+  
+  </table>  
+  
+  
+  <div class="field" id="date">
+    <%= f.label :date_begin %><br />
+    <%= f.datetime_select :date_begin, {:minute_step => 15} %>
+	<%#カレンダー%>
+	<%=render :file => "_share/datepicker_js", :locals => {:name => "entry", :property => "date_begin" } %>
+
+  </div>
+  
+  <div class="field" >
+    <%=check_box_tag "set_date_end" , 1, (@entry.date_end ) %><%= label_tag :set_date_end, "公開終了日を指定する" %><br />
+	<div id="div_date_end" >
+    <%= f.datetime_select :date_end,{:minute_step => 15, :include_blank => true} %>
+	<%#カレンダー%>
+	<%=render :file => "_share/datepicker_js", :locals => {:name => "entry", :property => "date_end" } %>
+	</div>
+  </div>
+  
+
+  
+  <div class="actions" id="button" >
+
+
+	<%if enabled_flags[:fukki] %>
+      <%= f.submit "復帰", :class => "button", :name=>"submit_action[fukki]", :data => {:disable_with => '登録中...'} %>
+	<%end%>	
+	
+	<%if enabled_flags[:sakujo] %>
+      <%= f.submit "完全に削除", :class => "button", :name=>"submit_action[sakujo]", :onclick => "return confirm('この操作は元に戻せません。よろしいですか？');" , :data => {:disable_with => '登録中...'}%>
+	<%end%>	  	
+  	
+	<%if enabled_flags[:sitagaki] %>
+      <%= f.submit "下書き保存", :class => "button", :name=>"submit_action[sitagaki]"  , :data => {:disable_with => '登録中...'} %>
+	<%end%>
+	
+	<%if enabled_flags[:kettei] %>
+  	  <%= f.submit "決定", :class => "button", :name=>"submit_action[kettei]", :data => {:disable_with => '登録中...'} %>
+	<%end%>
+	
+	<%if enabled_flags[:syounin] %>
+      <%= f.submit "承認", :class => "button", :name=>"submit_action[syounin]", :data => {:disable_with => '登録中...'} %>
+	<%end%>
+	
+	<%if enabled_flags[:syounin_torikesi] %>
+      <%= f.submit "承認取消", :class => "button", :name=>"submit_action[syounin_torikesi]", :data => {:disable_with => '登録中...'} %>
+	<%end%>
+	
+	<%if enabled_flags[:gomibako] %>
+      <%= f.submit "ゴミ箱", :class => "button", :name=>"submit_action[gomibako]", :data => {:disable_with => '登録中...'} %>
+	<%end%>		
+  </div>
+  
+  <div class="field">
+  	現在の状態:<%=status_label(@entry.status) %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :created_by, "作成者" %><br />
+    <%= @entry.created_by_name %>
+  </div>
+  
+  <%unless @entry.new_record? %>
+	  <div class="field">
+	    <%= f.label :updated_by, "最終更新者" %><br />
+	    <%= @entry.updated_by_name %>
+	  </div>
+	  
+	  <div class="field">
+	    作成日<br />
+	    <%= @entry.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+		
+	  </div>
+	  <div class="field">
+	    更新日<br />
+	    <%= @entry.updated_at.strftime("%Y年%m月%d日 %H:%M") %>
+	  </div>    
+  <%end%>
+    
+<% end %>

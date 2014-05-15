@@ -1,0 +1,81 @@
+!!! 5
+/[if lt IE 7] <html class="ie6 datauri_na" lang="ja">
+/[if IE 7] <html class="ie7 datauri_na" lang="ja">
+/[if IE 8] <html class="ie8 datauri_na" lang="ja">
+/[if gt IE 8] <!--> <html class="modearn datauri_avlbl" lang="ja"> <!--
+=render 'contents/template/brand/common/head'
+%body.menus
+	=render 'contents/template/brand/common/header'
+	.after-nav.container-full
+		.container
+			.row
+				%h2.col-xs-12
+					%span.glyphicon.glyphicon-globe
+					メニュー
+	.container
+		.row
+			%ol.breadcrumb.col-xs-6.pull-left
+				%li
+					%a{href:'/index.html',title:'トップ'} トップ
+				%li
+					メニュー
+			-#SNSボタンの読み込み
+			=render 'contents/template/brand/common/sns'
+		.row
+			.carousel.slide#menu-slide{data:{ride: :carousel}}
+				%ol.carousel-indicators
+					%li.active{data:{target: '#menu-slide',slide:{to: 0}}}
+					%li.active{data:{target: '#menu-slide',slide:{to: 1}}}
+				.carousel-inner
+					.item.active
+						%img{src:'/images/menus/slide_1.jpg',alt:'XO醤と２種類のネギのコラボレーション'}
+					.item
+						%img{src:'/images/menus/slide_2.jpg',alt:'2枚目のスライド'}
+				%a.left.carousel-control{href:'#menu-slide',data:{slide: :prev}}
+					%span.glyphicon.glyphicon-chevron-left
+				%a.right.carousel-control{href:'#menu-slide',data:{slide: :next}}
+					%span.glyphicon.glyphicon-chevron-right
+		.row
+			%hr
+	.container
+		.row
+			.col-xs-12
+				%ul.nav.nav-tabs.menu-tab
+					%li.active
+						%a{href:'./regular#menu-tab'} レギュラー
+					%li
+						%a{href:'./set#menu-tab'} セットメニュー
+					%li
+						%a{href:'./limited#menu-tab'} 期間限定
+					%li
+						%a{href:'./topping#menu-tab'} トッピング
+	.container
+		.row
+			.col-xs-12
+				%h3 レギュラーメニュー
+			.col-md-7.col-xs-12.menu-intro
+				%p
+					レギュラーメニューは全29種類。
+				%p
+					バリエーションの豊富さは、山岡家のささやかな自慢の一つです。
+				%p
+					お気に入りの一杯が、きっと見つかるはず。
+			.col-md-5.col-xs-12
+				%img.img-rounded{src:'/images/menus/img01.jpg',width: '100%'}
+		.row
+			-@category0 = "レギュラー";@category1 = "醤油";@category1_eng = "Soy Sauce"
+			=render 'contents/template/brand/loop/menu_list_ng'
+		.row
+			-@category0 = "レギュラー";@category1 = "味噌";@category1_eng = "Miso"
+			=render 'contents/template/brand/loop/menu_list_ng'
+		.row
+			-@category0 = "レギュラー";@category1 = "塩";@category1_eng = "Salt"
+			=render 'contents/template/brand/loop/menu_list_ng'
+		.row
+			-@category0 = "レギュラー";@category1 = "特製味噌";@category1_eng = "Special Miso"
+			=render 'contents/template/brand/loop/menu_list_ng'
+		.row
+			-@category0 = "レギュラー";@category1 = "辛味噌";@category1_eng = "Hot Miso"
+			=render 'contents/template/brand/loop/menu_list_ng'	
+	=render 'contents/template/brand/common/footer'
+!= "</html>"

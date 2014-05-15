@@ -1,0 +1,16 @@
+body.shop{
+
+	.jumbotron{
+		background: asset-url('shop/bg03.jpg') no-repeat center;
+	}
+	.imagemap-wrap{
+		position:fixed;
+		z-index: 200;
+	}
+	.shop-image{
+		width:100%;
+	}
+	.table caption{
+		font-size: $font-size-large;
+	}
+}

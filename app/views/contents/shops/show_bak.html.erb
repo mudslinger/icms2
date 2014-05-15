@@ -1,0 +1,158 @@
+<%
+@page_title =  @entry.title;
+%>
+
+<%=render 'contents/template/brand/common/head' %>
+
+<body class="categoryClassName Shop">
+
+
+<%=render 'contents/template/brand/common/header' %>
+
+
+<section>
+	<header>
+		<div class="title">
+			<div class="container clearfix">
+					<h1 class="col-xs-12"><span><i>S</i>hop</span>店舗情報</h1>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2><%=@page_title%></h2>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<ol class="breadcrumb col-xs-12">
+			<li><a href='/index.html' title='トップ'>トップ</a></li>
+			<li><a href='/shops/' title='店舗情報'>店舗情報</a></li>
+			<li><%=@page_title%></li>
+			<li class="pull-right"><img src="/images/tweet.jpg">　<img src="/images/fb-btn.png"></li>
+		</ol>
+	</div>
+
+	<div class='container'>
+
+
+<script>
+$(document).ready( function (){
+
+var ido_keido ="<%= @entry.cf.location %>";
+
+  if(ido_keido != "")	{ 
+  	kekka = ido_keido.split(",");
+	var lng = kekka[1];
+	var lat = kekka[0];
+
+  }
+            var latlng = new google.maps.LatLng(lat, lng);
+            var mapOptions = {
+                zoom: <%= @entry.cf.zoom %>,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                scaleControl: true
+            };
+            var mapObj = new google.maps.Map(document.getElementById('maps'), mapOptions);
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: mapObj
+            });
+});
+</script>
+
+		<div class="clearfix">
+			<div class="col-md-6">
+				<%if file_exists?("/images/shop/photo/#{@entry.cf.id}.jpg") %>
+<img src="/images/shop/photo/<%= @entry.cf.id %>.jpg" class="shopImage col-md-10" />	
+<%else%>	
+	<img src="/images/shop/img_shop_dummy.jpg" />
+<%end%>	
+				<hr class="trans-10">
+				<table class="table">
+<tr>
+                <th>住所</th>
+                <td>
+                  〒<%= @entry.cf.zip %>
+                  <br>
+                  <%= @entry.cf.location_address %>
+                </td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td><%= @entry.cf.phone %></td>
+              </tr>
+              <tr>
+                <th>営業時間</th>
+                <td><%= @entry.cf.shop_hour %></td>
+              </tr>
+              <tr>
+                <th>アクセス</th>
+                <td><%= @entry.cf.access %></td>
+              </tr>
+              <tr>
+                <th>目印・その他</th>
+                <td><%= @entry.cf.landmark %></td>
+              </tr>
+              <tr>
+                <th>限定メニュー</th>
+                <td>--</td>
+              </tr>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<div id="maps" style="width:97%;height:500px;margin-left:3%;background:#222;">
+			</div>
+		</div>
+		<hr class="trans-20">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>近くのお店</h3>
+			</div>
+		</div>
+
+		<div class="clearfix">
+			
+			
+			
+			<%neighbor_entries(@entry, headline("shops", 999) ,4, :within =>
+70).each do |entry|%>
+	
+<div class="col-md-3">	
+
+		  
+		  
+		  				<div class="thumbnail">
+				<%if file_exists?("/images/shop/photo/#{entry.cf.id}.jpg") %>	
+<img src="/images/shop/photo/<%= entry.cf.id %>.jpg" width="320" />	
+<%else%>	
+	<img src="/images/shop/img_shop_dummy.jpg"  width="320" />
+<%end%>			<div class="caption">
+						<h3><%=entry.title%></h3>
+						<p><%=entry.cf.location_address%></p>
+						<p><%=link_to contents_detail_path_for(entry), :class => "btn btn-primary" do %>店舗詳細・地図<%end%></p>
+					</div>
+				</div>
+				
+				
+		  </div>	  
+
+<%end%>
+
+		</div>
+		<hr class="trans-40">
+
+	</div>
+</section>
+
+
+
+<%=render 'contents/template/brand/common/footer' %>
+
+
+
+
+

@@ -1,0 +1,33 @@
+<%#デフォルトテンプレート・一覧形式
+対応するテンプレートがないとき呼ばれる
+%>
+<%=render "header" %>
+
+<h1>一覧</h1>
+デフォルトテンプレート
+<table border="1">
+	
+	<% @entries.each_with_index do |entry, i| %>
+  <tr>
+
+
+    <td>
+        
+                <p>
+        <%= link_to entry.title, contents_detail_path_for(entry) %>
+                </p>
+        </td>
+    
+        
+    
+
+<% end %>
+
+  </tr>
+
+</table>
+
+<br />
+
+
+<%=render "footer" %>

@@ -1,0 +1,86 @@
+<%=render 'my_entries/header' %>
+
+
+<style type="text/css">
+h3 {
+margin:0px;
+border:1px solid #ccc;
+font-size:100%;
+font-weight:normal;
+background-color:#eee;
+padding:5px;
+clear:both;
+margin-botom:2px;
+}
+
+ul,li {
+margin:0px;padding:0px;
+}
+li {
+font-size:80%;
+list-style-type:none;
+border:1px solid #CCC;
+margin:6px;
+padding:3px;
+width:250px;
+float:left;
+background-repeat:no-repeat;height:100px;padding-left:90px;
+}
+
+
+li a{
+display:block;
+color:navy;
+text-decoration:none;
+
+vertical-align:middle;
+}
+</style>
+
+	  
+<h3>お気に入り一覧</h3>
+<ul>
+<% @favorites = @favorites.per(5)%>	
+<% @favorites.each do |favorite| %>
+  <%entry = favorite.entry%>
+  <%#最初の画像フィールド%>
+  <%first_img_value = entry.first_image_field_value%>
+  <li style="background-image:url(<%= first_img_value.url_t("80x6110") %>);">
+  	<%=link_to entry.title, contents_detail_path_for( entry ) %>&nbsp;&nbsp;&nbsp;
+    <%= link_to '削除', favorite, confirm: "削除しますか?", method: :delete %>
+  </li>
+<% end %>
+</ul>
+
+
+<%= paginate @favorites %>
+
+<div style="clear:left"></div>
+
+<hr>
+
+
+
+<h3>モデルコース一覧</h3>
+<ul>
+<% @entries = @entries.per(5)%>	
+<% @entries.each do |entry| %>
+  <li>
+  	<%=link_to entry.title, contents_detail_path_for(entry)%>&nbsp;&nbsp;&nbsp;
+    <%=link_to "修正", edit_my_entry_path(entry.id) %>|
+	<%=link_to "削除", my_entry_path(entry.id), confirm: "削除しますか?", method: :delete %>
+  </li>
+<%end%>
+</ul>
+
+<%= paginate @entries, :param_name => "page_entries" %>
+
+<div style="clear:left">
+  <%=link_to "新規モデルコース", new_my_entry_path%>
+</div>
+
+<div>
+  <%=link_to "トップへ戻る", root_path%>
+</div>
+
+<%=render 'my_entries/footer'%>

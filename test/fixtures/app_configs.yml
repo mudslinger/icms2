@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cron1_triggered_at: 2011-03-17 16:29:28
+
+two:
+  cron1_triggered_at: 2011-03-17 16:29:28

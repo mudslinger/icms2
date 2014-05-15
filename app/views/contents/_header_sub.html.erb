@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta content='キーワード1,キーワード2,キーワード3' name='Keywords'>
+    <title>ページタイトル　｜　山岡家</title>
+    <meta content='ページのdescription' name='description'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <link href='/css/normalize.css' rel='stylesheet' type='text/css'>
+    <link href='/css/layout.css' rel='stylesheet' type='text/css'>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	
+    <script src='/js/menu.js'></script>
+    <!--[if lt IE 9]>
+      <script src='/js/html5.js'></script>
+      <link href='/css/ie8.css' media='all' rel='stylesheet' type='text/css'>
+    <![endif]-->
+  </head>
+  <body class='categoryClassName'>
+    <header>
+      <div class='wrapper'>
+        <h1>山岡家のラーメンは濃厚スープに極太麺。年中無休24時間営業中！</h1>
+        <p class='logo'>
+          <a href='/index.html' title='山岡家ホーム'>
+            <img alt='山岡家' height='43' src='/images/logo.png' width='254'>
+          </a>
+        </p>
+        <a class='sp-menu-btn'>
+          <img alt='メニュー' src='/images/btn_menu.png' width='42'>
+        </a>
+ <%=render 'contents/template/brand/nav' %>
+      </div>
+    </header>
+    <section>
+      <header>
+        <div class='title'>
+          <p>
+            <span class='eng'>
+              Category
+            </span>
+            <span class='jp'>
+              <%=@category_title%>
+            </span>
+            <a class='additional' href='#'>
+              カテゴリートップへ戻る
+            </a>
+          </p>
+        </div>
+        <p class='cateName'>
+           <%=@category_title%>
+        </p>
+        <div class='pageName'>
+          <h1 class='pageName'>
+            <%=@page_title%>
+          </h1>
+          <nav class='breadCrumb'>
+            <ul>
+              <li>
+                <a href='../index.html' title='トップ'>
+                  トップ
+                </a>
+              </li>
+              <li>
+                <a href='#' title='カテゴリー名'>
+                   <%=@category_title%>
+                </a>
+              </li>
+              <li>
+                <a href='#' title='サブカテゴリー名'>
+                  サブカテゴリー名
+                </a>
+              </li>
+              <li>
+                <a href='#'>
+                  <%=@page_title%>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
