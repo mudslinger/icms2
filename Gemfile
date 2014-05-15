@@ -56,9 +56,9 @@ gem 'unicorn'
 gem 'aws-ses'
 gem 'rest-client'
 gem 'nokogiri', '~> 1.6.0'
-
-gem 'compass-rails'
 gem 'sass-rails', '~> 4.0.0'
+gem 'compass-rails'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby

@@ -24,6 +24,10 @@ needs
 ・フッターの最後の2段、よりよいデザイン
 ・メニュー画像720pxの差し替え
 ・メニュー個別ページの上位リンクの正常化（レギュラーならレギュラーに）
+・ヘッドラインニュースのデザイン考案
+・トップナビの現在位置特定機能を実装
+・assets:precompile環境のproductionに対応すること
+　->つまり、digestがついたファイル名
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create

@@ -14,7 +14,7 @@ Icms::Application.configure do
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
 
   # For nginx:
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
   # If you have no front-end server that supports something like X-Sendfile,
   # just comment this out and Rails will serve the files
@@ -35,6 +35,19 @@ Icms::Application.configure do
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
+  # Compress JavaScripts and CSS.
+  config.assets.js_compressor = :uglifier
+  config.assets.css_compressor = :scss
+
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  config.assets.compile = false
+  config.assets.initialize_on_precompile = false
+  # Generate digests for assets URLs.
+  config.assets.digest = true
+
+  # Version of your assets, change this if you want to expire all your assets.
+  config.assets.version = '1.0'
+
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
@@ -48,5 +61,5 @@ Icms::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   config.consider_all_requests_local = true
-  config.assets.debug = true
+  config.assets.debug = false
 end
