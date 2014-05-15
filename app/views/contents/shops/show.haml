@@ -11,11 +11,11 @@
 		.container
 			.row
 				%h2.col-xs-12
-					%span.glyphicon.glyphicon-globe
+					%span.glyphicon.glyphicon-shop_window
 					=@page_title
 	.container
 		.row
-			%ol.breadcrumb.col-xs-6.pull-left
+			%ol.breadcrumb.col-xs-8.pull-left
 				%li
 					%a{href:'/index.html',title:'トップ'} トップ
 				%li
@@ -63,13 +63,19 @@
 				.col-md-3
 					.thumbnail
 						.caption
-							%h4=entry.title
+							%h4
+								=entry.title
 						-if file_exists? "/images/shop/photo/#{entry.cf.id}.jpg"
 							%img.img-thumbnail{src:"/images/shop/photo/#{entry.cf.id}.jpg"}
 						-else
 							%img.img-thumbnail{src:"/images/shop/img_shop_dummy.jpg"}
 						.caption
-							%p=entry.cf.location_address
+							%p
+								%span.glyphicon.glyphicon-road
+								=entry.cf.location_address
+							%p
+								%span.glyphicon.glyphicon-phone_alt
+								=entry.cf.phone
 							%p=link_to "店舗情報",contents_detail_path_for(entry), :class => "btn btn-primary"
 	#location.hidden=@entry.cf.location
 	#zoom.hidden=@entry.cf.zoom

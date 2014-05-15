@@ -28,7 +28,7 @@
 #apply heightline
 #$("div.thumbnail").heightLine() if $("div.thumbnail")
 rf = (ticker,news,i)->
-	ticker.css(left: '3000px')
+	ticker.css(left: '3000px',opacity: 1)
 	ticker.html(news.get(i))
 	ticker.animate left:0,800
 	ret = (if i+1 >= news.length then 0 else i+1)

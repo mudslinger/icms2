@@ -1,16 +1,23 @@
 body.top{
 	.ticker{
-		background-color: $gray;
-		height:25px;
+		background-color: $brand-primary;
+		border-top: solid 1px $almost-white;
+		height:40px;
 		position: relative;
 		overflow: hidden;
 		padding-top:5px;
+		h1{
+			font-size: $font-size-base;
+			padding:0;
+			margin:0;
+		}
 
 	}
 	#ticker{
 		position: relative;
+		margin-top:5px;
 		left: 3000px;
-		height:25px;
+		height:20px;
 	}
 	#menu{
 		@include bg('bg_menu.jpg');

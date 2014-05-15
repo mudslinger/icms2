@@ -7,6 +7,13 @@ body{
 	.after-nav{
 		background-color: $brand-primary;
 		border-top:solid 1px $almost-white;
+		height:40px;
+		overflow: hidden;
+		h2{
+			font-size: 2em;
+			padding:0;
+			margin:9px;
+		}
 	}
 	.footer{
 		background: url('/assets/bg_footer.png') darken($brand-primary,8%) top right no-repeat;
@@ -76,6 +83,9 @@ body{
 	.thumbnail{
 		h1,h2,h3,h4,h5,a{
 			color: $gray-darker;
+		}
+		.btn{
+			color:$almost-white;
 		}
 	}
 	form{
