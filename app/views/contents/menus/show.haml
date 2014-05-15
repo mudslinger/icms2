@@ -24,10 +24,10 @@
 			=render 'contents/template/brand/common/sns'
 		.row
 			.col-sm-8.col-sm-offset-2.col-xs-12.thumbnail
-				.caption.col-sm-10.col-sm-offset-1
+				.caption
 					%p.text-left= raw @entry.content
 				%img{src:@entry.cf.photo1}
-				.caption.col-sm-10.col-sm-offset-1
+				.caption
 					%p.text-right
 						%strong.text-danger#price=@entry.cf.price
 						%span.yen 円

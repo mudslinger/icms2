@@ -26,9 +26,14 @@ needs
 ・メニュー個別ページの上位リンクの正常化（レギュラーならレギュラーに）
 ・ヘッドラインニュースのデザイン考案
 ・トップナビの現在位置特定機能を実装
+・画像ファイル、asset pipelineから読み込むものと、
+　その他の画像の切り分け条件を明確にし、asset pipelineのものは
+  railsのimg_tagを使用(digest対応)
 ・assets:precompile環境のproductionに対応すること
 　->つまり、digestがついたファイル名
 ・非推奨のオプション（起動時に警告される）を使わないようにする
+・ソースの整理。いらないファイルの削除または移動・当社のサイトに関係ないファイルの削除
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create

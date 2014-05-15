@@ -2,7 +2,7 @@ body.top{
 	.ticker{
 		background-color: $brand-primary;
 		border-top: solid 1px $almost-white;
-		height:40px;
+		// height:25px;
 		position: relative;
 		overflow: hidden;
 		padding-top:5px;
@@ -15,9 +15,12 @@ body.top{
 	}
 	#ticker{
 		position: relative;
-		margin-top:5px;
+		margin-top:0px;
 		left: 3000px;
 		height:20px;
+		a:hover{
+			color:$almost-white;
+		}
 	}
 	#menu{
 		@include bg('bg_menu.jpg');
