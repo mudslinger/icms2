@@ -1,22 +1,29 @@
 .navbar.navbar-inverse.navbar-fixed-top#header
 	.container
 		.navbar-header
-			%button.navbar-toggle{type: 'button',data:{toggle: :collapse,target:'navbar-collapse'}}
+			%button.navbar-toggle{type: 'button',data:{toggle: :collapse,target:'.navbar-collapse'}}
 				%span.icon-bar
 				%span.icon-bar
 				%span.icon-bar
 			%a.logo{href: '/index.html'}
 				%img{src: '/assets/logo.png',alt:'ラーメン山岡家'}
-		.navbar-collapse.collapse
+		.navbar-collapse.collapse#nav
 			%ul.nav.navbar-nav.navbar-right
 				%li.active
-					%a{href:'/index.html'} ホーム
+					%a{href:'#top'} 
+						%span.glyphicon.glyphicon-home
+						ホーム
 				%li
-					%a{href:'/shops/index.html'} 店舗
+					%a{href:'#shop'}
+						%span.glyphicon.glyphicon-shop_window
+						店舗
 				%li
-					%a{href:'/menus/categories/regular'} メニュー
+					%a{href:'#menu'} 
+						%span.glyphicon.glyphicon-pot
+						メニュー
 				%li
 					%a.dropdown-toggle{href:'#',data:{toggle: :dropdown}}
+						%span.glyphicon.glyphicon-info
 						about
 						%b.caret
 					%ul.dropdown-menu
@@ -27,7 +34,9 @@
 						%li
 							%a{href:'/contents/etc/207',title: 'SNSガイドライン',tabindex: -1} SNSガイドライン
 				%li
-					%a{href:'feedbacks.html'} ご意見・ご感想
+					%a{href:'/feedbacks.html'}
+						%span.glyphicon.glyphicon-send
+						ご意見・ご感想
 	.ticker
 		.container
 			.row

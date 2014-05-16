@@ -25,6 +25,7 @@
 #Notification slide
 #= require noty
 
+#=require smooth
 #apply heightline
 #$("div.thumbnail").heightLine() if $("div.thumbnail")
 rf = (ticker,news,i)->

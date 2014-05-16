@@ -1,4 +1,12 @@
 body.top{
+
+	.jumbotron {
+		margin-top:100px;
+		padding-left:1em;
+		padding-right:1em;
+		margin-bottom:$jumbotron-padding;
+
+	}
 	.ticker{
 		background-color: $brand-primary;
 		border-top: solid 1px $almost-white;

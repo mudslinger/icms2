@@ -3,17 +3,16 @@
 		%span.glyphicon.glyphicon-shop.original-news
 		%span.glyphicon.glyphicon-social-facebook.facebook
 		%span.glyphicon.glyphicon-social-twitter.twitter
-		
 	.clearfix
 	.noty-content
 		.panel-group#accordion
 			.panel.panel-default
 				.panel-heading.original-news
-					%a.accordion-toggle{href: '#collapse-01',data:{toggle: :collapse,parent:'#accordion'}}
+					%a.accordion-toggle{href: '#collapse-01'}
 						%h4.panel-title 
 							%span.glyphicon.glyphicon-shop
 							Topics
-				.panel-collapse.collapase.in#collapse-01
+				.panel-collapse.collapase#collapse-01
 					.panel-body.noty-message
 						%table.table
 							- each_headline( "news",8 ) do |entry|
@@ -26,11 +25,11 @@
 											%span.glyphicon.glyphicon-bullhorn
 											=entry.title
 					.panel-footer
-						%a.btn.btn-info.btn-xs{href:'#'} 一覧
+						%a.btn.btn-primary.btn-xs.pull-right{href:'/news/index.html'} 一覧を見る
 						.clearfix
 			.panel.panel-default
 				.panel-heading.facebook
-					%a.accordion-toggle{href: '#collapse-02',data:{toggle: :collapse,parent:'#accordion'}}
+					%a.accordion-toggle{href: '#collapse-02'}
 						%h4.panel-title
 							%span.glyphicon.glyphicon-social-facebook
 							Facebook
@@ -39,7 +38,7 @@
 				.clearfix
 			.panel.panel-default
 				.panel-heading.twitter
-					%a.accordion-toggle{href: '#collapse-03',data:{toggle: :collapse,parent:'#accordion'}}
+					%a.accordion-toggle{href: '#collapse-03'}
 						%h4.panel-title
 							%span.glyphicon.glyphicon-social-twitter
 							Twitter
