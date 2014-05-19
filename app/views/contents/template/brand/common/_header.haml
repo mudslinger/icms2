@@ -7,21 +7,22 @@
 				%span.icon-bar
 			%a.logo{href: '/index.html'}
 				%img{src: '/assets/logo.png',alt:'ラーメン山岡家'}
+				=request.fullpath
 		.navbar-collapse.collapse
 			%ul.nav.navbar-nav.navbar-right
-				%li.active
+				%li
 					%a{href:'/index.html'} 
 						%span.glyphicon.glyphicon-home
 						ホーム
-				%li
+				%li{class: request.fullpath.include?('/shops') ? 'active' : '' }
 					%a{href:'/shops/index.html'}
 						%span.glyphicon.glyphicon-shop_window
 						店舗
-				%li
+				%li{class: request.fullpath.include?('/menus') ? 'active' : '' }
 					%a{href:'/menus/categories/regular'} 
 						%span.glyphicon.glyphicon-pot
 						メニュー
-				%li
+				%li{class: request.fullpath.include?('/etc') ? 'active' : '' }
 					%a.dropdown-toggle{href:'#',data:{toggle: :dropdown}}
 						%span.glyphicon.glyphicon-info
 						about
@@ -33,7 +34,7 @@
 							%a{href:'/contents/etc/211',title: 'サイトマップ',tabindex: -1} サイトマップ
 						%li
 							%a{href:'/contents/etc/207',title: 'SNSガイドライン',tabindex: -1} SNSガイドライン
-				%li
+				%li{class: request.fullpath.include?('/feedbacks') ? 'active' : '' }
 					%a{href:'/feedbacks.html'}
 						%span.glyphicon.glyphicon-send
 						ご意見・ご感想
